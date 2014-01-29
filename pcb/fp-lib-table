@@ -1,0 +1,7 @@
+(fp_lib_table
+  (lib (name Aalto_connect)(type Legacy)(uri libraries_aalto/connect.mod)(options "")(descr ""))
+  (lib (name Aalto_ic)(type Legacy)(uri libraries_aalto/ic.mod)(options "")(descr ""))
+  (lib (name oshec_diode)(type Legacy)(uri libraries_oshec/diode-1.mod)(options "")(descr ""))
+  (lib (name oshec_rcl)(type Legacy)(uri libraries_oshec/rcl.mod)(options "")(descr ""))
+  (lib (name oshec_transistor)(type Legacy)(uri libraries_oshec/transistor.mod)(options "")(descr ""))
+)

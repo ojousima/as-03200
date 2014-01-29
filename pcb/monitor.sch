@@ -606,7 +606,7 @@ F 3 "" H 3200 2300 60  0000 C CNN
 	1    3200 2300
 	0    -1   -1   0   
 $EndComp
-Text Notes 2650 600  0    60   ~ 0
+Text Notes 2750 650  0    60   ~ 0
 Each cell sense has LPF + protection zener.\nSee LTC6803-3 datasheet p. 27 for details.
 $Comp
 L CONNECT_2 K112

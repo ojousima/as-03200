@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2014-01-28 BZR 4644)-product date = Wed 29 Jan 2014 15:43:15 EET
+Cmp-Mod V01 Created by CvPcb (2014-01-28 BZR 4644)-product date = Thu 30 Jan 2014 17:30:45 EET
 
 BeginCmp
 TimeStamp = /52E50BA2;
@@ -85,6 +85,27 @@ IdModule  = oshec_rcl:rcl-C0805;
 EndCmp
 
 BeginCmp
+TimeStamp = /52EA5A1A;
+Reference = D1;
+ValeurCmp = RS07J;
+IdModule  = oshec_diode:diode-1-DO214AA;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EA5A2E;
+Reference = D2;
+ValeurCmp = RS07J;
+IdModule  = oshec_diode:diode-1-DO214AA;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EA5A42;
+Reference = D3;
+ValeurCmp = RS07J;
+IdModule  = oshec_diode:diode-1-DO214AA;
+EndCmp
+
+BeginCmp
 TimeStamp = /52E5108C;
 Reference = D101;
 ValeurCmp = 7V5;
@@ -166,6 +187,27 @@ TimeStamp = /52E512B2;
 Reference = D112;
 ValeurCmp = 7V5;
 IdModule  = oshec_diode:diode-1-DO214AA;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EA68F2;
+Reference = K1;
+ValeurCmp = Phoenix 1729034;
+IdModule  = Aalto_connect:CONNECT_4_2.54mm_SCREW_TECONNECTIVITY_282834-4;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EA59F7;
+Reference = K2;
+ValeurCmp = Phoenix 1729034;
+IdModule  = Aalto_connect:CONNECT_4_2.54mm_SCREW_TECONNECTIVITY_282834-4;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EA59E3;
+Reference = K3;
+ValeurCmp = Phoenix 1729034;
+IdModule  = Aalto_connect:CONNECT_4_2.54mm_SCREW_TECONNECTIVITY_282834-4;
 EndCmp
 
 BeginCmp
@@ -256,14 +298,14 @@ BeginCmp
 TimeStamp = /52E50314;
 Reference = K113;
 ValeurCmp = JUMPER_3;
-IdModule  = ;
+IdModule  = Aalto_connect:JUMPER_3;
 EndCmp
 
 BeginCmp
 TimeStamp = /52E50324;
 Reference = K114;
 ValeurCmp = JUMPER_3;
-IdModule  = ;
+IdModule  = Aalto_connect:JUMPER_3;
 EndCmp
 
 BeginCmp

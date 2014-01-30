@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /home/otso/ownCloud/git/as-03200/pcb/monitor.sch)
-    (date "Thu 30 Jan 2014 16:28:04 EET")
+    (date "Thu 30 Jan 2014 17:30:27 EET")
     (tool "eeschema (2014-01-28 BZR 4644)-product"))
   (components
     (comp (ref U101)
@@ -320,35 +320,35 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 52E55C2B))
     (comp (ref K3)
-      (value CONNECT_4)
+      (value TEC-282834-4)
       (libsource (lib connect) (part CONNECT_4))
       (sheetpath (names /) (tstamps /))
       (tstamp 52EA59E3))
     (comp (ref K2)
-      (value CONNECT_4)
+      (value TEC-282834-4)
       (libsource (lib connect) (part CONNECT_4))
       (sheetpath (names /) (tstamps /))
       (tstamp 52EA59F7))
     (comp (ref D1)
-      (value RS07J)
+      (value ER1J)
       (footprint diode-1-DO41-10)
       (libsource (lib diode-1) (part 1N4004))
       (sheetpath (names /) (tstamps /))
       (tstamp 52EA5A1A))
     (comp (ref D2)
-      (value RS07J)
+      (value ER1J)
       (footprint diode-1-DO41-10)
       (libsource (lib diode-1) (part 1N4004))
       (sheetpath (names /) (tstamps /))
       (tstamp 52EA5A2E))
     (comp (ref D3)
-      (value RS07J)
+      (value ER1J)
       (footprint diode-1-DO41-10)
       (libsource (lib diode-1) (part 1N4004))
       (sheetpath (names /) (tstamps /))
       (tstamp 52EA5A42))
     (comp (ref K1)
-      (value CONNECT_4)
+      (value TEC-282834-4)
       (libsource (lib connect) (part CONNECT_4))
       (sheetpath (names /) (tstamps /))
       (tstamp 52EA68F2)))
@@ -369,13 +369,6 @@
       (pins
         (pin (num A) (name A) (type passive))
         (pin (num C) (name C) (type passive))))
-    (libpart (lib connect) (part connect_2)
-      (fields
-        (field (name Reference) K)
-        (field (name Value) connect_2))
-      (pins
-        (pin (num 1) (name 1) (type BiDi))
-        (pin (num 2) (name 2) (type BiDi))))
     (libpart (lib rcl) (part C-EUC0805)
       (fields
         (field (name Reference) C)
@@ -392,6 +385,13 @@
       (pins
         (pin (num 1) (name 1) (type passive))
         (pin (num 2) (name 2) (type passive))))
+    (libpart (lib connect) (part connect_2)
+      (fields
+        (field (name Reference) K)
+        (field (name Value) connect_2))
+      (pins
+        (pin (num 1) (name 1) (type BiDi))
+        (pin (num 2) (name 2) (type BiDi))))
     (libpart (lib transistor) (part -PNP-SOT23-BCE)
       (fields
         (field (name Reference) T)
@@ -449,14 +449,6 @@
         (pin (num 42) (name SDI) (type input))
         (pin (num 43) (name SDO) (type output))
         (pin (num 44) (name CSBI) (type input))))
-    (libpart (lib connect) (part JUMPER_3)
-      (fields
-        (field (name Reference) K)
-        (field (name Value) JUMPER_3))
-      (pins
-        (pin (num 1) (name 1) (type BiDi))
-        (pin (num 2) (name 2) (type BiDi))
-        (pin (num 3) (name 3) (type BiDi))))
     (libpart (lib connect) (part CONNECT_4)
       (fields
         (field (name Reference) K)
@@ -465,7 +457,15 @@
         (pin (num 1) (name 1) (type BiDi))
         (pin (num 2) (name 2) (type BiDi))
         (pin (num 3) (name 3) (type BiDi))
-        (pin (num 4) (name 4) (type BiDi)))))
+        (pin (num 4) (name 4) (type BiDi))))
+    (libpart (lib connect) (part JUMPER_3)
+      (fields
+        (field (name Reference) K)
+        (field (name Value) JUMPER_3))
+      (pins
+        (pin (num 1) (name 1) (type BiDi))
+        (pin (num 2) (name 2) (type BiDi))
+        (pin (num 3) (name 3) (type BiDi)))))
   (libraries
     (library (logical diode-1)
       (uri libraries_oshec/diode-1.lib))

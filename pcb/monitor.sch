@@ -837,7 +837,7 @@ Text Notes 7800 1800 0    60   ~ 0
 TODO: Add watchdog timer connection
 Text Label 600  800  0    60   ~ 0
 CSBO
-Text Label 750  2850 0    60   ~ 0
+Text Label 750  2950 0    60   ~ 0
 SDO
 Text Label 600  1000 0    60   ~ 0
 SCKO
@@ -845,9 +845,9 @@ Text Label 750  2650 0    60   ~ 0
 CSBI
 Text Label 750  2750 0    60   ~ 0
 SDI
-Text Label 600  900  0    60   ~ 0
+Text Label 750  2850 0    60   ~ 0
 SCKI
-Text Label 750  2950 0    60   ~ 0
+Text Label 600  900  0    60   ~ 0
 SDOI
 $Comp
 L 1N4004 D1
@@ -890,14 +890,14 @@ Text Label 7250 6300 1    60   ~ 0
 SDOI
 Text Label 7350 6300 1    60   ~ 0
 SCKO
-Text Label 8050 5600 1    60   ~ 0
-BATT1-
-Text Label 8150 5600 1    60   ~ 0
-SDI
 Text Label 8250 5600 1    60   ~ 0
-SCKI
+BATT1-
+Text Label 8050 5600 1    60   ~ 0
+SDI
 Text Label 8350 5600 1    60   ~ 0
-SCBI
+SCKI
+Text Label 8150 5600 1    60   ~ 0
+CSBI
 Text Notes 6900 6250 1    60   ~ 0
 Redundant protection connection \nMUST be attached first
 Text Notes 7900 6100 1    60   ~ 0
@@ -1378,10 +1378,10 @@ F 3 "" H 8350 5950 60  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L LTC6803-3 U?
+L LTC6803-3 U1
 U 1 1 52EAC2E6
 P 2000 2050
-F 0 "U?" V 2050 2050 60  0000 C CNN
+F 0 "U1" V 2050 2050 60  0000 C CNN
 F 1 "LTC6803-3" V 1950 2050 60  0000 C CNN
 F 2 "" H 2000 2050 60  0000 C CNN
 F 3 "" H 2000 2050 60  0000 C CNN

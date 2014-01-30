@@ -1,20 +1,5 @@
-update=Sun 26 Jan 2014 19:27:39 EET
-last_client=cvpcb
-[eeschema]
-version=1
-LibDir=libraries_aalto;libraries_kicad;libraries_oshec
-NetFmtName=
-RptD_X=0
-RptD_Y=100
-RptLab=1
-LabSize=60
-[eeschema/libraries]
-LibName1=diode-1
-LibName2=rcl
-LibName3=transistor
-LibName4=power
-LibName5=connect
-LibName6=linear_pmic
+update=Thu 30 Jan 2014 15:01:48 EET
+last_client=eeschema
 [pcbnew]
 version=1
 LastNetListRead=
@@ -46,3 +31,21 @@ version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
+[eeschema]
+version=1
+PageLayoutDescrFile=
+SubpartIdSeparator=0
+SubpartFirstId=65
+LibDir=libraries_aalto;libraries_kicad;libraries_oshec
+NetFmtName=
+RptD_X=0
+RptD_Y=100
+RptLab=1
+LabSize=60
+[eeschema/libraries]
+LibName1=diode-1
+LibName2=rcl
+LibName3=transistor
+LibName4=power
+LibName5=connect
+LibName6=linear_pmic

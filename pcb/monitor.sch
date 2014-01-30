@@ -45,23 +45,23 @@ $EndComp
 $Comp
 L JUMPER_3 K113
 U 1 1 52E50314
-P 9300 5250
-F 0 "K113" H 9300 5600 60  0000 C CNN
-F 1 "JUMPER_3" H 9300 5500 60  0000 C CNN
-F 2 "" H 9300 5250 60  0000 C CNN
-F 3 "" H 9300 5250 60  0000 C CNN
-	1    9300 5250
+P 5700 6800
+F 0 "K113" H 5700 7150 60  0000 C CNN
+F 1 "JUMPER_3" H 5700 7050 60  0000 C CNN
+F 2 "" H 5700 6800 60  0000 C CNN
+F 3 "" H 5700 6800 60  0000 C CNN
+	1    5700 6800
 	0    -1   -1   0   
 $EndComp
 $Comp
 L JUMPER_3 K114
 U 1 1 52E50324
-P 9300 5850
-F 0 "K114" H 9300 6200 60  0000 C CNN
-F 1 "JUMPER_3" H 9300 6100 60  0000 C CNN
-F 2 "" H 9300 5850 60  0000 C CNN
-F 3 "" H 9300 5850 60  0000 C CNN
-	1    9300 5850
+P 5700 7400
+F 0 "K114" H 5700 7750 60  0000 C CNN
+F 1 "JUMPER_3" H 5700 7650 60  0000 C CNN
+F 2 "" H 5700 7400 60  0000 C CNN
+F 3 "" H 5700 7400 60  0000 C CNN
+	1    5700 7400
 	0    -1   -1   0   
 $EndComp
 Text Label 800  1500 0    60   ~ 0
@@ -72,11 +72,11 @@ Text Label 800  1400 0    60   ~ 0
 5V
 Text Label 800  1600 0    60   ~ 0
 VMODE
-Text Label 9800 5250 0    60   ~ 0
+Text Label 6200 6800 0    60   ~ 0
 VMODE
-Text Label 9800 5850 0    60   ~ 0
+Text Label 6200 7400 0    60   ~ 0
 TOS
-Text Notes 8900 4900 0    60   ~ 0
+Text Notes 5300 6450 0    60   ~ 0
 TODO: Figure out proper \nconnections to jumpers
 $Comp
 L C-EUC0805 C101
@@ -740,22 +740,248 @@ F 3 "" H 5400 950 60  0000 C CNN
 	1    5350 950 
 	0    1    1    0   
 $EndComp
+Text Notes 3750 3350 0    60   ~ 0
+NOTE: Kelvin connection
+Text Label 2700 900  0    60   ~ 0
+S12
+Text Label 2700 1100 0    60   ~ 0
+S11
+Text Label 2700 1300 0    60   ~ 0
+S10
+Text Label 2700 1500 0    60   ~ 0
+S9
+Text Label 2700 1700 0    60   ~ 0
+S8
+Text Label 2700 1900 0    60   ~ 0
+S7
+Text Label 2700 2100 0    60   ~ 0
+S6
+Text Label 2700 2300 0    60   ~ 0
+S5
+Text Label 2700 2500 0    60   ~ 0
+S4
+Text Label 2700 2700 0    60   ~ 0
+S3
+Text Label 2700 2900 0    60   ~ 0
+S2
+Text Label 2700 3100 0    60   ~ 0
+S1
+Text Label 4650 800  0    60   ~ 0
+BATT12+
+Text Label 4650 1000 0    60   ~ 0
+BATT11+
+Text Label 4650 1200 0    60   ~ 0
+BATT10+
+Text Notes 4800 700  0    60   ~ 0
+To discharge x12
+Text Notes 6200 2750 1    60   ~ 0
+TODO: Name battery +, \nAdd connection to discharging circuit
+Text Notes 2900 5400 1    60   ~ 0
+TODO: Discharge circuit x12
+$Comp
+L R-EU_R0805 R113
+U 1 1 52E55C4A
+P 1650 4400
+F 0 "R113" H 1500 4459 50  0000 L BNN
+F 1 "R-EU_R0805" H 1500 4270 50  0000 L BNN
+F 2 "rcl-R0805" H 1650 4550 50  0001 C CNN
+F 3 "" H 1650 4400 60  0000 C CNN
+	1    1650 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L R-EU_R0805 R114
+U 1 1 52E55C63
+P 1650 5000
+F 0 "R114" H 1500 5059 50  0000 L BNN
+F 1 "R-EU_R0805" H 1500 4870 50  0000 L BNN
+F 2 "rcl-R0805" H 1650 5150 50  0001 C CNN
+F 3 "" H 1650 5000 60  0000 C CNN
+	1    1650 5000
+	1    0    0    -1  
+$EndComp
+Text Label 2000 4400 0    60   ~ 0
+BATT12+
+Text Label 2000 4800 0    60   ~ 0
+BATT11+
+Text Label 2000 5400 0    60   ~ 0
+BATT10+
+Text Label 850  4600 0    60   ~ 0
+S12
+Text Label 850  5200 0    60   ~ 0
+S11
+$Comp
+L -PNP-SOT23-BCE T102
+U 1 1 52E55C3A
+P 1250 5200
+F 0 "T102" H 850 5500 50  0000 L BNN
+F 1 "ZUMT718" H 850 5400 50  0000 L BNN
+F 2 "transistor-SOT23-BCE" H 1250 5350 50  0001 C CNN
+F 3 "" H 1250 5200 60  0000 C CNN
+	1    1250 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L -PNP-SOT23-BCE T101
+U 1 1 52E55C2B
+P 1250 4600
+F 0 "T101" H 850 4900 50  0000 L BNN
+F 1 "ZUMT718" H 850 4800 50  0000 L BNN
+F 2 "transistor-SOT23-BCE" H 1250 4750 50  0001 C CNN
+F 3 "" H 1250 4600 60  0000 C CNN
+	1    1250 4600
+	1    0    0    -1  
+$EndComp
+Text Notes 6450 3300 1    60   ~ 0
+Each battery has its own connector with both terminals.\nUse external low DC resistance connection in high \ncurrent applications
+Text Notes 7800 1050 0    60   ~ 0
+TODO: Add daisy-chain connections for high side
+Text Notes 7800 1200 0    60   ~ 0
+TODO: Add daisy-chain connections for low side
+Text Notes 7800 1350 0    60   ~ 0
+TODO: Add isolated communication port for bottom circuit
+Text Notes 7800 1500 0    60   ~ 0
+TODO: Add temperature measurement connections
+Text Notes 7800 1650 0    60   ~ 0
+TODO: Add GPIO connections
+Text Notes 7800 1800 0    60   ~ 0
+TODO: Add watchdog timer connection
+Text Label 600  800  0    60   ~ 0
+CSBO
+Text Label 600  900  0    60   ~ 0
+SDO
+Text Label 600  1000 0    60   ~ 0
+SCKO
+Text Label 750  2650 0    60   ~ 0
+CSBI
+Text Label 750  2750 0    60   ~ 0
+SDI
+Text Label 750  2850 0    60   ~ 0
+SCKI
+Text Label 750  2950 0    60   ~ 0
+SDOI
+$Comp
+L CONNECT_4 K?
+U 1 1 52EA59E3
+P 8200 5950
+F 0 "K?" H 8200 6150 60  0000 C CNN
+F 1 "CONNECT_4" H 8200 6250 60  0000 C CNN
+F 2 "" H 8200 5950 60  0000 C CNN
+F 3 "" H 8200 5950 60  0000 C CNN
+	1    8200 5950
+	1    0    0    1   
+$EndComp
+$Comp
+L CONNECT_4 K?
+U 1 1 52EA59F7
+P 7200 4600
+F 0 "K?" H 7200 4800 60  0000 C CNN
+F 1 "CONNECT_4" H 7200 4900 60  0000 C CNN
+F 2 "" H 7200 4600 60  0000 C CNN
+F 3 "" H 7200 4600 60  0000 C CNN
+	1    7200 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L 1N4004 D?
+U 1 1 52EA5A1A
+P 7150 5100
+F 0 "D?" H 7350 5150 50  0000 L BNN
+F 1 "RS07J" H 7500 5150 50  0000 L BNN
+F 2 "diode-1-DO41-10" H 7150 5250 50  0001 C CNN
+F 3 "" H 7150 5100 60  0000 C CNN
+	1    7150 5100
+	0    1    1    0   
+$EndComp
+$Comp
+L 1N4004 D?
+U 1 1 52EA5A2E
+P 7250 5100
+F 0 "D?" H 7450 5150 50  0000 L BNN
+F 1 "RS07J" H 7600 5150 50  0000 L BNN
+F 2 "diode-1-DO41-10" H 7250 5250 50  0001 C CNN
+F 3 "" H 7250 5100 60  0000 C CNN
+	1    7250 5100
+	0    1    1    0   
+$EndComp
+$Comp
+L 1N4004 D?
+U 1 1 52EA5A42
+P 7350 5100
+F 0 "D?" H 7550 5150 50  0000 L BNN
+F 1 "RS07J" H 7700 5150 50  0000 L BNN
+F 2 "diode-1-DO41-10" H 7350 5250 50  0001 C CNN
+F 3 "" H 7350 5100 60  0000 C CNN
+	1    7350 5100
+	0    1    1    0   
+$EndComp
+Text Label 7050 6300 1    60   ~ 0
+BATT12+
+Text Label 7150 6300 1    60   ~ 0
+CSBO
+Text Label 7250 6300 1    60   ~ 0
+SDOI
+Text Label 7350 6300 1    60   ~ 0
+SCKO
+Text Label 8050 5600 1    60   ~ 0
+BATT1-
+Text Label 8150 5600 1    60   ~ 0
+SDI
+Text Label 8250 5600 1    60   ~ 0
+SCKI
+Text Label 8350 5600 1    60   ~ 0
+SCBI
+Text Notes 6900 6250 1    60   ~ 0
+Redundant protection connection \nMUST be attached first
+Text Notes 7900 6100 1    60   ~ 0
+Redundant protection connection \nMUST be attached first
+Text Notes 7550 4200 2    60   ~ 0
+Screw terminal
+Text Notes 7900 6400 0    60   ~ 0
+Screw terminal
+Text Notes 6850 4050 0    60   ~ 0
+Communication to \nnext LTC6803
+Text Notes 7750 4050 0    60   ~ 0
+Communication to\nprevious LTC6803
+Text Notes 5750 4050 0    60   ~ 0
+Communication to\nMCU
+$Comp
+L CONNECT_4 K?
+U 1 1 52EA68F2
+P 6050 4600
+F 0 "K?" H 6050 4800 60  0000 C CNN
+F 1 "CONNECT_4" H 6050 4900 60  0000 C CNN
+F 2 "" H 6050 4600 60  0000 C CNN
+F 3 "" H 6050 4600 60  0000 C CNN
+	1    6050 4600
+	1    0    0    -1  
+$EndComp
+Text Notes 5750 4200 0    60   ~ 0
+Screw terminal
+Text Label 5900 5250 1    60   ~ 0
+CSBI
+Text Label 6000 5250 1    60   ~ 0
+SDO
+Text Label 6100 5250 1    60   ~ 0
+SDI
+Text Label 6200 5250 1    60   ~ 0
+SCKI
 Wire Wire Line
 	1150 3050 1050 3050
 Wire Wire Line
 	1050 3050 1050 3500
 Wire Wire Line
-	9500 5850 9800 5850
+	5900 7400 6200 7400
 Wire Wire Line
-	9500 5250 9800 5250
+	5900 6800 6200 6800
 Wire Wire Line
-	9500 5150 9800 5150
+	5900 6700 6200 6700
 Wire Wire Line
-	9500 5350 9800 5350
+	5900 6900 6200 6900
 Wire Wire Line
-	9500 5750 9800 5750
+	5900 7300 6200 7300
 Wire Wire Line
-	9500 5950 9800 5950
+	5900 7500 6200 7500
 Wire Wire Line
 	1150 1300 800  1300
 Wire Wire Line
@@ -1012,8 +1238,6 @@ Wire Wire Line
 	5150 1100 5000 1100
 Wire Wire Line
 	4900 3450 4900 3300
-Text Notes 3750 3350 0    60   ~ 0
-NOTE: Kelvin connection
 Wire Wire Line
 	2650 900  2900 900 
 Wire Wire Line
@@ -1038,43 +1262,11 @@ Wire Wire Line
 	2650 2900 2900 2900
 Wire Wire Line
 	2650 3100 2900 3100
-Text Label 2700 900  0    60   ~ 0
-S12
-Text Label 2700 1100 0    60   ~ 0
-S11
-Text Label 2700 1300 0    60   ~ 0
-S10
-Text Label 2700 1500 0    60   ~ 0
-S9
-Text Label 2700 1700 0    60   ~ 0
-S8
-Text Label 2700 1900 0    60   ~ 0
-S7
-Text Label 2700 2100 0    60   ~ 0
-S6
-Text Label 2700 2300 0    60   ~ 0
-S5
-Text Label 2700 2500 0    60   ~ 0
-S4
-Text Label 2700 2700 0    60   ~ 0
-S3
-Text Label 2700 2900 0    60   ~ 0
-S2
-Text Label 2700 3100 0    60   ~ 0
-S1
-Text Label 4650 800  0    60   ~ 0
-BATT12+
-Text Label 4650 1000 0    60   ~ 0
-BATT11+
-Text Label 4650 1200 0    60   ~ 0
-BATT10+
 Wire Wire Line
 	4600 800  4600 700 
 Wire Wire Line
 	4600 700  4800 700 
 Connection ~ 4600 800 
-Text Notes 4800 700  0    60   ~ 0
-To discharge x12
 Wire Wire Line
 	4600 1200 4600 1100
 Connection ~ 4600 1200
@@ -1090,32 +1282,6 @@ Wire Wire Line
 Wire Wire Line
 	4600 1300 4800 1300
 Connection ~ 4600 1400
-Text Notes 6200 2750 1    60   ~ 0
-TODO: Name battery +, \nAdd connection to discharging circuit
-Text Notes 2900 5400 1    60   ~ 0
-TODO: Discharge circuit x12
-$Comp
-L R-EU_R0805 R113
-U 1 1 52E55C4A
-P 1650 4400
-F 0 "R113" H 1500 4459 50  0000 L BNN
-F 1 "R-EU_R0805" H 1500 4270 50  0000 L BNN
-F 2 "rcl-R0805" H 1650 4550 50  0001 C CNN
-F 3 "" H 1650 4400 60  0000 C CNN
-	1    1650 4400
-	1    0    0    -1  
-$EndComp
-$Comp
-L R-EU_R0805 R114
-U 1 1 52E55C63
-P 1650 5000
-F 0 "R114" H 1500 5059 50  0000 L BNN
-F 1 "R-EU_R0805" H 1500 4870 50  0000 L BNN
-F 2 "rcl-R0805" H 1650 5150 50  0001 C CNN
-F 3 "" H 1650 5000 60  0000 C CNN
-	1    1650 5000
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	1450 4400 1350 4400
 Wire Wire Line
@@ -1130,51 +1296,63 @@ Wire Wire Line
 	1150 5200 850  5200
 Wire Wire Line
 	1350 5400 2000 5400
-Text Label 2000 4400 0    60   ~ 0
-BATT12+
-Text Label 2000 4800 0    60   ~ 0
-BATT11+
 Wire Wire Line
 	1850 5000 1950 5000
 Wire Wire Line
 	1950 5000 1950 4800
 Connection ~ 1950 4800
-Text Label 2000 5400 0    60   ~ 0
-BATT10+
-Text Label 850  4600 0    60   ~ 0
-S12
-Text Label 850  5200 0    60   ~ 0
-S11
-$Comp
-L -PNP-SOT23-BCE T102
-U 1 1 52E55C3A
-P 1250 5200
-F 0 "T102" H 850 5500 50  0000 L BNN
-F 1 "ZUMT718" H 850 5400 50  0000 L BNN
-F 2 "transistor-SOT23-BCE" H 1250 5350 50  0001 C CNN
-F 3 "" H 1250 5200 60  0000 C CNN
-	1    1250 5200
-	1    0    0    -1  
-$EndComp
-$Comp
-L -PNP-SOT23-BCE T101
-U 1 1 52E55C2B
-P 1250 4600
-F 0 "T101" H 850 4900 50  0000 L BNN
-F 1 "ZUMT718" H 850 4800 50  0000 L BNN
-F 2 "transistor-SOT23-BCE" H 1250 4750 50  0001 C CNN
-F 3 "" H 1250 4600 60  0000 C CNN
-	1    1250 4600
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	1150 1400 800  1400
-Text Notes 6450 3300 1    60   ~ 0
-Each battery has its own connector with both terminals.\nUse external low DC resistance connection in high \ncurrent applications
-Text Notes 7800 1050 0    60   ~ 0
-TODO: Add daisy-chain connections for high side
-Text Notes 7800 1200 0    60   ~ 0
-TODO: Add daisy-chain connections for low side
-Text Notes 7800 1350 0    60   ~ 0
-TODO: Add isolated communication port for bottom circuit
+Wire Wire Line
+	1150 800  600  800 
+Wire Wire Line
+	1150 900  600  900 
+Wire Wire Line
+	1150 1000 600  1000
+Wire Wire Line
+	1150 2950 750  2950
+Wire Wire Line
+	1150 2850 750  2850
+Wire Wire Line
+	1150 2750 750  2750
+Wire Wire Line
+	1150 2650 750  2650
+Wire Wire Line
+	7350 5000 7350 4900
+Wire Wire Line
+	7250 5000 7250 4900
+Wire Wire Line
+	7150 5000 7150 4900
+Wire Wire Line
+	7350 5200 7350 6300
+Wire Wire Line
+	7250 5200 7250 6300
+Wire Wire Line
+	7150 5200 7150 6300
+Wire Wire Line
+	7050 4900 7050 6300
+Wire Wire Line
+	8050 5650 8050 5250
+Wire Wire Line
+	8150 5250 8150 5650
+Wire Wire Line
+	8250 5650 8250 5250
+Wire Wire Line
+	8350 5650 8350 5250
+Wire Wire Line
+	5900 4900 5900 5250
+Wire Wire Line
+	6000 4900 6000 5250
+Wire Wire Line
+	6100 4900 6100 5250
+Wire Wire Line
+	6200 4900 6200 5250
+Wire Notes Line
+	7780 1010 10110 1010
+Wire Notes Line
+	7780 1160 10110 1160
+Wire Notes Line
+	8710 1320 10500 1320
+Wire Notes Line
+	10500 1320 10500 1310
 $EndSCHEMATC

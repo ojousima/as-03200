@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2014-01-28 BZR 4644)-product date = Thu 30 Jan 2014 17:30:45 EET
+Cmp-Mod V01 Created by CvPcb (2014-01-28 BZR 4644)-product date = Thu 30 Jan 2014 22:11:36 EET
 
 BeginCmp
 TimeStamp = /52E50BA2;
@@ -87,21 +87,21 @@ EndCmp
 BeginCmp
 TimeStamp = /52EA5A1A;
 Reference = D1;
-ValeurCmp = RS07J;
+ValeurCmp = ER1J;
 IdModule  = oshec_diode:diode-1-DO214AA;
 EndCmp
 
 BeginCmp
 TimeStamp = /52EA5A2E;
 Reference = D2;
-ValeurCmp = RS07J;
+ValeurCmp = ER1J;
 IdModule  = oshec_diode:diode-1-DO214AA;
 EndCmp
 
 BeginCmp
 TimeStamp = /52EA5A42;
 Reference = D3;
-ValeurCmp = RS07J;
+ValeurCmp = ER1J;
 IdModule  = oshec_diode:diode-1-DO214AA;
 EndCmp
 
@@ -190,122 +190,143 @@ IdModule  = oshec_diode:diode-1-DO214AA;
 EndCmp
 
 BeginCmp
-TimeStamp = /52EA68F2;
+TimeStamp = /52EAB17C;
 Reference = K1;
-ValeurCmp = Phoenix 1729034;
-IdModule  = Aalto_connect:CONNECT_4_2.54mm_SCREW_TECONNECTIVITY_282834-4;
+ValeurCmp = DG128-02P;
+IdModule  = Aalto_connect:CONNECT_2_5.00mm_SCREW_DG128-02P_DG128-5.0-02P-14-00A(H);
 EndCmp
 
 BeginCmp
-TimeStamp = /52EA59F7;
+TimeStamp = /52EAB190;
 Reference = K2;
-ValeurCmp = Phoenix 1729034;
-IdModule  = Aalto_connect:CONNECT_4_2.54mm_SCREW_TECONNECTIVITY_282834-4;
+ValeurCmp = DG128-02P;
+IdModule  = Aalto_connect:CONNECT_2_5.00mm_SCREW_DG128-02P_DG128-5.0-02P-14-00A(H);
 EndCmp
 
 BeginCmp
-TimeStamp = /52EA59E3;
+TimeStamp = /52EAB1CC;
 Reference = K3;
-ValeurCmp = Phoenix 1729034;
-IdModule  = Aalto_connect:CONNECT_4_2.54mm_SCREW_TECONNECTIVITY_282834-4;
+ValeurCmp = DG128-02P;
+IdModule  = Aalto_connect:CONNECT_2_5.00mm_SCREW_DG128-02P_DG128-5.0-02P-14-00A(H);
+EndCmp
+
+BeginCmp
+TimeStamp = /52EAB1E0;
+Reference = K4;
+ValeurCmp = DG128-02P;
+IdModule  = Aalto_connect:CONNECT_2_5.00mm_SCREW_DG128-02P_DG128-5.0-02P-14-00A(H);
+EndCmp
+
+BeginCmp
+TimeStamp = /52EAB258;
+Reference = K5;
+ValeurCmp = DG128-02P;
+IdModule  = Aalto_connect:CONNECT_2_5.00mm_SCREW_DG128-02P_DG128-5.0-02P-14-00A(H);
+EndCmp
+
+BeginCmp
+TimeStamp = /52EAB26C;
+Reference = K6;
+ValeurCmp = DG128-02P;
+IdModule  = Aalto_connect:CONNECT_2_5.00mm_SCREW_DG128-02P_DG128-5.0-02P-14-00A(H);
 EndCmp
 
 BeginCmp
 TimeStamp = /52E532A9;
 Reference = K101;
-ValeurCmp = CONNECT_2;
-IdModule  = Aalto_connect:CONNECT_2_2mm54_VERT;
+ValeurCmp = DG128-02P;
+IdModule  = Aalto_connect:CONNECT_2_5.00mm_SCREW_DG128-02P_DG128-5.0-02P-14-00A(H);
 EndCmp
 
 BeginCmp
 TimeStamp = /52E5329A;
 Reference = K102;
-ValeurCmp = CONNECT_2;
-IdModule  = Aalto_connect:CONNECT_2_2mm54_VERT;
+ValeurCmp = DG128-02P;
+IdModule  = Aalto_connect:CONNECT_2_5.00mm_SCREW_DG128-02P_DG128-5.0-02P-14-00A(H);
 EndCmp
 
 BeginCmp
 TimeStamp = /52E5328B;
 Reference = K103;
-ValeurCmp = CONNECT_2;
-IdModule  = Aalto_connect:CONNECT_2_2mm54_VERT;
+ValeurCmp = DG128-02P;
+IdModule  = Aalto_connect:CONNECT_2_5.00mm_SCREW_DG128-02P_DG128-5.0-02P-14-00A(H);
 EndCmp
 
 BeginCmp
 TimeStamp = /52E5327C;
 Reference = K104;
-ValeurCmp = CONNECT_2;
-IdModule  = Aalto_connect:CONNECT_2_2mm54_VERT;
+ValeurCmp = DG128-02P;
+IdModule  = Aalto_connect:CONNECT_2_5.00mm_SCREW_DG128-02P_DG128-5.0-02P-14-00A(H);
 EndCmp
 
 BeginCmp
 TimeStamp = /52E5326D;
 Reference = K105;
-ValeurCmp = CONNECT_2;
-IdModule  = Aalto_connect:CONNECT_2_2mm54_VERT;
+ValeurCmp = DG128-02P;
+IdModule  = Aalto_connect:CONNECT_2_5.00mm_SCREW_DG128-02P_DG128-5.0-02P-14-00A(H);
 EndCmp
 
 BeginCmp
 TimeStamp = /52E5325E;
 Reference = K106;
-ValeurCmp = CONNECT_2;
-IdModule  = Aalto_connect:CONNECT_2_2mm54_VERT;
+ValeurCmp = DG128-02P;
+IdModule  = Aalto_connect:CONNECT_2_5.00mm_SCREW_DG128-02P_DG128-5.0-02P-14-00A(H);
 EndCmp
 
 BeginCmp
 TimeStamp = /52E5324F;
 Reference = K107;
-ValeurCmp = CONNECT_2;
-IdModule  = Aalto_connect:CONNECT_2_2mm54_VERT;
+ValeurCmp = DG128-02P;
+IdModule  = Aalto_connect:CONNECT_2_5.00mm_SCREW_DG128-02P_DG128-5.0-02P-14-00A(H);
 EndCmp
 
 BeginCmp
 TimeStamp = /52E53240;
 Reference = K108;
-ValeurCmp = CONNECT_2;
-IdModule  = Aalto_connect:CONNECT_2_2mm54_VERT;
+ValeurCmp = DG128-02P;
+IdModule  = Aalto_connect:CONNECT_2_5.00mm_SCREW_DG128-02P_DG128-5.0-02P-14-00A(H);
 EndCmp
 
 BeginCmp
 TimeStamp = /52E53231;
 Reference = K109;
-ValeurCmp = CONNECT_2;
-IdModule  = Aalto_connect:CONNECT_2_2mm54_VERT;
+ValeurCmp = DG128-02P;
+IdModule  = Aalto_connect:CONNECT_2_5.00mm_SCREW_DG128-02P_DG128-5.0-02P-14-00A(H);
 EndCmp
 
 BeginCmp
 TimeStamp = /52E53222;
 Reference = K110;
-ValeurCmp = CONNECT_2;
-IdModule  = Aalto_connect:CONNECT_2_2mm54_VERT;
+ValeurCmp = DG128-02P;
+IdModule  = Aalto_connect:CONNECT_2_5.00mm_SCREW_DG128-02P_DG128-5.0-02P-14-00A(H);
 EndCmp
 
 BeginCmp
 TimeStamp = /52E53213;
 Reference = K111;
-ValeurCmp = CONNECT_2;
-IdModule  = Aalto_connect:CONNECT_2_2mm54_VERT;
+ValeurCmp = DG128-02P;
+IdModule  = Aalto_connect:CONNECT_2_5.00mm_SCREW_DG128-02P_DG128-5.0-02P-14-00A(H);
 EndCmp
 
 BeginCmp
 TimeStamp = /52E53204;
 Reference = K112;
-ValeurCmp = CONNECT_2;
-IdModule  = Aalto_connect:CONNECT_2_2mm54_VERT;
+ValeurCmp = DG128-02P;
+IdModule  = Aalto_connect:CONNECT_2_5.00mm_SCREW_DG128-02P_DG128-5.0-02P-14-00A(H);
 EndCmp
 
 BeginCmp
 TimeStamp = /52E50314;
 Reference = K113;
 ValeurCmp = JUMPER_3;
-IdModule  = Aalto_connect:JUMPER_3;
+IdModule  = Aalto_connect:JUMPER_3_2.54mm;
 EndCmp
 
 BeginCmp
 TimeStamp = /52E50324;
 Reference = K114;
 ValeurCmp = JUMPER_3;
-IdModule  = Aalto_connect:JUMPER_3;
+IdModule  = Aalto_connect:JUMPER_3_2.54mm;
 EndCmp
 
 BeginCmp

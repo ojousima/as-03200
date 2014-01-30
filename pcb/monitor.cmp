@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2014-01-28 BZR 4644)-product date = Thu 30 Jan 2014 22:11:36 EET
+Cmp-Mod V01 Created by CvPcb (2014-01-28 BZR 4644)-product date = Thu 30 Jan 2014 22:37:58 EET
 
 BeginCmp
 TimeStamp = /52E50BA2;
@@ -442,8 +442,8 @@ IdModule  = oshec_transistor:transistor-SOT23-BEC;
 EndCmp
 
 BeginCmp
-TimeStamp = /52E50008;
-Reference = U101;
+TimeStamp = /52EAC2E6;
+Reference = U1;
 ValeurCmp = LTC6803-3;
 IdModule  = Aalto_ic:SSOP44;
 EndCmp

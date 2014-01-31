@@ -1,0 +1,2 @@
+These files are originally bundled with KiCad.
+All rights are reserved by original authors.

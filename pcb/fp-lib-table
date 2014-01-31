@@ -4,4 +4,5 @@
   (lib (name oshec_diode)(type Legacy)(uri libraries_oshec/diode-1.mod)(options "")(descr ""))
   (lib (name oshec_rcl)(type Legacy)(uri libraries_oshec/rcl.mod)(options "")(descr ""))
   (lib (name oshec_transistor)(type Legacy)(uri libraries_oshec/transistor.mod)(options "")(descr ""))
+  (lib (name oshec_led)(type Legacy)(uri libraries_oshec/led.mod)(options "")(descr ""))
 )

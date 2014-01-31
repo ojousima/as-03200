@@ -1,87 +1,94 @@
-Cmp-Mod V01 Created by CvPcb (2014-01-28 BZR 4644)-product date = Thu 30 Jan 2014 22:37:58 EET
+Cmp-Mod V01 Created by CvPcb (2014-01-28 BZR 4644)-product date = Fri 31 Jan 2014 19:32:10 EET
 
 BeginCmp
 TimeStamp = /52E50BA2;
 Reference = C101;
-ValeurCmp = 100n;
-IdModule  = oshec_rcl:rcl-C0805;
+ValeurCmp = 3u3;
+IdModule  = oshec_rcl:rcl-C1206;
 EndCmp
 
 BeginCmp
 TimeStamp = /52E50BB1;
 Reference = C102;
-ValeurCmp = 100n;
-IdModule  = oshec_rcl:rcl-C0805;
+ValeurCmp = 3u3;
+IdModule  = oshec_rcl:rcl-C1206;
 EndCmp
 
 BeginCmp
 TimeStamp = /52E50F15;
 Reference = C103;
-ValeurCmp = 100n;
-IdModule  = oshec_rcl:rcl-C0805;
+ValeurCmp = 3u3;
+IdModule  = oshec_rcl:rcl-C1206;
 EndCmp
 
 BeginCmp
 TimeStamp = /52E50F1B;
 Reference = C104;
-ValeurCmp = 100n;
-IdModule  = oshec_rcl:rcl-C0805;
+ValeurCmp = 3u3;
+IdModule  = oshec_rcl:rcl-C1206;
 EndCmp
 
 BeginCmp
 TimeStamp = /52E510DC;
 Reference = C105;
-ValeurCmp = 100n;
-IdModule  = oshec_rcl:rcl-C0805;
+ValeurCmp = 3u3;
+IdModule  = oshec_rcl:rcl-C1206;
 EndCmp
 
 BeginCmp
 TimeStamp = /52E510E2;
 Reference = C106;
-ValeurCmp = 100n;
-IdModule  = oshec_rcl:rcl-C0805;
+ValeurCmp = 3u3;
+IdModule  = oshec_rcl:rcl-C1206;
 EndCmp
 
 BeginCmp
 TimeStamp = /52E5110F;
 Reference = C107;
-ValeurCmp = 100n;
-IdModule  = oshec_rcl:rcl-C0805;
+ValeurCmp = 3u3;
+IdModule  = oshec_rcl:rcl-C1206;
 EndCmp
 
 BeginCmp
 TimeStamp = /52E51115;
 Reference = C108;
-ValeurCmp = 100n;
-IdModule  = oshec_rcl:rcl-C0805;
+ValeurCmp = 3u3;
+IdModule  = oshec_rcl:rcl-C1206;
 EndCmp
 
 BeginCmp
 TimeStamp = /52E51186;
 Reference = C109;
-ValeurCmp = 100n;
-IdModule  = oshec_rcl:rcl-C0805;
+ValeurCmp = 3u3;
+IdModule  = oshec_rcl:rcl-C1206;
 EndCmp
 
 BeginCmp
 TimeStamp = /52E5118C;
 Reference = C110;
-ValeurCmp = 100n;
-IdModule  = oshec_rcl:rcl-C0805;
+ValeurCmp = 3u3;
+IdModule  = oshec_rcl:rcl-C1206;
 EndCmp
 
 BeginCmp
 TimeStamp = /52E511B9;
 Reference = C111;
-ValeurCmp = 100n;
-IdModule  = oshec_rcl:rcl-C0805;
+ValeurCmp = 3u3;
+IdModule  = oshec_rcl:rcl-C1206;
 EndCmp
 
 BeginCmp
 TimeStamp = /52E511BF;
 Reference = C112;
-ValeurCmp = 100n;
-IdModule  = oshec_rcl:rcl-C0805;
+ValeurCmp = 3u3;
+IdModule  = oshec_rcl:rcl-C1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBD99B;
+Reference = C113;
+ValeurCmp = 3u3;
+IdModule  = oshec_rcl:rcl-C1206;
 EndCmp
 
 BeginCmp
@@ -330,101 +337,416 @@ IdModule  = Aalto_connect:JUMPER_3_2.54mm;
 EndCmp
 
 BeginCmp
+TimeStamp = /52EBE27B;
+Reference = LD1;
+ValeurCmp = GREEN-LED0805;
+IdModule  = oshec_led:led-CHIP-LED0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBE28F;
+Reference = LD2;
+ValeurCmp = GREEN-LED0805;
+IdModule  = oshec_led:led-CHIP-LED0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBED90;
+Reference = LD3;
+ValeurCmp = GREEN-LED0805;
+IdModule  = oshec_led:led-CHIP-LED0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBED96;
+Reference = LD4;
+ValeurCmp = GREEN-LED0805;
+IdModule  = oshec_led:led-CHIP-LED0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBF0BD;
+Reference = LD5;
+ValeurCmp = GREEN-LED0805;
+IdModule  = oshec_led:led-CHIP-LED0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBF0C3;
+Reference = LD6;
+ValeurCmp = GREEN-LED0805;
+IdModule  = oshec_led:led-CHIP-LED0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBF490;
+Reference = LD7;
+ValeurCmp = GREEN-LED0805;
+IdModule  = oshec_led:led-CHIP-LED0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBF24B;
+Reference = LD8;
+ValeurCmp = GREEN-LED0805;
+IdModule  = oshec_led:led-CHIP-LED0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBF251;
+Reference = LD9;
+ValeurCmp = GREEN-LED0805;
+IdModule  = oshec_led:led-CHIP-LED0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBF28F;
+Reference = LD10;
+ValeurCmp = GREEN-LED0805;
+IdModule  = oshec_led:led-CHIP-LED0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBF295;
+Reference = LD11;
+ValeurCmp = GREEN-LED0805;
+IdModule  = oshec_led:led-CHIP-LED0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBF2D4;
+Reference = LD12;
+ValeurCmp = GREEN-LED0805;
+IdModule  = oshec_led:led-CHIP-LED0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBE20D;
+Reference = R1;
+ValeurCmp = 10k;
+IdModule  = oshec_rcl:rcl-R0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBE22B;
+Reference = R2;
+ValeurCmp = 10k;
+IdModule  = oshec_rcl:rcl-R0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBED78;
+Reference = R3;
+ValeurCmp = 10k;
+IdModule  = oshec_rcl:rcl-R0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBED7E;
+Reference = R4;
+ValeurCmp = 10k;
+IdModule  = oshec_rcl:rcl-R0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBF0A5;
+Reference = R5;
+ValeurCmp = 10k;
+IdModule  = oshec_rcl:rcl-R0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBF0AB;
+Reference = R6;
+ValeurCmp = 10k;
+IdModule  = oshec_rcl:rcl-R0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBE253;
+Reference = R7;
+ValeurCmp = 100;
+IdModule  = oshec_rcl:rcl-R0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBE23F;
+Reference = R8;
+ValeurCmp = 100;
+IdModule  = oshec_rcl:rcl-R0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBED8A;
+Reference = R9;
+ValeurCmp = 100;
+IdModule  = oshec_rcl:rcl-R0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBED84;
+Reference = R10;
+ValeurCmp = 100;
+IdModule  = oshec_rcl:rcl-R0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBF0B7;
+Reference = R11;
+ValeurCmp = 100;
+IdModule  = oshec_rcl:rcl-R0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBF0B1;
+Reference = R12;
+ValeurCmp = 100;
+IdModule  = oshec_rcl:rcl-R0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBF484;
+Reference = R13;
+ValeurCmp = 10k;
+IdModule  = oshec_rcl:rcl-R0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBF233;
+Reference = R14;
+ValeurCmp = 10k;
+IdModule  = oshec_rcl:rcl-R0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBF239;
+Reference = R15;
+ValeurCmp = 10k;
+IdModule  = oshec_rcl:rcl-R0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBF277;
+Reference = R16;
+ValeurCmp = 10k;
+IdModule  = oshec_rcl:rcl-R0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBF27D;
+Reference = R17;
+ValeurCmp = 10k;
+IdModule  = oshec_rcl:rcl-R0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBF2BC;
+Reference = R18;
+ValeurCmp = 10k;
+IdModule  = oshec_rcl:rcl-R0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBF48A;
+Reference = R19;
+ValeurCmp = 100;
+IdModule  = oshec_rcl:rcl-R0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBF245;
+Reference = R20;
+ValeurCmp = 100;
+IdModule  = oshec_rcl:rcl-R0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBF23F;
+Reference = R21;
+ValeurCmp = 100;
+IdModule  = oshec_rcl:rcl-R0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBF289;
+Reference = R22;
+ValeurCmp = 100;
+IdModule  = oshec_rcl:rcl-R0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBF283;
+Reference = R23;
+ValeurCmp = 100;
+IdModule  = oshec_rcl:rcl-R0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBF2CE;
+Reference = R24;
+ValeurCmp = 100;
+IdModule  = oshec_rcl:rcl-R0805;
+EndCmp
+
+BeginCmp
 TimeStamp = /52E50C00;
 Reference = R101;
-ValeurCmp = 100R;
+ValeurCmp = 10k;
 IdModule  = oshec_rcl:rcl-C0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /52E50DC3;
 Reference = R102;
-ValeurCmp = 100R;
+ValeurCmp = 10k;
 IdModule  = oshec_rcl:rcl-C0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /52E50F21;
 Reference = R103;
-ValeurCmp = 100R;
+ValeurCmp = 10k;
 IdModule  = oshec_rcl:rcl-C0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /52E50F31;
 Reference = R104;
-ValeurCmp = 100R;
+ValeurCmp = 10k;
 IdModule  = oshec_rcl:rcl-C0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /52E510E8;
 Reference = R105;
-ValeurCmp = 100R;
+ValeurCmp = 10k;
 IdModule  = oshec_rcl:rcl-C0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /52E510F8;
 Reference = R106;
-ValeurCmp = 100R;
+ValeurCmp = 10k;
 IdModule  = oshec_rcl:rcl-C0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /52E5111B;
 Reference = R107;
-ValeurCmp = 100R;
+ValeurCmp = 10k;
 IdModule  = oshec_rcl:rcl-C0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /52E5112B;
 Reference = R108;
-ValeurCmp = 100R;
+ValeurCmp = 10k;
 IdModule  = oshec_rcl:rcl-C0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /52E51192;
 Reference = R109;
-ValeurCmp = 100R;
+ValeurCmp = 10k;
 IdModule  = oshec_rcl:rcl-C0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /52E511A2;
 Reference = R110;
-ValeurCmp = 100R;
+ValeurCmp = 10k;
 IdModule  = oshec_rcl:rcl-C0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /52E511C5;
 Reference = R111;
-ValeurCmp = 100R;
+ValeurCmp = 10k;
 IdModule  = oshec_rcl:rcl-C0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /52E511D5;
 Reference = R112;
-ValeurCmp = 100R;
+ValeurCmp = 10k;
 IdModule  = oshec_rcl:rcl-C0805;
 EndCmp
 
 BeginCmp
-TimeStamp = /52E55C4A;
+TimeStamp = /52EBD95F;
 Reference = R113;
-ValeurCmp = R-EU_R0805;
+ValeurCmp = 10k;
 IdModule  = oshec_rcl:rcl-C0805;
 EndCmp
 
 BeginCmp
-TimeStamp = /52E55C63;
-Reference = R114;
-ValeurCmp = R-EU_R0805;
-IdModule  = oshec_rcl:rcl-C0805;
+TimeStamp = /52EBED70;
+Reference = T1;
+ValeurCmp = ZUMT718;
+IdModule  = oshec_transistor:transistor-SOT23-BEC;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBED6A;
+Reference = T2;
+ValeurCmp = ZUMT718;
+IdModule  = oshec_transistor:transistor-SOT23-BEC;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBF09D;
+Reference = T3;
+ValeurCmp = ZUMT718;
+IdModule  = oshec_transistor:transistor-SOT23-BEC;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBF097;
+Reference = T4;
+ValeurCmp = ZUMT718;
+IdModule  = oshec_transistor:transistor-SOT23-BEC;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBF47D;
+Reference = T5;
+ValeurCmp = ZUMT718;
+IdModule  = oshec_transistor:transistor-SOT23-BEC;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBF22B;
+Reference = T6;
+ValeurCmp = ZUMT718;
+IdModule  = oshec_transistor:transistor-SOT23-BEC;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBF225;
+Reference = T7;
+ValeurCmp = ZUMT718;
+IdModule  = oshec_transistor:transistor-SOT23-BEC;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBF26F;
+Reference = T8;
+ValeurCmp = ZUMT718;
+IdModule  = oshec_transistor:transistor-SOT23-BEC;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBF269;
+Reference = T9;
+ValeurCmp = ZUMT718;
+IdModule  = oshec_transistor:transistor-SOT23-BEC;
+EndCmp
+
+BeginCmp
+TimeStamp = /52EBF2B4;
+Reference = T10;
+ValeurCmp = ZUMT718;
+IdModule  = oshec_transistor:transistor-SOT23-BEC;
 EndCmp
 
 BeginCmp

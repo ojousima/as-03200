@@ -6,7 +6,8 @@ LIBS:power
 LIBS:connect
 LIBS:linear_pmic
 LIBS:led
-EELAYER 27 0
+LIBS:monitor-cache
+EELAYER 24 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -20,17 +21,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L GND #PWR1
-U 1 1 52E50195
-P 1050 3500
-F 0 "#PWR1" H 1050 3500 30  0001 C CNN
-F 1 "GND" H 1050 3430 30  0001 C CNN
-F 2 "" H 1050 3500 60  0000 C CNN
-F 3 "" H 1050 3500 60  0000 C CNN
-	1    1050 3500
-	1    0    0    -1  
-$EndComp
 $Comp
 L JUMPER_3 K113
 U 1 1 52E50314
@@ -729,8 +719,6 @@ F 3 "" H 5400 950 60  0000 C CNN
 	1    5350 950 
 	0    1    1    0   
 $EndComp
-Text Notes 4950 3400 0    60   ~ 0
-NOTE: Kelvin connection
 Text Label 2700 900  0    60   ~ 0
 S12
 Text Label 2700 1100 0    60   ~ 0
@@ -761,8 +749,6 @@ Text Label 4650 1000 0    60   ~ 0
 BATT11+
 Text Label 4650 1200 0    60   ~ 0
 BATT10+
-Text Notes 4800 700  0    60   ~ 0
-To discharge x12
 Text Label 2600 3750 0    60   ~ 0
 BATT12+
 Text Label 2600 4150 0    60   ~ 0
@@ -797,12 +783,8 @@ F 3 "" H 1550 3950 60  0000 C CNN
 $EndComp
 Text Notes 6450 3300 1    60   ~ 0
 Each battery has its own connector with both terminals.\nUse external low DC resistance connection in high \ncurrent applications
-Text Notes 7800 1050 0    60   ~ 0
-TODO: Add daisy-chain connections for high side
-Text Notes 7800 1200 0    60   ~ 0
-TODO: Add daisy-chain connections for low side
-Text Notes 7800 1350 0    60   ~ 0
-TODO: Add isolated communication port for bottom circuit
+Text Notes 5650 5550 0    60   ~ 0
+TODO: Add isolation
 Text Label 600  800  0    60   ~ 0
 CSBO
 Text Label 750  2950 0    60   ~ 0
@@ -1519,7 +1501,7 @@ BATT2+
 Text Label 4650 3000 0    60   ~ 0
 BATT1+
 Text Label 4900 3750 0    60   ~ 0
-BATT12+
+BATT6+
 Text Label 3000 3950 0    60   ~ 0
 S6
 $Comp
@@ -1612,9 +1594,7 @@ F 3 "" H 9250 6300 60  0000 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	1150 3050 1050 3050
-Wire Wire Line
-	1050 3050 1050 3500
+	750  3050 1150 3050
 Wire Wire Line
 	5900 7400 6200 7400
 Wire Wire Line
@@ -1633,7 +1613,6 @@ Wire Wire Line
 	1150 1500 800  1500
 Wire Wire Line
 	1150 1600 800  1600
-Connection ~ 1050 3450
 Wire Wire Line
 	4550 800  5000 800 
 Wire Wire Line
@@ -1788,8 +1767,6 @@ Wire Wire Line
 	3600 3050 3500 3050
 Wire Wire Line
 	3500 3050 3500 3150
-Wire Wire Line
-	1050 3450 4900 3450
 Connection ~ 3150 800 
 Connection ~ 3150 1000
 Connection ~ 3200 1000
@@ -1814,9 +1791,6 @@ Connection ~ 3150 2000
 Connection ~ 3200 2000
 Connection ~ 3200 1800
 Connection ~ 3150 1800
-Wire Wire Line
-	4900 3300 5050 3200
-Connection ~ 5050 3200
 Wire Wire Line
 	5150 3100 5000 3100
 Wire Wire Line
@@ -1879,8 +1853,6 @@ Wire Wire Line
 Connection ~ 5000 1100
 Wire Wire Line
 	5150 1100 5000 1100
-Wire Wire Line
-	4900 3450 4900 3300
 Wire Wire Line
 	2650 900  2900 900 
 Wire Wire Line
@@ -1975,12 +1947,6 @@ Wire Wire Line
 	6100 4850 6100 5250
 Wire Wire Line
 	6200 4850 6200 5250
-Wire Notes Line
-	7780 1010 10110 1010
-Wire Notes Line
-	7780 1160 10110 1160
-Wire Notes Line
-	8710 1320 10500 1320
 Wire Notes Line
 	10500 1320 10500 1310
 Wire Wire Line
@@ -2416,4 +2382,20 @@ Text Notes 10350 3900 0    60   ~ 0
 PSU bypassing
 Text Notes 7600 1750 0    60   ~ 0
 Watchdog + GPIO led connections
+Text Label 750  3050 0    60   ~ 0
+V-
+$Comp
+L GND #PWR?
+U 1 1 52EDF786
+P 4950 3400
+F 0 "#PWR?" H 4950 3400 30  0001 C CNN
+F 1 "GND" H 4950 3330 30  0001 C CNN
+F 2 "" H 4950 3400 60  0000 C CNN
+F 3 "" H 4950 3400 60  0000 C CNN
+	1    4950 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4950 3400 4950 3200
+Connection ~ 4950 3200
 $EndSCHEMATC

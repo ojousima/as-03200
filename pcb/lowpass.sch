@@ -1,0 +1,834 @@
+EESchema Schematic File Version 2
+LIBS:diode-1
+LIBS:rcl
+LIBS:transistor
+LIBS:power
+LIBS:connect
+LIBS:linear_pmic
+LIBS:led
+EELAYER 24 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 3 3
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L C-EUC0805 C?
+U 1 1 52F32486
+P 4800 1150
+AR Path="/52F32486" Ref="C?"  Part="1" 
+AR Path="/52F31D88/52F32486" Ref="C?"  Part="1" 
+F 0 "C?" V 4950 1200 50  0000 L BNN
+F 1 "3u3" V 4950 850 50  0000 L BNN
+F 2 "rcl-C0805" H 4800 1300 50  0001 C CNN
+F 3 "" H 4800 1150 60  0000 C CNN
+	1    4800 1150
+	-1   0    0    1   
+$EndComp
+$Comp
+L R-EU_R0805 R?
+U 1 1 52F32492
+P 5200 850
+AR Path="/52F32492" Ref="R?"  Part="1" 
+AR Path="/52F31D88/52F32492" Ref="R?"  Part="1" 
+F 0 "R?" H 5000 750 50  0000 L BNN
+F 1 "10k" H 5250 750 50  0000 L BNN
+F 2 "rcl-R0805" H 5200 1000 50  0001 C CNN
+F 3 "" H 5200 850 60  0000 C CNN
+	1    5200 850 
+	1    0    0    -1  
+$EndComp
+$Comp
+L ZENER-DIODESMB D?
+U 1 1 52F324CE
+P 4200 1050
+AR Path="/52F324CE" Ref="D?"  Part="1" 
+AR Path="/52F31D88/52F324CE" Ref="D?"  Part="1" 
+F 0 "D?" H 4130 1125 50  0000 L BNN
+F 1 "7V5" H 4130 915 50  0000 L BNN
+F 2 "diode-1-SMB" H 4200 1200 50  0001 C CNN
+F 3 "" H 4200 1050 60  0000 C CNN
+	1    4200 1050
+	0    -1   -1   0   
+$EndComp
+Connection ~ 4200 850 
+Text Notes 3800 700  0    60   ~ 0
+Each cell sense has LPF + protection zener.\nSee LTC6803-3 datasheet p. 27 for details.
+Wire Wire Line
+	5400 850  5750 850 
+Wire Wire Line
+	4800 950  4800 850 
+Connection ~ 4800 850 
+Wire Wire Line
+	4200 950  4200 850 
+Wire Wire Line
+	4800 1300 4800 1250
+Text Label 5000 1300 2    60   ~ 0
+GND
+Wire Wire Line
+	4800 1300 5000 1300
+Wire Wire Line
+	4200 1150 4200 1350
+$Comp
+L C-EUC0805 C?
+U 1 1 52F32787
+P 4850 1650
+AR Path="/52F32787" Ref="C?"  Part="1" 
+AR Path="/52F31D88/52F32787" Ref="C?"  Part="1" 
+F 0 "C?" V 5000 1700 50  0000 L BNN
+F 1 "3u3" V 5000 1350 50  0000 L BNN
+F 2 "rcl-C0805" H 4850 1800 50  0001 C CNN
+F 3 "" H 4850 1650 60  0000 C CNN
+	1    4850 1650
+	-1   0    0    1   
+$EndComp
+$Comp
+L R-EU_R0805 R?
+U 1 1 52F3278D
+P 5250 1350
+AR Path="/52F3278D" Ref="R?"  Part="1" 
+AR Path="/52F31D88/52F3278D" Ref="R?"  Part="1" 
+F 0 "R?" H 5050 1250 50  0000 L BNN
+F 1 "10k" H 5300 1250 50  0000 L BNN
+F 2 "rcl-R0805" H 5250 1500 50  0001 C CNN
+F 3 "" H 5250 1350 60  0000 C CNN
+	1    5250 1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L ZENER-DIODESMB D?
+U 1 1 52F32793
+P 4250 1550
+AR Path="/52F32793" Ref="D?"  Part="1" 
+AR Path="/52F31D88/52F32793" Ref="D?"  Part="1" 
+F 0 "D?" H 4180 1625 50  0000 L BNN
+F 1 "7V5" H 4180 1415 50  0000 L BNN
+F 2 "diode-1-SMB" H 4250 1700 50  0001 C CNN
+F 3 "" H 4250 1550 60  0000 C CNN
+	1    4250 1550
+	0    -1   -1   0   
+$EndComp
+Connection ~ 4250 1350
+Wire Wire Line
+	5450 1350 5800 1350
+Wire Wire Line
+	4850 1350 4850 1450
+Connection ~ 4850 1350
+Wire Wire Line
+	4250 1450 4250 1350
+Wire Wire Line
+	4850 1800 4850 1750
+Text Label 5050 1800 2    60   ~ 0
+GND
+Wire Wire Line
+	4850 1800 5050 1800
+Wire Wire Line
+	4250 1650 4250 1850
+Connection ~ 4200 1350
+Wire Wire Line
+	3850 850  5000 850 
+Wire Wire Line
+	3850 1350 5050 1350
+$Comp
+L C-EUC0805 C?
+U 1 1 52F32836
+P 4800 2150
+AR Path="/52F32836" Ref="C?"  Part="1" 
+AR Path="/52F31D88/52F32836" Ref="C?"  Part="1" 
+F 0 "C?" V 4950 2200 50  0000 L BNN
+F 1 "3u3" V 4950 1850 50  0000 L BNN
+F 2 "rcl-C0805" H 4800 2300 50  0001 C CNN
+F 3 "" H 4800 2150 60  0000 C CNN
+	1    4800 2150
+	-1   0    0    1   
+$EndComp
+$Comp
+L R-EU_R0805 R?
+U 1 1 52F3283C
+P 5200 1850
+AR Path="/52F3283C" Ref="R?"  Part="1" 
+AR Path="/52F31D88/52F3283C" Ref="R?"  Part="1" 
+F 0 "R?" H 5000 1750 50  0000 L BNN
+F 1 "10k" H 5250 1750 50  0000 L BNN
+F 2 "rcl-R0805" H 5200 2000 50  0001 C CNN
+F 3 "" H 5200 1850 60  0000 C CNN
+	1    5200 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L ZENER-DIODESMB D?
+U 1 1 52F32842
+P 4200 2050
+AR Path="/52F32842" Ref="D?"  Part="1" 
+AR Path="/52F31D88/52F32842" Ref="D?"  Part="1" 
+F 0 "D?" H 4130 2125 50  0000 L BNN
+F 1 "7V5" H 4130 1915 50  0000 L BNN
+F 2 "diode-1-SMB" H 4200 2200 50  0001 C CNN
+F 3 "" H 4200 2050 60  0000 C CNN
+	1    4200 2050
+	0    -1   -1   0   
+$EndComp
+Connection ~ 4200 1850
+Wire Wire Line
+	5400 1850 5750 1850
+Wire Wire Line
+	4800 1950 4800 1850
+Connection ~ 4800 1850
+Wire Wire Line
+	4200 1950 4200 1850
+Wire Wire Line
+	4800 2300 4800 2250
+Text Label 5000 2300 2    60   ~ 0
+GND
+Wire Wire Line
+	4800 2300 5000 2300
+Wire Wire Line
+	4200 2150 4200 2350
+$Comp
+L C-EUC0805 C?
+U 1 1 52F32851
+P 4850 2650
+AR Path="/52F32851" Ref="C?"  Part="1" 
+AR Path="/52F31D88/52F32851" Ref="C?"  Part="1" 
+F 0 "C?" V 5000 2700 50  0000 L BNN
+F 1 "3u3" V 5000 2350 50  0000 L BNN
+F 2 "rcl-C0805" H 4850 2800 50  0001 C CNN
+F 3 "" H 4850 2650 60  0000 C CNN
+	1    4850 2650
+	-1   0    0    1   
+$EndComp
+$Comp
+L R-EU_R0805 R?
+U 1 1 52F32857
+P 5250 2350
+AR Path="/52F32857" Ref="R?"  Part="1" 
+AR Path="/52F31D88/52F32857" Ref="R?"  Part="1" 
+F 0 "R?" H 5050 2250 50  0000 L BNN
+F 1 "10k" H 5300 2250 50  0000 L BNN
+F 2 "rcl-R0805" H 5250 2500 50  0001 C CNN
+F 3 "" H 5250 2350 60  0000 C CNN
+	1    5250 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L ZENER-DIODESMB D?
+U 1 1 52F3285D
+P 4250 2550
+AR Path="/52F3285D" Ref="D?"  Part="1" 
+AR Path="/52F31D88/52F3285D" Ref="D?"  Part="1" 
+F 0 "D?" H 4180 2625 50  0000 L BNN
+F 1 "7V5" H 4180 2415 50  0000 L BNN
+F 2 "diode-1-SMB" H 4250 2700 50  0001 C CNN
+F 3 "" H 4250 2550 60  0000 C CNN
+	1    4250 2550
+	0    -1   -1   0   
+$EndComp
+Connection ~ 4250 2350
+Wire Wire Line
+	5450 2350 5800 2350
+Wire Wire Line
+	4850 2350 4850 2450
+Connection ~ 4850 2350
+Wire Wire Line
+	4250 2450 4250 2350
+Wire Wire Line
+	4850 2800 4850 2750
+Text Label 5050 2800 2    60   ~ 0
+GND
+Wire Wire Line
+	4850 2800 5050 2800
+Wire Wire Line
+	4250 2650 4250 2850
+Connection ~ 4200 2350
+Wire Wire Line
+	3850 1850 5000 1850
+Wire Wire Line
+	3850 2350 5050 2350
+Connection ~ 4250 1850
+$Comp
+L C-EUC0805 C?
+U 1 1 52F32871
+P 4800 3150
+AR Path="/52F32871" Ref="C?"  Part="1" 
+AR Path="/52F31D88/52F32871" Ref="C?"  Part="1" 
+F 0 "C?" V 4950 3200 50  0000 L BNN
+F 1 "3u3" V 4950 2850 50  0000 L BNN
+F 2 "rcl-C0805" H 4800 3300 50  0001 C CNN
+F 3 "" H 4800 3150 60  0000 C CNN
+	1    4800 3150
+	-1   0    0    1   
+$EndComp
+$Comp
+L R-EU_R0805 R?
+U 1 1 52F32877
+P 5200 2850
+AR Path="/52F32877" Ref="R?"  Part="1" 
+AR Path="/52F31D88/52F32877" Ref="R?"  Part="1" 
+F 0 "R?" H 5000 2750 50  0000 L BNN
+F 1 "10k" H 5250 2750 50  0000 L BNN
+F 2 "rcl-R0805" H 5200 3000 50  0001 C CNN
+F 3 "" H 5200 2850 60  0000 C CNN
+	1    5200 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L ZENER-DIODESMB D?
+U 1 1 52F3287D
+P 4200 3050
+AR Path="/52F3287D" Ref="D?"  Part="1" 
+AR Path="/52F31D88/52F3287D" Ref="D?"  Part="1" 
+F 0 "D?" H 4130 3125 50  0000 L BNN
+F 1 "7V5" H 4130 2915 50  0000 L BNN
+F 2 "diode-1-SMB" H 4200 3200 50  0001 C CNN
+F 3 "" H 4200 3050 60  0000 C CNN
+	1    4200 3050
+	0    -1   -1   0   
+$EndComp
+Connection ~ 4200 2850
+Wire Wire Line
+	5400 2850 5750 2850
+Wire Wire Line
+	4800 2950 4800 2850
+Connection ~ 4800 2850
+Wire Wire Line
+	4200 2950 4200 2850
+Wire Wire Line
+	4800 3300 4800 3250
+Text Label 5000 3300 2    60   ~ 0
+GND
+Wire Wire Line
+	4800 3300 5000 3300
+Wire Wire Line
+	4200 3150 4200 3350
+$Comp
+L C-EUC0805 C?
+U 1 1 52F3288C
+P 4850 3650
+AR Path="/52F3288C" Ref="C?"  Part="1" 
+AR Path="/52F31D88/52F3288C" Ref="C?"  Part="1" 
+F 0 "C?" V 5000 3700 50  0000 L BNN
+F 1 "3u3" V 5000 3350 50  0000 L BNN
+F 2 "rcl-C0805" H 4850 3800 50  0001 C CNN
+F 3 "" H 4850 3650 60  0000 C CNN
+	1    4850 3650
+	-1   0    0    1   
+$EndComp
+$Comp
+L R-EU_R0805 R?
+U 1 1 52F32892
+P 5250 3350
+AR Path="/52F32892" Ref="R?"  Part="1" 
+AR Path="/52F31D88/52F32892" Ref="R?"  Part="1" 
+F 0 "R?" H 5050 3250 50  0000 L BNN
+F 1 "10k" H 5300 3250 50  0000 L BNN
+F 2 "rcl-R0805" H 5250 3500 50  0001 C CNN
+F 3 "" H 5250 3350 60  0000 C CNN
+	1    5250 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L ZENER-DIODESMB D?
+U 1 1 52F32898
+P 4250 3550
+AR Path="/52F32898" Ref="D?"  Part="1" 
+AR Path="/52F31D88/52F32898" Ref="D?"  Part="1" 
+F 0 "D?" H 4180 3625 50  0000 L BNN
+F 1 "7V5" H 4180 3415 50  0000 L BNN
+F 2 "diode-1-SMB" H 4250 3700 50  0001 C CNN
+F 3 "" H 4250 3550 60  0000 C CNN
+	1    4250 3550
+	0    -1   -1   0   
+$EndComp
+Connection ~ 4250 3350
+Wire Wire Line
+	5450 3350 5800 3350
+Wire Wire Line
+	4850 3350 4850 3450
+Connection ~ 4850 3350
+Wire Wire Line
+	4250 3450 4250 3350
+Wire Wire Line
+	4850 3800 4850 3750
+Text Label 5050 3800 2    60   ~ 0
+GND
+Wire Wire Line
+	4850 3800 5050 3800
+Wire Wire Line
+	4250 3650 4250 3850
+Connection ~ 4200 3350
+Wire Wire Line
+	3850 2850 5000 2850
+Wire Wire Line
+	3850 3350 5050 3350
+$Comp
+L C-EUC0805 C?
+U 1 1 52F328AA
+P 4800 4150
+AR Path="/52F328AA" Ref="C?"  Part="1" 
+AR Path="/52F31D88/52F328AA" Ref="C?"  Part="1" 
+F 0 "C?" V 4950 4200 50  0000 L BNN
+F 1 "3u3" V 4950 3850 50  0000 L BNN
+F 2 "rcl-C0805" H 4800 4300 50  0001 C CNN
+F 3 "" H 4800 4150 60  0000 C CNN
+	1    4800 4150
+	-1   0    0    1   
+$EndComp
+$Comp
+L R-EU_R0805 R?
+U 1 1 52F328B0
+P 5200 3850
+AR Path="/52F328B0" Ref="R?"  Part="1" 
+AR Path="/52F31D88/52F328B0" Ref="R?"  Part="1" 
+F 0 "R?" H 5000 3750 50  0000 L BNN
+F 1 "10k" H 5250 3750 50  0000 L BNN
+F 2 "rcl-R0805" H 5200 4000 50  0001 C CNN
+F 3 "" H 5200 3850 60  0000 C CNN
+	1    5200 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L ZENER-DIODESMB D?
+U 1 1 52F328B6
+P 4200 4050
+AR Path="/52F328B6" Ref="D?"  Part="1" 
+AR Path="/52F31D88/52F328B6" Ref="D?"  Part="1" 
+F 0 "D?" H 4130 4125 50  0000 L BNN
+F 1 "7V5" H 4130 3915 50  0000 L BNN
+F 2 "diode-1-SMB" H 4200 4200 50  0001 C CNN
+F 3 "" H 4200 4050 60  0000 C CNN
+	1    4200 4050
+	0    -1   -1   0   
+$EndComp
+Connection ~ 4200 3850
+Wire Wire Line
+	5400 3850 5750 3850
+Wire Wire Line
+	4800 3950 4800 3850
+Connection ~ 4800 3850
+Wire Wire Line
+	4200 3950 4200 3850
+Wire Wire Line
+	4800 4300 4800 4250
+Text Label 5000 4300 2    60   ~ 0
+GND
+Wire Wire Line
+	4800 4300 5000 4300
+Wire Wire Line
+	4200 4150 4200 4350
+$Comp
+L C-EUC0805 C?
+U 1 1 52F328C5
+P 4850 4650
+AR Path="/52F328C5" Ref="C?"  Part="1" 
+AR Path="/52F31D88/52F328C5" Ref="C?"  Part="1" 
+F 0 "C?" V 5000 4700 50  0000 L BNN
+F 1 "3u3" V 5000 4350 50  0000 L BNN
+F 2 "rcl-C0805" H 4850 4800 50  0001 C CNN
+F 3 "" H 4850 4650 60  0000 C CNN
+	1    4850 4650
+	-1   0    0    1   
+$EndComp
+$Comp
+L R-EU_R0805 R?
+U 1 1 52F328CB
+P 5250 4350
+AR Path="/52F328CB" Ref="R?"  Part="1" 
+AR Path="/52F31D88/52F328CB" Ref="R?"  Part="1" 
+F 0 "R?" H 5050 4250 50  0000 L BNN
+F 1 "10k" H 5300 4250 50  0000 L BNN
+F 2 "rcl-R0805" H 5250 4500 50  0001 C CNN
+F 3 "" H 5250 4350 60  0000 C CNN
+	1    5250 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L ZENER-DIODESMB D?
+U 1 1 52F328D1
+P 4250 4550
+AR Path="/52F328D1" Ref="D?"  Part="1" 
+AR Path="/52F31D88/52F328D1" Ref="D?"  Part="1" 
+F 0 "D?" H 4180 4625 50  0000 L BNN
+F 1 "7V5" H 4180 4415 50  0000 L BNN
+F 2 "diode-1-SMB" H 4250 4700 50  0001 C CNN
+F 3 "" H 4250 4550 60  0000 C CNN
+	1    4250 4550
+	0    -1   -1   0   
+$EndComp
+Connection ~ 4250 4350
+Wire Wire Line
+	5450 4350 5800 4350
+Wire Wire Line
+	4850 4350 4850 4450
+Connection ~ 4850 4350
+Wire Wire Line
+	4250 4450 4250 4350
+Wire Wire Line
+	4850 4800 4850 4750
+Text Label 5050 4800 2    60   ~ 0
+GND
+Wire Wire Line
+	4850 4800 5050 4800
+Wire Wire Line
+	4250 4650 4250 4850
+Connection ~ 4200 4350
+Wire Wire Line
+	3850 3850 5000 3850
+Wire Wire Line
+	3850 4350 5050 4350
+Connection ~ 4250 3850
+Connection ~ 4250 2850
+$Comp
+L C-EUC0805 C?
+U 1 1 52F328E6
+P 4800 5150
+AR Path="/52F328E6" Ref="C?"  Part="1" 
+AR Path="/52F31D88/52F328E6" Ref="C?"  Part="1" 
+F 0 "C?" V 4950 5200 50  0000 L BNN
+F 1 "3u3" V 4950 4850 50  0000 L BNN
+F 2 "rcl-C0805" H 4800 5300 50  0001 C CNN
+F 3 "" H 4800 5150 60  0000 C CNN
+	1    4800 5150
+	-1   0    0    1   
+$EndComp
+$Comp
+L R-EU_R0805 R?
+U 1 1 52F328EC
+P 5200 4850
+AR Path="/52F328EC" Ref="R?"  Part="1" 
+AR Path="/52F31D88/52F328EC" Ref="R?"  Part="1" 
+F 0 "R?" H 5000 4750 50  0000 L BNN
+F 1 "10k" H 5250 4750 50  0000 L BNN
+F 2 "rcl-R0805" H 5200 5000 50  0001 C CNN
+F 3 "" H 5200 4850 60  0000 C CNN
+	1    5200 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L ZENER-DIODESMB D?
+U 1 1 52F328F2
+P 4200 5050
+AR Path="/52F328F2" Ref="D?"  Part="1" 
+AR Path="/52F31D88/52F328F2" Ref="D?"  Part="1" 
+F 0 "D?" H 4130 5125 50  0000 L BNN
+F 1 "7V5" H 4130 4915 50  0000 L BNN
+F 2 "diode-1-SMB" H 4200 5200 50  0001 C CNN
+F 3 "" H 4200 5050 60  0000 C CNN
+	1    4200 5050
+	0    -1   -1   0   
+$EndComp
+Connection ~ 4200 4850
+Wire Wire Line
+	5400 4850 5750 4850
+Wire Wire Line
+	4800 4950 4800 4850
+Connection ~ 4800 4850
+Wire Wire Line
+	4200 4950 4200 4850
+Wire Wire Line
+	4800 5300 4800 5250
+Text Label 5000 5300 2    60   ~ 0
+GND
+Wire Wire Line
+	4800 5300 5000 5300
+Wire Wire Line
+	4200 5150 4200 5350
+$Comp
+L C-EUC0805 C?
+U 1 1 52F32901
+P 4850 5650
+AR Path="/52F32901" Ref="C?"  Part="1" 
+AR Path="/52F31D88/52F32901" Ref="C?"  Part="1" 
+F 0 "C?" V 5000 5700 50  0000 L BNN
+F 1 "3u3" V 5000 5350 50  0000 L BNN
+F 2 "rcl-C0805" H 4850 5800 50  0001 C CNN
+F 3 "" H 4850 5650 60  0000 C CNN
+	1    4850 5650
+	-1   0    0    1   
+$EndComp
+$Comp
+L R-EU_R0805 R?
+U 1 1 52F32907
+P 5250 5350
+AR Path="/52F32907" Ref="R?"  Part="1" 
+AR Path="/52F31D88/52F32907" Ref="R?"  Part="1" 
+F 0 "R?" H 5050 5250 50  0000 L BNN
+F 1 "10k" H 5300 5250 50  0000 L BNN
+F 2 "rcl-R0805" H 5250 5500 50  0001 C CNN
+F 3 "" H 5250 5350 60  0000 C CNN
+	1    5250 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L ZENER-DIODESMB D?
+U 1 1 52F3290D
+P 4250 5550
+AR Path="/52F3290D" Ref="D?"  Part="1" 
+AR Path="/52F31D88/52F3290D" Ref="D?"  Part="1" 
+F 0 "D?" H 4180 5625 50  0000 L BNN
+F 1 "7V5" H 4180 5415 50  0000 L BNN
+F 2 "diode-1-SMB" H 4250 5700 50  0001 C CNN
+F 3 "" H 4250 5550 60  0000 C CNN
+	1    4250 5550
+	0    -1   -1   0   
+$EndComp
+Connection ~ 4250 5350
+Wire Wire Line
+	5450 5350 5800 5350
+Wire Wire Line
+	4850 5350 4850 5450
+Connection ~ 4850 5350
+Wire Wire Line
+	4250 5450 4250 5350
+Wire Wire Line
+	4850 5800 4850 5750
+Text Label 5050 5800 2    60   ~ 0
+GND
+Wire Wire Line
+	4850 5800 5050 5800
+Wire Wire Line
+	4250 5650 4250 5850
+Connection ~ 4200 5350
+Wire Wire Line
+	3850 4850 5000 4850
+Wire Wire Line
+	3850 5350 5050 5350
+$Comp
+L C-EUC0805 C?
+U 1 1 52F3291F
+P 4800 6150
+AR Path="/52F3291F" Ref="C?"  Part="1" 
+AR Path="/52F31D88/52F3291F" Ref="C?"  Part="1" 
+F 0 "C?" V 4950 6200 50  0000 L BNN
+F 1 "3u3" V 4950 5850 50  0000 L BNN
+F 2 "rcl-C0805" H 4800 6300 50  0001 C CNN
+F 3 "" H 4800 6150 60  0000 C CNN
+	1    4800 6150
+	-1   0    0    1   
+$EndComp
+$Comp
+L R-EU_R0805 R?
+U 1 1 52F32925
+P 5200 5850
+AR Path="/52F32925" Ref="R?"  Part="1" 
+AR Path="/52F31D88/52F32925" Ref="R?"  Part="1" 
+F 0 "R?" H 5000 5750 50  0000 L BNN
+F 1 "10k" H 5250 5750 50  0000 L BNN
+F 2 "rcl-R0805" H 5200 6000 50  0001 C CNN
+F 3 "" H 5200 5850 60  0000 C CNN
+	1    5200 5850
+	1    0    0    -1  
+$EndComp
+$Comp
+L ZENER-DIODESMB D?
+U 1 1 52F3292B
+P 4200 6050
+AR Path="/52F3292B" Ref="D?"  Part="1" 
+AR Path="/52F31D88/52F3292B" Ref="D?"  Part="1" 
+F 0 "D?" H 4130 6125 50  0000 L BNN
+F 1 "7V5" H 4130 5915 50  0000 L BNN
+F 2 "diode-1-SMB" H 4200 6200 50  0001 C CNN
+F 3 "" H 4200 6050 60  0000 C CNN
+	1    4200 6050
+	0    -1   -1   0   
+$EndComp
+Connection ~ 4200 5850
+Wire Wire Line
+	5400 5850 5750 5850
+Wire Wire Line
+	4800 5950 4800 5850
+Connection ~ 4800 5850
+Wire Wire Line
+	4200 5950 4200 5850
+Wire Wire Line
+	4800 6300 4800 6250
+Text Label 5000 6300 2    60   ~ 0
+GND
+Wire Wire Line
+	4800 6300 5000 6300
+Wire Wire Line
+	4200 6150 4200 6350
+$Comp
+L C-EUC0805 C?
+U 1 1 52F3293A
+P 4850 6650
+AR Path="/52F3293A" Ref="C?"  Part="1" 
+AR Path="/52F31D88/52F3293A" Ref="C?"  Part="1" 
+F 0 "C?" V 5000 6700 50  0000 L BNN
+F 1 "3u3" V 5000 6350 50  0000 L BNN
+F 2 "rcl-C0805" H 4850 6800 50  0001 C CNN
+F 3 "" H 4850 6650 60  0000 C CNN
+	1    4850 6650
+	-1   0    0    1   
+$EndComp
+$Comp
+L R-EU_R0805 R?
+U 1 1 52F32940
+P 5250 6350
+AR Path="/52F32940" Ref="R?"  Part="1" 
+AR Path="/52F31D88/52F32940" Ref="R?"  Part="1" 
+F 0 "R?" H 5050 6250 50  0000 L BNN
+F 1 "10k" H 5300 6250 50  0000 L BNN
+F 2 "rcl-R0805" H 5250 6500 50  0001 C CNN
+F 3 "" H 5250 6350 60  0000 C CNN
+	1    5250 6350
+	1    0    0    -1  
+$EndComp
+$Comp
+L ZENER-DIODESMB D?
+U 1 1 52F32946
+P 4250 6550
+AR Path="/52F32946" Ref="D?"  Part="1" 
+AR Path="/52F31D88/52F32946" Ref="D?"  Part="1" 
+F 0 "D?" H 4180 6625 50  0000 L BNN
+F 1 "7V5" H 4180 6415 50  0000 L BNN
+F 2 "diode-1-SMB" H 4250 6700 50  0001 C CNN
+F 3 "" H 4250 6550 60  0000 C CNN
+	1    4250 6550
+	0    -1   -1   0   
+$EndComp
+Connection ~ 4250 6350
+Wire Wire Line
+	5450 6350 5800 6350
+Wire Wire Line
+	4850 6350 4850 6450
+Connection ~ 4850 6350
+Wire Wire Line
+	4250 6450 4250 6350
+Wire Wire Line
+	4850 6800 4850 6750
+Text Label 5050 6800 2    60   ~ 0
+GND
+Wire Wire Line
+	4250 6650 4250 6850
+Connection ~ 4200 6350
+Wire Wire Line
+	3850 5850 5000 5850
+Wire Wire Line
+	3850 6350 5050 6350
+Connection ~ 4250 5850
+Connection ~ 4250 4850
+Text HLabel 3850 850  0    60   Output ~ 0
+C12
+Text HLabel 3850 1350 0    60   Output ~ 0
+C11
+Text HLabel 3850 1850 0    60   Output ~ 0
+C10
+Text HLabel 3850 2350 0    60   Output ~ 0
+C9
+Text HLabel 3850 2850 0    60   Output ~ 0
+C8
+Text HLabel 3850 3350 0    60   Output ~ 0
+C7
+Text HLabel 3850 3850 0    60   Output ~ 0
+C6
+Text HLabel 3850 4350 0    60   Output ~ 0
+C5
+Text HLabel 3850 4850 0    60   Output ~ 0
+C4
+Text HLabel 3850 5350 0    60   Output ~ 0
+C3
+Text HLabel 3850 5850 0    60   Output ~ 0
+C2
+Text HLabel 3850 6350 0    60   Output ~ 0
+C1
+Text HLabel 5750 850  2    60   Input ~ 0
+Batt12+
+Text HLabel 5800 1350 2    60   Input ~ 0
+BATT11+
+Text HLabel 5750 1850 2    60   Input ~ 0
+BATT10+
+Text HLabel 5800 2350 2    60   Input ~ 0
+BATT9+
+Text HLabel 5750 2850 2    60   Input ~ 0
+BATT8+
+Text HLabel 5800 3350 2    60   Input ~ 0
+BATT7+
+Text HLabel 5750 3850 2    60   Input ~ 0
+BATT6+
+Text HLabel 5800 4350 2    60   Input ~ 0
+BATT5+
+Text HLabel 5750 4850 2    60   Input ~ 0
+BATT4+
+Text HLabel 5800 5350 2    60   Input ~ 0
+BATT3+
+Text HLabel 5750 5850 2    60   Input ~ 0
+BATT2+
+Text HLabel 5800 6350 2    60   Input ~ 0
+BATT1+
+Wire Wire Line
+	5050 6800 4850 6800
+$Comp
+L C-EUC0805 C?
+U 1 1 52F32A79
+P 4800 7150
+AR Path="/52F32A79" Ref="C?"  Part="1" 
+AR Path="/52F31D88/52F32A79" Ref="C?"  Part="1" 
+F 0 "C?" V 4950 7200 50  0000 L BNN
+F 1 "3u3" V 4950 6850 50  0000 L BNN
+F 2 "rcl-C0805" H 4800 7300 50  0001 C CNN
+F 3 "" H 4800 7150 60  0000 C CNN
+	1    4800 7150
+	-1   0    0    1   
+$EndComp
+$Comp
+L R-EU_R0805 R?
+U 1 1 52F32A7F
+P 5200 6850
+AR Path="/52F32A7F" Ref="R?"  Part="1" 
+AR Path="/52F31D88/52F32A7F" Ref="R?"  Part="1" 
+F 0 "R?" H 5000 6750 50  0000 L BNN
+F 1 "10k" H 5250 6750 50  0000 L BNN
+F 2 "rcl-R0805" H 5200 7000 50  0001 C CNN
+F 3 "" H 5200 6850 60  0000 C CNN
+	1    5200 6850
+	1    0    0    -1  
+$EndComp
+$Comp
+L ZENER-DIODESMB D?
+U 1 1 52F32A85
+P 4200 7050
+AR Path="/52F32A85" Ref="D?"  Part="1" 
+AR Path="/52F31D88/52F32A85" Ref="D?"  Part="1" 
+F 0 "D?" H 4130 7125 50  0000 L BNN
+F 1 "7V5" H 4130 6915 50  0000 L BNN
+F 2 "diode-1-SMB" H 4200 7200 50  0001 C CNN
+F 3 "" H 4200 7050 60  0000 C CNN
+	1    4200 7050
+	0    -1   -1   0   
+$EndComp
+Connection ~ 4200 6850
+Wire Wire Line
+	5400 6850 5750 6850
+Wire Wire Line
+	4800 6850 4800 6950
+Connection ~ 4800 6850
+Wire Wire Line
+	4200 6950 4200 6850
+Wire Wire Line
+	4800 7300 4800 7250
+Text Label 5000 7300 2    60   ~ 0
+GND
+Wire Wire Line
+	4200 7150 4200 7350
+Wire Wire Line
+	3800 6850 5000 6850
+Text HLabel 3800 6850 0    60   Output ~ 0
+C0
+Text HLabel 5750 6850 2    60   Input ~ 0
+BATT1-
+Wire Wire Line
+	4200 7300 5000 7300
+Connection ~ 4200 7300
+Connection ~ 4800 7300
+Connection ~ 4250 6850
+Text HLabel 4200 7350 3    60   Input ~ 0
+GND
+$EndSCHEMATC

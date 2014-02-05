@@ -6,11 +6,13 @@ LIBS:power
 LIBS:connect
 LIBS:linear_pmic
 LIBS:led
+LIBS:isopower
+LIBS:monitor-cache
 EELAYER 24 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 3
+Sheet 2 4
 Title ""
 Date ""
 Rev ""

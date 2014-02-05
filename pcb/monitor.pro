@@ -1,4 +1,4 @@
-update=Fri 31 Jan 2014 19:16:02 EET
+update=Wed 05 Feb 2014 17:04:56 EET
 last_client=eeschema
 [pcbnew]
 version=1
@@ -50,3 +50,4 @@ LibName4=power
 LibName5=connect
 LibName6=linear_pmic
 LibName7=led
+LibName8=isopower

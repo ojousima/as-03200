@@ -1,4 +1,4 @@
-PCBNEW-LibModule-V1  Thu 30 Jan 2014 22:26:51 EET
+PCBNEW-LibModule-V1  Sat 08 Feb 2014 12:55:23 EET
 # encoding utf-8
 Units mm
 $INDEX
@@ -7,6 +7,7 @@ CONNECT_2_5.00mm_SCREW_DG128-02P_DG128-5.0-02P-14-00A(H)
 CONNECT_4_2.54mm_SCREW_TECONNECTIVITY_282834-4
 CONNECT_4_5.00mm_SCREW_PHOENIX_1729034
 JUMPER_3_2.54mm
+Keystone_Electronics_5000
 $EndINDEX
 $MODULE CONNECT_2_2mm54_VERT
 Po 0 0 0 15 52E51397 00000000 ~~
@@ -220,4 +221,21 @@ Ne 0 ""
 Po 2.54 0
 $EndPAD
 $EndMODULE JUMPER_3_2.54mm
+$MODULE Keystone_Electronics_5000
+Po 0 0 0 15 52F60D0C 00000000 ~~
+Li Keystone_Electronics_5000
+Sc 0
+AR 
+Op 0 0 0
+T0 0.5 -3.5 1 1 0 0.15 N I 21 N "Keystone_Electronics_5000"
+T1 0 3 1 1 0 0.15 N V 21 N "VAL**"
+DC 0 0 1.27 0 0.15 21
+$PAD
+Sh "1" C 1.5 1.5 0 0 0
+Dr 1 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE Keystone_Electronics_5000
 $EndLIBRARY

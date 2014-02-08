@@ -28,9 +28,9 @@ Text Label 5300 3950 0    60   ~ 0
 CSBI
 Text Label 5300 4250 0    60   ~ 0
 SDO
-Text Label 5300 4050 0    60   ~ 0
-SDI
 Text Label 5300 4150 0    60   ~ 0
+SDI
+Text Label 5300 4050 0    60   ~ 0
 SCKI
 $Comp
 L CONNECT_2 K403
@@ -127,8 +127,6 @@ F 3 "" H 6050 4800 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2600 3800 2600 3750
-Wire Wire Line
 	2600 3750 3450 3750
 Wire Wire Line
 	2600 4300 2600 4450
@@ -144,8 +142,6 @@ Wire Wire Line
 	2600 4100 2800 4100
 Wire Wire Line
 	2800 4100 2800 4150
-Wire Wire Line
-	2800 4150 3450 4150
 Wire Wire Line
 	2600 4000 3100 4000
 Wire Wire Line
@@ -205,16 +201,6 @@ Text Notes 5750 5200 0    60   ~ 0
 Max 2 mm from \npins 16 and 15
 Text Notes 2900 5250 0    60   ~ 0
 Max 2 mm from \npins 1 and 2
-Text Notes 2950 3750 0    60   ~ 0
-Vin
-Text Notes 2850 3900 0    60   ~ 0
-CS
-Text Notes 2850 4000 0    60   ~ 0
-MOSI
-Text Notes 2850 4150 0    60   ~ 0
-SCLK
-Text Notes 2850 4250 0    60   ~ 0
-MISO
 Wire Wire Line
 	4950 4350 5150 4350
 Wire Wire Line
@@ -224,9 +210,9 @@ Text HLabel 5700 3750 2    60   Output ~ 0
 5V
 Text HLabel 5700 3950 2    60   Output ~ 0
 CSBI
-Text HLabel 5700 4050 2    60   Output ~ 0
-SDI
 Text HLabel 5700 4150 2    60   Output ~ 0
+SDI
+Text HLabel 5700 4050 2    60   Output ~ 0
 SCKI
 Text HLabel 5700 4250 2    60   Input ~ 0
 SDO
@@ -250,4 +236,18 @@ Text Label 5050 5000 2    60   ~ 0
 GND2
 Text HLabel 5700 4450 2    60   Input ~ 0
 GND
+Wire Wire Line
+	2600 3800 2600 3750
+Wire Wire Line
+	2800 4150 3450 4150
+Text Label 2900 3750 0    60   ~ 0
+Vin
+Text Label 2900 3900 0    60   ~ 0
+CS
+Text Label 2900 4250 0    60   ~ 0
+MISO
+Text Label 2900 4000 0    60   ~ 0
+MOSI
+Text Label 2900 4150 0    60   ~ 0
+SCL
 $EndSCHEMATC

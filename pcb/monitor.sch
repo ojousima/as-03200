@@ -8,7 +8,7 @@ LIBS:linear_pmic
 LIBS:led
 LIBS:isopower
 LIBS:monitor-cache
-EELAYER 27 0
+EELAYER 24 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -277,11 +277,11 @@ Text Label 7250 6300 1    60   ~ 0
 SDOI
 Text Label 7350 6300 1    60   ~ 0
 SCKO
-Text Label 8050 5250 1    60   ~ 0
-SDI
-Text Label 8350 5250 1    60   ~ 0
-SCKI
 Text Label 8150 5250 1    60   ~ 0
+SDI
+Text Label 8050 5250 1    60   ~ 0
+SCKI
+Text Label 8350 5250 1    60   ~ 0
 CSBI
 Text Notes 6900 6250 1    60   ~ 0
 Redundant protection connection \nMUST be attached first
@@ -861,39 +861,6 @@ F 3 "" H 7600 6050 60  0000 C CNN
 	1    7600 6050
 	1    0    0    -1  
 $EndComp
-$Comp
-L TEST_POINT TP113
-U 1 1 52F69EE5
-P 8500 5700
-F 0 "TP113" H 8500 5600 60  0000 C CNN
-F 1 "TEST_POINT" H 8500 5850 60  0001 C CNN
-F 2 "" H 8500 5700 60  0000 C CNN
-F 3 "" H 8500 5700 60  0000 C CNN
-	1    8500 5700
-	1    0    0    -1  
-$EndComp
-$Comp
-L TEST_POINT TP112
-U 1 1 52F6A055
-P 8500 5500
-F 0 "TP112" H 8500 5400 60  0000 C CNN
-F 1 "TEST_POINT" H 8500 5650 60  0001 C CNN
-F 2 "" H 8500 5500 60  0000 C CNN
-F 3 "" H 8500 5500 60  0000 C CNN
-	1    8500 5500
-	1    0    0    -1  
-$EndComp
-$Comp
-L TEST_POINT TP111
-U 1 1 52F6A1C5
-P 8500 5300
-F 0 "TP111" H 8500 5200 60  0000 C CNN
-F 1 "TEST_POINT" H 8500 5450 60  0001 C CNN
-F 2 "" H 8500 5300 60  0000 C CNN
-F 3 "" H 8500 5300 60  0000 C CNN
-	1    8500 5300
-	1    0    0    -1  
-$EndComp
 Text Notes 4300 6900 0    60   ~ 0
 Terminate to DGND\nif ground is used
 $Comp
@@ -1410,15 +1377,6 @@ Wire Wire Line
 	7500 5650 7150 5650
 Connection ~ 7150 5650
 Wire Wire Line
-	8400 5700 8350 5700
-Connection ~ 8350 5700
-Wire Wire Line
-	8400 5500 8150 5500
-Connection ~ 8150 5500
-Wire Wire Line
-	8400 5300 8050 5300
-Connection ~ 8050 5300
-Wire Wire Line
 	8250 4900 8350 4900
 Wire Wire Line
 	8350 4900 8350 4950
@@ -1437,4 +1395,12 @@ Wire Wire Line
 	9350 5200 9250 5200
 Wire Wire Line
 	9250 5200 9250 5500
+Text Label 6200 6700 0    60   ~ 0
+5V
+Text Label 6200 7300 0    60   ~ 0
+5V
+Text Label 6200 7500 0    60   ~ 0
+V-
+Text Label 6200 6900 0    60   ~ 0
+V-
 $EndSCHEMATC

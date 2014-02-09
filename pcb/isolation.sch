@@ -8,7 +8,7 @@ LIBS:linear_pmic
 LIBS:led
 LIBS:isopower
 LIBS:monitor-cache
-EELAYER 27 0
+EELAYER 24 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8

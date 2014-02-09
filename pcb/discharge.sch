@@ -8,7 +8,7 @@ LIBS:linear_pmic
 LIBS:led
 LIBS:isopower
 LIBS:monitor-cache
-EELAYER 27 0
+EELAYER 24 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -775,4 +775,5 @@ BATT3+
 Text HLabel 7400 4150 2    60   Output ~ 0
 BATT2+
 Connection ~ 7300 4750
+Connection ~ 4700 4150
 $EndSCHEMATC

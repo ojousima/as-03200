@@ -774,4 +774,5 @@ Text HLabel 7400 3450 2    60   Output ~ 0
 BATT3+
 Text HLabel 7400 4150 2    60   Output ~ 0
 BATT2+
+Connection ~ 7300 4750
 $EndSCHEMATC

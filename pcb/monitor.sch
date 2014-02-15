@@ -56,8 +56,6 @@ Text Label 6200 6800 0    60   ~ 0
 VMODE
 Text Label 6200 7400 0    60   ~ 0
 TOS
-Text Notes 5300 6450 0    60   ~ 0
-TODO: Figure out proper \nconnections to jumpers
 $Comp
 L CONNECT_2 K112
 U 1 1 52E53204
@@ -270,7 +268,7 @@ F 3 "" H 7350 5100 60  0000 C CNN
 	0    1    1    0   
 $EndComp
 Text Label 7050 6300 1    60   ~ 0
-BATT12+
+V+
 Text Label 7150 6300 1    60   ~ 0
 CSBO
 Text Label 7250 6300 1    60   ~ 0
@@ -281,64 +279,14 @@ Text Label 8150 5250 1    60   ~ 0
 SDI
 Text Label 8050 5250 1    60   ~ 0
 SCKI
-Text Label 8350 5250 1    60   ~ 0
+Text Label 8250 5250 1    60   ~ 0
 CSBI
-Text Notes 6900 6250 1    60   ~ 0
-Redundant protection connection \nMUST be attached first
-Text Notes 7900 6100 1    60   ~ 0
-Redundant protection connection \nMUST be attached first
-Text Notes 7550 4200 2    60   ~ 0
-Screw terminal
-Text Notes 7900 6500 0    60   ~ 0
-Screw terminal
+Text Notes 9150 3550 0    60   ~ 0
+Redundant protection connection \nMUST be attached before \nstacked communication
 Text Notes 6850 4050 0    60   ~ 0
 Communication to \nnext LTC6803
 Text Notes 7750 4050 0    60   ~ 0
 Communication to\nprevious LTC6803
-$Comp
-L CONNECT_2 K3
-U 1 1 52EAB1CC
-P 7100 4650
-F 0 "K3" V 7100 4950 60  0000 C CNN
-F 1 "DG128-02P" H 7200 5050 60  0000 C CNN
-F 2 "" H 7150 4650 60  0000 C CNN
-F 3 "" H 7150 4650 60  0000 C CNN
-	1    7100 4650
-	1    0    0    -1  
-$EndComp
-$Comp
-L CONNECT_2 K4
-U 1 1 52EAB1E0
-P 7300 4650
-F 0 "K4" V 7300 4950 60  0000 C CNN
-F 1 "DG128-02P" H 6700 4800 60  0000 C CNN
-F 2 "" H 7350 4650 60  0000 C CNN
-F 3 "" H 7350 4650 60  0000 C CNN
-	1    7300 4650
-	1    0    0    -1  
-$EndComp
-$Comp
-L CONNECT_2 K5
-U 1 1 52EAB258
-P 8100 5950
-F 0 "K5" V 8100 6250 60  0000 C CNN
-F 1 "DG128-02P" H 8000 6350 60  0000 C CNN
-F 2 "" H 8150 5950 60  0000 C CNN
-F 3 "" H 8150 5950 60  0000 C CNN
-	1    8100 5950
-	-1   0    0    1   
-$EndComp
-$Comp
-L CONNECT_2 K6
-U 1 1 52EAB26C
-P 8300 5950
-F 0 "K6" V 8300 6250 60  0000 C CNN
-F 1 "DG128-02P" H 7900 6100 60  0000 C CNN
-F 2 "" H 8350 5950 60  0000 C CNN
-F 3 "" H 8350 5950 60  0000 C CNN
-	1    8300 5950
-	-1   0    0    1   
-$EndComp
 $Comp
 L LTC6803-3 U1
 U 1 1 52EAC2E6
@@ -730,28 +678,6 @@ F 3 "" H 2900 3200 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L AGND #PWR05
-U 1 1 52F52F1D
-P 9250 5050
-F 0 "#PWR05" H 9250 5050 40  0001 C CNN
-F 1 "AGND" H 9250 4980 50  0000 C CNN
-F 2 "" H 9250 5050 60  0000 C CNN
-F 3 "" H 9250 5050 60  0000 C CNN
-	1    9250 5050
-	1    0    0    -1  
-$EndComp
-$Comp
-L AGND #PWR06
-U 1 1 52F52F31
-P 9800 5150
-F 0 "#PWR06" H 9800 5150 40  0001 C CNN
-F 1 "AGND" H 9800 5080 50  0000 C CNN
-F 2 "" H 9800 5150 60  0000 C CNN
-F 3 "" H 9800 5150 60  0000 C CNN
-	1    9800 5150
-	1    0    0    -1  
-$EndComp
-$Comp
 L TEST_POINT TP101
 U 1 1 52F64C1B
 P 1750 2300
@@ -859,19 +785,6 @@ F 1 "TEST_POINT" H 7600 6200 60  0001 C CNN
 F 2 "" H 7600 6050 60  0000 C CNN
 F 3 "" H 7600 6050 60  0000 C CNN
 	1    7600 6050
-	1    0    0    -1  
-$EndComp
-Text Notes 4300 6900 0    60   ~ 0
-Terminate to DGND\nif ground is used
-$Comp
-L DGND #PWR07
-U 1 1 52F65DEB
-P 8350 4950
-F 0 "#PWR07" H 8350 4950 40  0001 C CNN
-F 1 "DGND" H 8350 4880 40  0000 C CNN
-F 2 "" H 8350 4950 60  0000 C CNN
-F 3 "" H 8350 4950 60  0000 C CNN
-	1    8350 4950
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -987,9 +900,7 @@ Wire Wire Line
 Wire Wire Line
 	8150 5250 8150 5750
 Wire Wire Line
-	8250 4900 8250 5750
-Wire Wire Line
-	8350 5250 8350 5750
+	8350 5200 8350 5750
 Wire Notes Line
 	3600 5120 3600 5110
 Wire Wire Line
@@ -1039,7 +950,7 @@ Wire Wire Line
 Wire Wire Line
 	3450 5150 3450 5100
 Wire Wire Line
-	3150 4800 3750 4800
+	3150 4800 4000 4800
 Connection ~ 3450 4800
 Connection ~ 3450 5150
 Wire Wire Line
@@ -1377,16 +1288,10 @@ Wire Wire Line
 	7500 5650 7150 5650
 Connection ~ 7150 5650
 Wire Wire Line
-	8250 4900 8350 4900
-Wire Wire Line
-	8350 4900 8350 4950
-Wire Wire Line
 	1650 2300 1600 2300
 Connection ~ 1600 2300
 Wire Wire Line
 	9700 5500 9700 4900
-Wire Wire Line
-	9800 4900 9800 5150
 Wire Wire Line
 	9250 4900 9250 5050
 Wire Wire Line
@@ -1403,4 +1308,156 @@ Text Label 6200 7500 0    60   ~ 0
 V-
 Text Label 6200 6900 0    60   ~ 0
 V-
+$Comp
+L TEST_POINT TP111
+U 1 1 52FF9C54
+P 4100 4800
+F 0 "TP111" H 4100 4700 60  0000 C CNN
+F 1 "TEST_POINT" H 4100 4950 60  0001 C CNN
+F 2 "" H 4100 4800 60  0000 C CNN
+F 3 "" H 4100 4800 60  0000 C CNN
+	1    4100 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L DGND #PWR06
+U 1 1 52FFC0E6
+P 9250 5050
+F 0 "#PWR06" H 9250 5050 40  0001 C CNN
+F 1 "DGND" H 9250 4980 40  0000 C CNN
+F 2 "" H 9250 5050 60  0000 C CNN
+F 3 "" H 9250 5050 60  0000 C CNN
+	1    9250 5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L DGND #PWR07
+U 1 1 52FFC1A8
+P 9800 5050
+F 0 "#PWR07" H 9800 5050 40  0001 C CNN
+F 1 "DGND" H 9800 4980 40  0000 C CNN
+F 2 "" H 9800 5050 60  0000 C CNN
+F 3 "" H 9800 5050 60  0000 C CNN
+	1    9800 5050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9800 5050 9800 4900
+Wire Wire Line
+	9200 800  9200 550 
+Wire Wire Line
+	9200 550  9550 550 
+Connection ~ 9200 800 
+$Comp
+L MOUNT K119
+U 1 1 52FFDB5A
+P 9900 550
+F 0 "K119" H 9900 450 60  0000 C CNN
+F 1 "MOUNT" H 9900 650 60  0000 C CNN
+F 2 "" H 9900 550 60  0000 C CNN
+F 3 "" H 9900 550 60  0000 C CNN
+	1    9900 550 
+	1    0    0    -1  
+$EndComp
+$Comp
+L MOUNT K115
+U 1 1 52FFE396
+P 1100 7150
+F 0 "K115" H 1100 7050 60  0000 C CNN
+F 1 "MOUNT" H 1100 7250 60  0000 C CNN
+F 2 "" H 1100 7150 60  0000 C CNN
+F 3 "" H 1100 7150 60  0000 C CNN
+	1    1100 7150
+	1    0    0    -1  
+$EndComp
+$Comp
+L MOUNT K116
+U 1 1 52FFE86C
+P 1100 7450
+F 0 "K116" H 1100 7350 60  0000 C CNN
+F 1 "MOUNT" H 1100 7550 60  0000 C CNN
+F 2 "" H 1100 7450 60  0000 C CNN
+F 3 "" H 1100 7450 60  0000 C CNN
+	1    1100 7450
+	1    0    0    -1  
+$EndComp
+$Comp
+L MOUNT K117
+U 1 1 52FFE92E
+P 1500 7150
+F 0 "K117" H 1500 7050 60  0000 C CNN
+F 1 "MOUNT" H 1500 7250 60  0000 C CNN
+F 2 "" H 1500 7150 60  0000 C CNN
+F 3 "" H 1500 7150 60  0000 C CNN
+	1    1500 7150
+	-1   0    0    1   
+$EndComp
+$Comp
+L MOUNT K118
+U 1 1 52FFE9F0
+P 1500 7450
+F 0 "K118" H 1500 7350 60  0000 C CNN
+F 1 "MOUNT" H 1500 7550 60  0000 C CNN
+F 2 "" H 1500 7450 60  0000 C CNN
+F 3 "" H 1500 7450 60  0000 C CNN
+	1    1500 7450
+	-1   0    0    1   
+$EndComp
+$Comp
+L CONNECT_4 K120
+U 1 1 53002B5F
+P 7200 4550
+F 0 "K120" H 7200 4750 60  0000 C CNN
+F 1 "CONNECT_4" H 7200 4850 60  0000 C CNN
+F 2 "" H 7200 4550 60  0000 C CNN
+F 3 "" H 7200 4550 60  0000 C CNN
+	1    7200 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONNECT_4 K121
+U 1 1 53002C21
+P 8200 6050
+F 0 "K121" H 8200 6250 60  0000 C CNN
+F 1 "CONNECT_4" H 8200 6350 60  0000 C CNN
+F 2 "" H 8200 6050 60  0000 C CNN
+F 3 "" H 8200 6050 60  0000 C CNN
+	1    8200 6050
+	-1   0    0    1   
+$EndComp
+$Comp
+L MOUNT K122
+U 1 1 5300423C
+P 8900 3400
+F 0 "K122" H 8900 3300 60  0000 C CNN
+F 1 "MOUNT" H 8900 3500 60  0000 C CNN
+F 2 "" H 8900 3400 60  0000 C CNN
+F 3 "" H 8900 3400 60  0000 C CNN
+	1    8900 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8550 3400 8500 3400
+Wire Wire Line
+	8500 3400 8500 3100
+Connection ~ 8500 3100
+Text Notes 950  6900 0    60   ~ 0
+Screw mounts,\nMechanical
+Wire Wire Line
+	8250 5750 8250 5250
+$Comp
+L DGND #PWR?
+U 1 1 53011F52
+P 8450 5250
+F 0 "#PWR?" H 8450 5250 40  0001 C CNN
+F 1 "DGND" H 8450 5180 40  0000 C CNN
+F 2 "" H 8450 5250 60  0000 C CNN
+F 3 "" H 8450 5250 60  0000 C CNN
+	1    8450 5250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8350 5200 8450 5200
+Wire Wire Line
+	8450 5200 8450 5250
 $EndSCHEMATC

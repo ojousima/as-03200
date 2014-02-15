@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2014-01-28 BZR 4644)-product date = Sat 08 Feb 2014 12:58:51 EET
+Cmp-Mod V01 Created by CvPcb (2014-01-28 BZR 4644)-product date = Sat 15 Feb 2014 17:34:25 EET
 
 BeginCmp
 TimeStamp = /52EE03C2;
@@ -253,45 +253,17 @@ IdModule  = oshec_diode:diode-1-DO214AA;
 EndCmp
 
 BeginCmp
-TimeStamp = /52EAB1CC;
-Reference = K3;
-ValeurCmp = DG128-02P;
-IdModule  = Aalto_connect:CONNECT_2_5.00mm_SCREW_DG128-02P_DG128-5.0-02P-14-00A(H);
-EndCmp
-
-BeginCmp
-TimeStamp = /52EAB1E0;
-Reference = K4;
-ValeurCmp = DG128-02P;
-IdModule  = Aalto_connect:CONNECT_2_5.00mm_SCREW_DG128-02P_DG128-5.0-02P-14-00A(H);
-EndCmp
-
-BeginCmp
-TimeStamp = /52EAB258;
-Reference = K5;
-ValeurCmp = DG128-02P;
-IdModule  = Aalto_connect:CONNECT_2_5.00mm_SCREW_DG128-02P_DG128-5.0-02P-14-00A(H);
-EndCmp
-
-BeginCmp
-TimeStamp = /52EAB26C;
-Reference = K6;
-ValeurCmp = DG128-02P;
-IdModule  = Aalto_connect:CONNECT_2_5.00mm_SCREW_DG128-02P_DG128-5.0-02P-14-00A(H);
-EndCmp
-
-BeginCmp
 TimeStamp = /52EDF5A1;
 Reference = K7;
-ValeurCmp = CONNECT_2;
-IdModule  = Aalto_connect:CONNECT_2_5.00mm_SCREW_DG128-02P_DG128-5.0-02P-14-00A(H);
+ValeurCmp = DG128-02P;
+IdModule  = Aalto_connect:CONNECT_2_2mm54_VERT;
 EndCmp
 
 BeginCmp
 TimeStamp = /52EE035C;
 Reference = K8;
-ValeurCmp = CONNECT_2;
-IdModule  = Aalto_connect:CONNECT_2_5.00mm_SCREW_DG128-02P_DG128-5.0-02P-14-00A(H);
+ValeurCmp = DG128-02P;
+IdModule  = Aalto_connect:CONNECT_2_2mm54_VERT;
 EndCmp
 
 BeginCmp
@@ -393,24 +365,66 @@ IdModule  = Aalto_connect:JUMPER_3_2.54mm;
 EndCmp
 
 BeginCmp
-TimeStamp = /52F65305/52F659A8;
+TimeStamp = /52FFE396;
+Reference = K115;
+ValeurCmp = MOUNT;
+IdModule  = Aalto_connect:M3_MOUNT_BARE;
+EndCmp
+
+BeginCmp
+TimeStamp = /52FFE86C;
+Reference = K116;
+ValeurCmp = MOUNT;
+IdModule  = Aalto_connect:M3_MOUNT_BARE;
+EndCmp
+
+BeginCmp
+TimeStamp = /52FFE92E;
+Reference = K117;
+ValeurCmp = MOUNT;
+IdModule  = Aalto_connect:M3_MOUNT_BARE;
+EndCmp
+
+BeginCmp
+TimeStamp = /52FFE9F0;
+Reference = K118;
+ValeurCmp = MOUNT;
+IdModule  = Aalto_connect:M3_MOUNT_BARE;
+EndCmp
+
+BeginCmp
+TimeStamp = /52FFDB5A;
+Reference = K119;
+ValeurCmp = MOUNT;
+IdModule  = Aalto_connect:M3_MOUNT_BARE;
+EndCmp
+
+BeginCmp
+TimeStamp = /53002B5F;
+Reference = K120;
+ValeurCmp = CONNECT_4;
+IdModule  = Aalto_connect:2_54_MM_HEADER_4;
+EndCmp
+
+BeginCmp
+TimeStamp = /53002C21;
+Reference = K121;
+ValeurCmp = CONNECT_4;
+IdModule  = Aalto_connect:2_54_MM_HEADER_4;
+EndCmp
+
+BeginCmp
+TimeStamp = /5300423C;
+Reference = K122;
+ValeurCmp = MOUNT;
+IdModule  = Aalto_connect:M3_MOUNT_BARE;
+EndCmp
+
+BeginCmp
+TimeStamp = /52F65305/52FFF847;
 Reference = K401;
-ValeurCmp = DG128-02P;
-IdModule  = Aalto_connect:CONNECT_2_5.00mm_SCREW_DG128-02P_DG128-5.0-02P-14-00A(H);
-EndCmp
-
-BeginCmp
-TimeStamp = /52F65305/52F65822;
-Reference = K402;
-ValeurCmp = DG128-02P;
-IdModule  = Aalto_connect:CONNECT_2_5.00mm_SCREW_DG128-02P_DG128-5.0-02P-14-00A(H);
-EndCmp
-
-BeginCmp
-TimeStamp = /52F65305/52F6581C;
-Reference = K403;
-ValeurCmp = DG128-02P;
-IdModule  = Aalto_connect:CONNECT_2_5.00mm_SCREW_DG128-02P_DG128-5.0-02P-14-00A(H);
+ValeurCmp = CONNECT_6;
+IdModule  = Aalto_connect:2_54_MM_HEADER_6;
 EndCmp
 
 BeginCmp
@@ -445,84 +459,84 @@ BeginCmp
 TimeStamp = /52F23F80/52F2453A;
 Reference = LD201;
 ValeurCmp = GREEN-LED0805;
-IdModule  = oshec_led:led-CHIPLED_0805;
+IdModule  = oshec_led:led-CHIP-LED0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /52F23F80/52F24645;
 Reference = LD202;
 ValeurCmp = GREEN-LED0805;
-IdModule  = oshec_led:led-CHIPLED_0805;
+IdModule  = oshec_led:led-CHIP-LED0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /52F23F80/52F24540;
 Reference = LD203;
 ValeurCmp = GREEN-LED0805;
-IdModule  = oshec_led:led-CHIPLED_0805;
+IdModule  = oshec_led:led-CHIP-LED0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /52F23F80/52F245D7;
 Reference = LD204;
 ValeurCmp = GREEN-LED0805;
-IdModule  = oshec_led:led-CHIPLED_0805;
+IdModule  = oshec_led:led-CHIP-LED0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /52F23F80/52F245DD;
 Reference = LD205;
 ValeurCmp = GREEN-LED0805;
-IdModule  = oshec_led:led-CHIPLED_0805;
+IdModule  = oshec_led:led-CHIP-LED0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /52F23F80/52F2456E;
 Reference = LD206;
 ValeurCmp = GREEN-LED0805;
-IdModule  = oshec_led:led-CHIPLED_0805;
+IdModule  = oshec_led:led-CHIP-LED0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /52F23F80/52F24574;
 Reference = LD207;
 ValeurCmp = GREEN-LED0805;
-IdModule  = oshec_led:led-CHIPLED_0805;
+IdModule  = oshec_led:led-CHIP-LED0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /52F23F80/52F2460B;
 Reference = LD208;
 ValeurCmp = GREEN-LED0805;
-IdModule  = oshec_led:led-CHIPLED_0805;
+IdModule  = oshec_led:led-CHIP-LED0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /52F23F80/52F24611;
 Reference = LD209;
 ValeurCmp = GREEN-LED0805;
-IdModule  = oshec_led:led-CHIPLED_0805;
+IdModule  = oshec_led:led-CHIP-LED0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /52F23F80/52F245A2;
 Reference = LD210;
 ValeurCmp = GREEN-LED0805;
-IdModule  = oshec_led:led-CHIPLED_0805;
+IdModule  = oshec_led:led-CHIP-LED0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /52F23F80/52F245A8;
 Reference = LD211;
 ValeurCmp = GREEN-LED0805;
-IdModule  = oshec_led:led-CHIPLED_0805;
+IdModule  = oshec_led:led-CHIP-LED0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /52F23F80/52F2462B;
 Reference = LD212;
 ValeurCmp = GREEN-LED0805;
-IdModule  = oshec_led:led-CHIPLED_0805;
+IdModule  = oshec_led:led-CHIP-LED0805;
 EndCmp
 
 BeginCmp
@@ -988,22 +1002,8 @@ IdModule  = Aalto_connect:Keystone_Electronics_5000;
 EndCmp
 
 BeginCmp
-TimeStamp = /52F6A1C5;
+TimeStamp = /52FF9C54;
 Reference = TP111;
-ValeurCmp = TEST_POINT;
-IdModule  = Aalto_connect:Keystone_Electronics_5000;
-EndCmp
-
-BeginCmp
-TimeStamp = /52F6A055;
-Reference = TP112;
-ValeurCmp = TEST_POINT;
-IdModule  = Aalto_connect:Keystone_Electronics_5000;
-EndCmp
-
-BeginCmp
-TimeStamp = /52F69EE5;
-Reference = TP113;
 ValeurCmp = TEST_POINT;
 IdModule  = Aalto_connect:Keystone_Electronics_5000;
 EndCmp

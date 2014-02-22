@@ -1,10 +1,47 @@
-PCBNEW-LibModule-V1  Fri 07 Feb 2014 20:16:38 EET
+PCBNEW-LibModule-V1  Sat 22 Feb 2014 10:48:10 EET
 # encoding utf-8
 Units mm
 $INDEX
+R0805
 SOIC_16_WIDE
 SSOP44
+SSOP44_HS
 $EndINDEX
+$MODULE R0805
+Po 0 0 0 15 53086420 00000000 ~~
+Li R0805
+Cd CAPACITOR
+Kw CAPACITOR
+Sc 0
+AR /52F31D88/52F32492
+Op 0 0 0
+At SMD
+T0 -2.4 0 0.5 0.5 900 0.1 N V 20 N "R301"
+T1 2.413 0 0.5 0.5 900 0.1 N I 20 N "10k"
+DS -1.016 0.635 1.016 0.635 0.15 24
+DS 1.016 0.635 1.016 -0.635 0.15 24
+DS 1.016 -0.635 -1.016 -0.635 0.15 24
+DS -1.016 -0.635 -1.016 0.635 0.15 24
+DS -1.016 0.635 -1.016 0.635 0.15 21
+DS -1.97104 -0.98298 1.97104 -0.98298 0.0508 21
+DS 1.97104 0.98298 -1.97104 0.98298 0.0508 21
+DS -1.97104 0.98298 -1.97104 -0.98298 0.0508 21
+DS 1.97104 -0.98298 1.97104 0.98298 0.0508 21
+$PAD
+Sh "1" R 1.29794 1.4986 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 1 "/Lowpass/C12"
+Po -0.94996 0
+$EndPAD
+$PAD
+Sh "2" R 1.29794 1.4986 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 2 "/discharge/BATT12+"
+Po 0.94996 0
+$EndPAD
+$EndMODULE R0805
 $MODULE SOIC_16_WIDE
 Po 0 0 0 15 52F522E9 00000000 ~~
 Li SOIC_16_WIDE
@@ -454,4 +491,326 @@ Ne 0 ""
 Po -1.75 3.35
 $EndPAD
 $EndMODULE SSOP44
+$MODULE SSOP44_HS
+Po 0 0 0 15 53086038 00000000 ~~
+Li SSOP44_HS
+Sc 0
+AR /52EAC2E6
+Op 0 0 0
+T0 -0.25 -1 1 1 0 0.15 N V 21 N "U1"
+T1 0 1.27 1 1 0 0.15 N V 21 N "LTC6803-3"
+DC -5.25 1.5 -5.75 2 0.15 21
+DS -6.25 -2.5 6.25 -2.5 0.15 21
+DS 6.25 -2.5 6.25 2.5 0.15 21
+DS 6.25 2.5 -6.25 2.5 0.15 21
+DS -6.25 2.5 -6.25 -2.5 0.15 21
+$PAD
+Sh "37" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 30 "/WDTB"
+Po -1.75 -3.85
+$EndPAD
+$PAD
+Sh "36" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 24 "/TOS"
+Po -1.25 -3.85
+$EndPAD
+$PAD
+Sh "35" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 4 "/Isolation/5V"
+Po -0.75 -3.85
+$EndPAD
+$PAD
+Sh "34" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 27 "/Vref"
+Po -0.25 -3.85
+$EndPAD
+$PAD
+Sh "38" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 2 "/GPIO1"
+Po -2.25 -3.85
+$EndPAD
+$PAD
+Sh "39" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 3 "/GPIO2"
+Po -2.75 -3.85
+$EndPAD
+$PAD
+Sh "40" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 26 "/VMODE"
+Po -3.25 -3.85
+$EndPAD
+$PAD
+Sh "41" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 6 "/Isolation/SCKI"
+Po -3.75 -3.85
+$EndPAD
+$PAD
+Sh "44" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 5 "/Isolation/CSBI"
+Po -5.25 -3.85
+$EndPAD
+$PAD
+Sh "43" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 8 "/Isolation/SDO"
+Po -4.75 -3.85
+$EndPAD
+$PAD
+Sh "42" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 7 "/Isolation/SDI"
+Po -4.25 -3.85
+$EndPAD
+$PAD
+Sh "31" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 44 "Net-(U1-Pad31)"
+Po 1.25 -3.85
+$EndPAD
+$PAD
+Sh "32" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 28 "/Vtemp1"
+Po 0.75 -3.85
+$EndPAD
+$PAD
+Sh "33" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 29 "/Vtemp2"
+Po 0.25 -3.85
+$EndPAD
+$PAD
+Sh "30" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 43 "DGND"
+Po 1.75 -3.85
+$EndPAD
+$PAD
+Sh "29" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 9 "/Lowpass/C0"
+Po 2.25 -3.85
+$EndPAD
+$PAD
+Sh "28" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 31 "/discharge/S1"
+Po 2.75 -3.85
+$EndPAD
+$PAD
+Sh "27" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 10 "/Lowpass/C1"
+Po 3.25 -3.85
+$EndPAD
+$PAD
+Sh "23" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 15 "/Lowpass/C3"
+Po 5.25 -3.85
+$EndPAD
+$PAD
+Sh "24" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 36 "/discharge/S3"
+Po 4.75 -3.85
+$EndPAD
+$PAD
+Sh "25" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 14 "/Lowpass/C2"
+Po 4.25 -3.85
+$EndPAD
+$PAD
+Sh "26" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 35 "/discharge/S2"
+Po 3.75 -3.85
+$EndPAD
+$PAD
+Sh "19" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 17 "/Lowpass/C5"
+Po 3.75 3.85
+$EndPAD
+$PAD
+Sh "20" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 38 "/discharge/S5"
+Po 4.25 3.85
+$EndPAD
+$PAD
+Sh "21" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 16 "/Lowpass/C4"
+Po 4.75 3.85
+$EndPAD
+$PAD
+Sh "22" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 37 "/discharge/S4"
+Po 5.25 3.85
+$EndPAD
+$PAD
+Sh "18" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 39 "/discharge/S6"
+Po 3.25 3.85
+$EndPAD
+$PAD
+Sh "17" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 18 "/Lowpass/C6"
+Po 2.75 3.85
+$EndPAD
+$PAD
+Sh "16" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 40 "/discharge/S7"
+Po 2.25 3.85
+$EndPAD
+$PAD
+Sh "15" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 19 "/Lowpass/C7"
+Po 1.75 3.85
+$EndPAD
+$PAD
+Sh "12" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 42 "/discharge/S9"
+Po 0.25 3.85
+$EndPAD
+$PAD
+Sh "13" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 20 "/Lowpass/C8"
+Po 0.75 3.85
+$EndPAD
+$PAD
+Sh "14" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 41 "/discharge/S8"
+Po 1.25 3.85
+$EndPAD
+$PAD
+Sh "3" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 22 "/SCKO"
+Po -4.25 3.85
+$EndPAD
+$PAD
+Sh "2" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 23 "/SDOI"
+Po -4.75 3.85
+$EndPAD
+$PAD
+Sh "1" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 1 "/CSBO"
+Po -5.25 3.85
+$EndPAD
+$PAD
+Sh "4" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 25 "/V+"
+Po -3.75 3.85
+$EndPAD
+$PAD
+Sh "5" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 13 "/Lowpass/C12"
+Po -3.25 3.85
+$EndPAD
+$PAD
+Sh "6" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 34 "/discharge/S12"
+Po -2.75 3.85
+$EndPAD
+$PAD
+Sh "7" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 12 "/Lowpass/C11"
+Po -2.25 3.85
+$EndPAD
+$PAD
+Sh "11" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 21 "/Lowpass/C9"
+Po -0.25 3.85
+$EndPAD
+$PAD
+Sh "10" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 32 "/discharge/S10"
+Po -0.75 3.85
+$EndPAD
+$PAD
+Sh "9" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 11 "/Lowpass/C10"
+Po -1.25 3.85
+$EndPAD
+$PAD
+Sh "8" R 0.25 2.25 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 33 "/discharge/S11"
+Po -1.75 3.85
+$EndPAD
+$EndMODULE SSOP44_HS
 $EndLIBRARY

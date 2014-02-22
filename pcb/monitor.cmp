@@ -1,10 +1,10 @@
-Cmp-Mod V01 Created by CvPcb (2014-01-28 BZR 4644)-product date = Sat 15 Feb 2014 17:34:25 EET
+Cmp-Mod V01 Created by CvPcb (2014-01-30 BZR 4648)-product date = Sat 22 Feb 2014 12:49:28 EET
 
 BeginCmp
 TimeStamp = /52EE03C2;
 Reference = C1;
 ValeurCmp = 100n;
-IdModule  = oshec_rcl:rcl-C0805;
+IdModule  = oshec_rcl:rcl-C1210;
 EndCmp
 
 BeginCmp
@@ -1012,7 +1012,7 @@ BeginCmp
 TimeStamp = /52EAC2E6;
 Reference = U1;
 ValeurCmp = LTC6803-3;
-IdModule  = Aalto_ic:SSOP44;
+IdModule  = Aalto_ic:SSOP44_HS;
 EndCmp
 
 BeginCmp

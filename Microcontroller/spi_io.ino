@@ -20,18 +20,22 @@
 /* Global variables and structures */
 unsigned char SPI_rec_buf[MON_BOARD_COUNT * 18]; /* Max data received from All Monitors */
 
-
+/*********************/
 /* SPI API functions */
+/*********************/
+
+/* Open SPI bus for communication */
 void SPI_openBus()
 {
   SPI.begin();
-  pinMode(SPI_SS_MON , OUTPUT);
-  digitalWrite(SPI_SS_MON , HIGH);
-  SPI.setBitOrder(MSBFIRST);
-  SPI.setDataMode(SPI_MODE3);
-  SPI.setClockDivider(SPI_CLOCK_DIV32); // This is default value
+  pinMode(SPI_SS_MON , OUTPUT);    /* Set slave select 1 to output */
+  digitalWrite(SPI_SS_MON , HIGH); /* Slave select high when no traffic */
+  SPI.setBitOrder(MSBFIRST);             /* LTC-6803 has Most Significant Bit first */
+  SPI.setDataMode(SPI_MODE3);            /* CPHA = 1 , CPOL = 1. (LTC-6803 datasheet page 17) */
+  SPI.setClockDivider(SPI_CLOCK_DIV32);  /* Bus speed */
 }
 
+/* End SPI bus communication */
 void SPI_closeBus()
 {
   SPI.end();

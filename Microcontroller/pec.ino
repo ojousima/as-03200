@@ -43,16 +43,15 @@ unsigned char calculatePECForByte(unsigned char input , unsigned char pec , bool
   
   while( i < 8 ) {
     in_bit = bitRead(input , 7-i);
-    pec = calculatePECForNextBit(in_bit , pec);
+    own_pec = calculatePECForNextBit(in_bit , own_pec);
     i++;
-    delay(500);
   }
   if( __DEBUG__ )
   {
     Serial.print("PEC is: ");
-    printByte(pec);
+    printByte(own_pec);
   }
-  return pec;
+  return own_pec;
 }
 
 

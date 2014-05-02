@@ -9,12 +9,16 @@
 /* Definitions about SPI Slave - Monitor */
 #define MON_BOARD_COUNT 6  /* Amount of monitor boards connected to system */
 /* Values of registers in the LTC6803 circuit */
+#define MON_WRITE_CONF_REG 0x01
+#define MON_READ_CONF_REG 0x02
 #define MON_READ_ALL_VOLTAGES 0x04
 #define MON_START_DIAG_REG 0x52
 #define MON_READ_DIAG_REG 0x54
 #define MON_READ_CELL_1_4 0x06
 #define MON_READ_CELL_5_8 0x08
 #define MON_READ_CELL_9_12 0x0A
+
+#define MON_SIZE_OF_CONF_REG 6
 
 
 /* Global variables and structures */
@@ -40,6 +44,71 @@ void SPI_closeBus()
 {
   SPI.end();
 }
+
+
+/* Write configuration register */
+void SPI_writeConfigurationRegister()
+{
+  int i = 0;
+  unsigned char conf_reg[MON_SIZE_OF_CONF_REG];
+  conf_reg[0] = 3;
+  conf_reg[1] = 0;
+  conf_reg[2] = 0;
+  conf_reg[3] = 0;
+  conf_reg[4] = 0;
+  conf_reg[5] = 0;
+
+  digitalWrite(SPI_SS_MON , LOW);
+  delayMicroseconds(50);
+  SPI.transfer(MON_WRITE_CONF_REG);
+  
+  Serial.println("Writing:");
+  SPI.transfer(conf_reg[i]);
+  printByte(conf_reg[i]);
+  unsigned char pec = calculatePECForByte(conf_reg[i] , 0 , true);
+  i++;
+  while( i < MON_SIZE_OF_CONF_REG ) {
+    SPI.transfer(conf_reg[i]);
+    printByte(conf_reg[i]);
+    pec = calculatePECForByte(conf_reg[i] , pec , false);
+    i++;
+  }
+  SPI.transfer(pec);
+  Serial.println("PEC:");
+  printByte(pec);
+}
+
+
+
+
+/* Read configuration register */
+unsigned char* SPI_readConfigurationRegister()
+{
+  int i = 0;
+  unsigned char pec = calculatePECForByte(MON_READ_CONF_REG , 0 , true);
+  digitalWrite(SPI_SS_MON , LOW);
+  SPI.transfer(MON_READ_CONF_REG);
+  SPI.transfer(pec);
+  
+  delayMicroseconds(5000);
+  
+  i = 0;
+  while( i < MON_SIZE_OF_CONF_REG )
+  {
+    SPI_rec_buf[i] = SPI.transfer(0);
+    i++;
+    if(__DEBUG__)
+    {
+      printByte(SPI_rec_buf[i]);
+    }
+  }
+  digitalWrite(SPI_SS_MON , HIGH);
+  return SPI_rec_buf;
+}
+
+
+
+/* Set LTC6803 to Monitoring mode */
 
 
 

@@ -22,15 +22,19 @@ int loop_ctr = 0;
 void loop()
 {
   SPI_openBus();
+  Serial.println("Opened SPI bus.");
   delay(1000);
-  SPI_startDiagnostics();
+//  SPI_writeConfigurationRegister();
+//  delay(1000);
+  SPI_readConfigurationRegister();
+//  SPI_startDiagnostics();
   delay(1000);
 
-  Serial.println("Opened SPI bus.");
   delay(1000);
   SPI_readDiagnostics();
   delay(1000);
   SPI_closeBus();
+  Serial.println("Closed SPI bus");
 
   delay(1000);
   loop_ctr++;

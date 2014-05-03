@@ -46,11 +46,6 @@ unsigned char calculatePECForByte(unsigned char input , unsigned char pec , bool
     own_pec = calculatePECForNextBit(in_bit , own_pec);
     i++;
   }
-  if( __DEBUG__ )
-  {
-    Serial.print("PEC is: ");
-    printByte(own_pec);
-  }
   return own_pec;
 }
 
@@ -61,10 +56,16 @@ int calculatePECForByteArray(unsigned char* byte_arr , int byte_count)
   int i = 0;
   unsigned char pec = initPEC();
   
-  while( i < byte_count )
-  {
+  while( i < byte_count ) {
     pec = calculatePECForByte(*(byte_arr + i) , pec , false);
     i++;
   }
+  
+  if( __PEC_DEBUG__ ) {
+    Serial.print("PEC for byte array is: ");
+    printByte(pec);
+    Serial.println("");
+  }
+  
   return pec;
 }

@@ -19,10 +19,12 @@
 #define MON_READ_CELL_9_12 0x0A
 
 #define MON_SIZE_OF_CONF_REG 6
+#define MON_SIZE_OF_DIAG_REG 2
 
 
 /* Global variables and structures */
 unsigned char SPI_rec_buf[MON_BOARD_COUNT * 18]; /* Max data received from All Monitors */
+unsigned char MON_configuration_register[MON_SIZE_OF_CONF_REG];
 
 /*********************/
 /* SPI API functions */
@@ -45,94 +47,180 @@ void SPI_closeBus()
   SPI.end();
 }
 
+void SPI_setSlaveSelect(boolean level)
+{
+  if(level) {
+    digitalWrite(SPI_SS_MON , HIGH);
+  }
+  else {
+    digitalWrite(SPI_SS_MON , LOW);
+  }
+  delayMicroseconds(100);
+}
 
-/* Write configuration register */
+
+
+
+
+
+
+/****************************/
+/* MODIFY MONITOR BEHAVIOUR */
+/****************************/
+
+/* Toggle GPIO Led 1 in monitor configuration register */
+void MON_setGPIOLed1(boolean toggle)
+{
+  if(toggle) {
+    MON_configuration_register[0] = (MON_configuration_register[0] & 0xBF);
+  }
+  else {
+    MON_configuration_register[0] = (MON_configuration_register[0] | 0x40);
+  }
+}
+
+/* Toggle GPIO Led 2 in monitor configuration register */
+void MON_setGPIOLed2(boolean toggle)
+{
+  if(toggle) {
+    MON_configuration_register[0] = (MON_configuration_register[0] & 0xDF);
+  }
+  else {
+    MON_configuration_register[0] = (MON_configuration_register[0] | 0x20);
+  }
+}
+
+
+
+/* Write configuration register to monitor */
 void SPI_writeConfigurationRegister()
 {
   int i = 0;
-  unsigned char conf_reg[MON_SIZE_OF_CONF_REG];
-  conf_reg[0] = 3;
-  conf_reg[1] = 0;
-  conf_reg[2] = 0;
-  conf_reg[3] = 0;
-  conf_reg[4] = 0;
-  conf_reg[5] = 0;
+  unsigned char pec = calculatePECForByte(MON_WRITE_CONF_REG , 0 , true);
 
-  digitalWrite(SPI_SS_MON , LOW);
-  delayMicroseconds(50);
-  SPI.transfer(MON_WRITE_CONF_REG);
+  if(__DEBUG__) {
+    Serial.println("\nWriting configuration register:");
+  }
   
-  Serial.println("Writing:");
-  SPI.transfer(conf_reg[i]);
-  printByte(conf_reg[i]);
-  unsigned char pec = calculatePECForByte(conf_reg[i] , 0 , true);
-  i++;
+  SPI_setSlaveSelect(false);
+  SPI.transfer(MON_WRITE_CONF_REG);
+  SPI.transfer(pec);
+  
   while( i < MON_SIZE_OF_CONF_REG ) {
-    SPI.transfer(conf_reg[i]);
-    printByte(conf_reg[i]);
-    pec = calculatePECForByte(conf_reg[i] , pec , false);
+    SPI.transfer(MON_configuration_register[i]);
+    if(__DEBUG__) {
+      printByte(MON_configuration_register[i]);
+    }
     i++;
   }
+  pec = calculatePECForByteArray(MON_configuration_register , 6);
   SPI.transfer(pec);
-  Serial.println("PEC:");
-  printByte(pec);
+
+  if(__DEBUG__) {
+    Serial.print("PEC: ");
+    printByte(pec);
+    Serial.println("END OF write configuration register\n");
+  }
+
+  SPI_setSlaveSelect(true);
 }
 
 
 
-
-/* Read configuration register */
+/* Read configuration register from monitor */
 unsigned char* SPI_readConfigurationRegister()
 {
   int i = 0;
-  unsigned char pec = calculatePECForByte(MON_READ_CONF_REG , 0 , true);
-  digitalWrite(SPI_SS_MON , LOW);
+  unsigned char in_pec = 0;
+  unsigned char in_pec_own = 0;
+  unsigned char out_pec = calculatePECForByte(MON_READ_CONF_REG , 0 , true);
+
+  if(__DEBUG__) {
+    Serial.println("\nReading configuration register:");
+  }
+
+  SPI_setSlaveSelect(false);
   SPI.transfer(MON_READ_CONF_REG);
-  SPI.transfer(pec);
-  
-  delayMicroseconds(5000);
-  
+  SPI.transfer(out_pec);
+    
   i = 0;
   while( i < MON_SIZE_OF_CONF_REG )
   {
-    SPI_rec_buf[i] = SPI.transfer(0);
-    i++;
+    MON_configuration_register[i] = SPI.transfer(0);
     if(__DEBUG__)
     {
-      printByte(SPI_rec_buf[i]);
+      printByte(MON_configuration_register[i]);
     }
+    i++;
   }
-  digitalWrite(SPI_SS_MON , HIGH);
+  in_pec = SPI.transfer(0);
+  in_pec_own = calculatePECForByteArray(MON_configuration_register , 6);
+  SPI_setSlaveSelect(true);
+  
+  if(__DEBUG__) {
+    if( in_pec == in_pec_own ) {
+      Serial.println("PECs match!");
+      printByte(in_pec);
+    }
+    else {
+      Serial.println("PECs MISMATCH!");
+      Serial.print("Pec received: ");
+      printByte(in_pec);
+      Serial.print("Pec calculated: ");
+      printByte(in_pec_own);
+    }
+    Serial.println("END OF read configuration register\n");
+  }
+  
   return SPI_rec_buf;
 }
-
-
-
-/* Set LTC6803 to Monitoring mode */
 
 
 
 unsigned char* SPI_readAllVoltages()
 {
   int i = 0;
-  unsigned char pec = calculatePECForByte( MON_READ_ALL_VOLTAGES , 0 , true);
-  
-  digitalWrite(SPI_SS_MON , LOW);
+  unsigned char pec_out = calculatePECForByte( MON_READ_ALL_VOLTAGES , 0 , true);
+  unsigned char pec_in = 0;
+  unsigned char pec_in_own = 0;
+
+  if(__DEBUG__) {
+    Serial.println("\nReading all voltages:");
+  }
+
+  SPI_setSlaveSelect(false);
   SPI.transfer(MON_READ_ALL_VOLTAGES);
-  SPI.transfer(pec);
+  SPI.transfer(pec_out);
   
   i = 0;
   while( i < 18 )
   {
     SPI_rec_buf[i] = SPI.transfer(0); /* Read response from monitor */
-    i++;
-    if( __DEBUG__ )
+    if(__DEBUG__)
     {
       printByte(SPI_rec_buf[i]);
     }
+    i++;
+  }
+  pec_in = SPI.transfer(0);
+  pec_in_own = calculatePECForByteArray(SPI_rec_buf , 18);
+  SPI_setSlaveSelect(true);
+  
+  if(__DEBUG__) {
+    if( pec_in == pec_in_own ) {
+      Serial.println("PECs match!");
+      printByte(pec_in);
+    }
+    else {
+      Serial.println("PECs MISMATCH!");
+      Serial.print("Pec received: ");
+      printByte(pec_in);
+      Serial.print("Pec calculated: ");
+      printByte(pec_in_own);
+    }
+    Serial.println("END OF read all voltages register\n");
   }
   
-  digitalWrite(SPI_SS_MON , HIGH);
   return SPI_rec_buf;
 }
 
@@ -141,25 +229,47 @@ unsigned char* SPI_readAllVoltages()
 void SPI_readDiagnostics()
 {
   int i = 0;
-  unsigned char pec = calculatePECForByte(MON_READ_DIAG_REG , 0 , true);
-  
-  digitalWrite(SPI_SS_MON , LOW);
-  delayMicroseconds(250);
+  unsigned char out_pec = calculatePECForByte(MON_READ_DIAG_REG , 0 , true);
+  unsigned char in_pec = 0;
+  unsigned char in_pec_own = 0;
+
+  if(__DEBUG__) {
+    Serial.println("\nReading diagnostics register:");
+  }  
+
+  SPI_setSlaveSelect(false);
   SPI.transfer(MON_READ_DIAG_REG);
-  SPI.transfer(pec);
-  delayMicroseconds(20);
+  SPI.transfer(out_pec);
+
   i = 0;
-  while( i < 3 )
+  while( i < MON_SIZE_OF_DIAG_REG )
   {
     SPI_rec_buf[i] = SPI.transfer(0); /* Read response from monitor */
-    i++;
-    if( __DEBUG__ )
-    {
+    
+    if(__DEBUG__) {
       printByte(SPI_rec_buf[i]);
     }
+    i++;
   }
-  delayMicroseconds(250);
-  digitalWrite(SPI_SS_MON , HIGH);
+  in_pec = SPI.transfer(0);
+  in_pec_own = calculatePECForByteArray(SPI_rec_buf , 2);
+  SPI_setSlaveSelect(true);
+  
+  if(__DEBUG__) {
+    if( in_pec == in_pec_own ) {
+      Serial.println("PECs match!");
+      printByte(in_pec);
+    }
+    else {
+      Serial.println("PECs MISMATCH!");
+      Serial.print("Pec received: ");
+      printByte(in_pec);
+      Serial.print("Pec calculated: ");
+      printByte(in_pec_own);
+    }
+    Serial.println("END OF read diagnostics register\n");
+  }
+
   return;
 }
 

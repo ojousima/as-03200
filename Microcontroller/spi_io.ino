@@ -290,6 +290,11 @@ void SPI_readDiagnostics()
 void SPI_sendCommandToMonitor(unsigned char cmd)
 {
   unsigned char pec = calculatePECForByte(cmd , 0 , true);
+  
+  if(__DEBUG__) {
+    Serial.print("\nSending command to monitor: ");
+    printByte(cmd);
+  }
 
   SPI_setSlaveSelect(false);
   SPI.transfer(cmd);

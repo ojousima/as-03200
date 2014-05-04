@@ -90,6 +90,7 @@ void MON_toggleGPIOLed2(boolean toggle)
   }
 }
 
+/* Set comparator duty cycle. Value is a number between 0-7. See LTC6803 datasheet. */
 void MON_setComparatorDutyCycle(unsigned char level)
 {
   if( 8 > level ) {
@@ -286,18 +287,15 @@ void SPI_readDiagnostics()
 
 
 
-void SPI_startDiagnostics()
+void SPI_sendCommandToMonitor(unsigned char cmd)
 {
-  unsigned char pec = calculatePECForByte(MON_START_DIAG_REG , 0 , true);
+  unsigned char pec = calculatePECForByte(cmd , 0 , true);
 
-  digitalWrite(SPI_SS_MON , LOW);
-  delayMicroseconds(100);
-
-  SPI.transfer(MON_START_DIAG_REG);
+  SPI_setSlaveSelect(false);
+  SPI.transfer(cmd);
   SPI.transfer(pec);
-
-  delayMicroseconds(100);
-  digitalWrite(SPI_SS_MON , HIGH);
+  SPI_setSlaveSelect(true);
+  
   return;
 }
 

@@ -90,6 +90,17 @@ void MON_setGPIOLed2(boolean toggle)
   }
 }
 
+void MON_setComparatorDutyCycle(unsigned char level)
+{
+  if( 8 > level ) {
+    MON_configuration_register[0] = (MON_configuration_register[0] & 0xF8);
+    MON_configuration_register[0] = (MON_configuration_register[0] | level);
+  }
+  else if(__DEBUG__) {
+    Serial.println("ERR: Trying to set invalid ADC conversion level!");
+  }
+}
+
 
 
 /* Write configuration register to monitor */

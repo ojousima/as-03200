@@ -1,6 +1,9 @@
 #define __DEBUG__ true
 #define __PEC_DEBUG__ false
 
+#define MON_CMD_START_ADC_CONVERSION_ALL 0x10
+#define MON_CMD_START_ADC_CONVERSION_SELF_TEST_1 0x1E
+#define MON_CMD_START_ADC_CONVERSION_SELF_TEST_2 0x1F
 
 
 void printByte(unsigned char byte_in) {

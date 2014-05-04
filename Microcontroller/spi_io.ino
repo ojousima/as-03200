@@ -25,6 +25,7 @@
 /* Global variables and structures */
 unsigned char SPI_rec_buf[MON_BOARD_COUNT * 18]; /* Max data received from All Monitors */
 unsigned char MON_configuration_register[MON_SIZE_OF_CONF_REG];
+word MON_voltages[MON_BOARD_COUNT * 12];
 
 /*********************/
 /* SPI API functions */
@@ -189,12 +190,17 @@ unsigned char* SPI_readConfigurationRegister()
 
 
 
-unsigned char* SPI_readAllVoltages()
+void SPI_readAllVoltages()
 {
   int i = 0;
+  int value_ctr = 0;
+  int bytes_read_not_handled = 0;
+  word high_byte = 0;
+  word low_byte = 0;
+  unsigned char rec_byte;
   unsigned char pec_out = calculatePECForByte( MON_READ_ALL_VOLTAGES , 0 , true);
   unsigned char pec_in = 0;
-  unsigned char pec_in_own = 0;
+  unsigned char pec_in_own = initPEC();
 
   if(__DEBUG__) {
     Serial.println("\nReading all voltages:");
@@ -204,18 +210,47 @@ unsigned char* SPI_readAllVoltages()
   SPI.transfer(MON_READ_ALL_VOLTAGES);
   SPI.transfer(pec_out);
   
+  
   i = 0;
-  while( i < 18 )
-  {
-    SPI_rec_buf[i] = SPI.transfer(0); /* Read response from monitor */
-    if(__DEBUG__)
-    {
-      printByte(SPI_rec_buf[i]);
+  value_ctr = 0;
+  while( i < 18 ) {
+    rec_byte = SPI.transfer(0);
+    pec_in_own = calculatePECForByte(rec_byte , pec_in_own , false);
+
+    if( bytes_read_not_handled == 0 ) {
+      low_byte = rec_byte;
+      
+      bytes_read_not_handled = 8;
     }
+    
+    else if( bytes_read_not_handled == 8 ) {
+      high_byte = (rec_byte & 0x0F);
+      MON_voltages[value_ctr] = low_byte + (high_byte << 8);
+      
+      low_byte = (rec_byte & 0xF0);
+      low_byte = (low_byte >> 4);
+      
+      bytes_read_not_handled = 4;
+      value_ctr++;
+    }
+    
+    else {
+      high_byte = rec_byte;
+      MON_voltages[value_ctr] = low_byte + (high_byte << 4);
+      
+      bytes_read_not_handled = 0;
+      value_ctr++;
+    }
+
+    if( (__DEBUG__) && (bytes_read_not_handled != 8) ) {
+      printWord(MON_voltages[value_ctr - 1]);
+    }
+
     i++;
-  }
+  } /* END OF WHILE */  
+  
+  
   pec_in = SPI.transfer(0);
-  pec_in_own = calculatePECForByteArray(SPI_rec_buf , 18);
   SPI_setSlaveSelect(true);
   
   if(__DEBUG__) {
@@ -233,7 +268,7 @@ unsigned char* SPI_readAllVoltages()
     Serial.println("END OF read all voltages register\n");
   }
   
-  return SPI_rec_buf;
+  return;
 }
 
 

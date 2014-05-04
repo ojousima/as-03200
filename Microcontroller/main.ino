@@ -66,10 +66,10 @@ void loop()
 //  }
 //
 //
-//  SPI_readDiagnostics();
-//  SPI_readConfigurationRegister();
-//  SPI_readAllVoltages();
-//  
+  SPI_readDiagnostics();
+  SPI_readConfigurationRegister();
+  SPI_readAllVoltages();
+  
   delay(100);
   loop_ctr++;
 }

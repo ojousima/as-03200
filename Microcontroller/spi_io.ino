@@ -23,7 +23,6 @@
 
 
 /* Global variables and structures */
-unsigned char SPI_rec_buf[MON_BOARD_COUNT * 18]; /* Max data received from All Monitors */
 unsigned char MON_configuration_register[MON_SIZE_OF_CONF_REG];
 word MON_voltages[MON_BOARD_COUNT * 12];
 
@@ -145,7 +144,7 @@ void SPI_writeConfigurationRegister()
 
 
 /* Read configuration register from monitor */
-unsigned char* SPI_readConfigurationRegister()
+void SPI_readConfigurationRegister()
 {
   int i = 0;
   unsigned char in_pec = 0;
@@ -189,7 +188,7 @@ unsigned char* SPI_readConfigurationRegister()
     Serial.println("END OF read configuration register\n");
   }
   
-  return SPI_rec_buf;
+  return;
 }
 
 

@@ -27,6 +27,10 @@ unsigned char SPI_rec_buf[MON_BOARD_COUNT * 18]; /* Max data received from All M
 unsigned char MON_configuration_register[MON_SIZE_OF_CONF_REG];
 word MON_voltages[MON_BOARD_COUNT * 12];
 
+word MON_DIAG_reference_voltage;
+unsigned char MON_DIAG_revision_number;
+boolean MON_DIAG_muxfail;
+
 /*********************/
 /* SPI API functions */
 /*********************/
@@ -276,9 +280,11 @@ void SPI_readAllVoltages()
 void SPI_readDiagnostics()
 {
   int i = 0;
+  word high_byte = 0;
+  unsigned char rec_byte = 0;
   unsigned char out_pec = calculatePECForByte(MON_READ_DIAG_REG , 0 , true);
   unsigned char in_pec = 0;
-  unsigned char in_pec_own = 0;
+  unsigned char in_pec_own = initPEC();
 
   if(__DEBUG__) {
     Serial.println("\nReading diagnostics register:");
@@ -288,18 +294,27 @@ void SPI_readDiagnostics()
   SPI.transfer(MON_READ_DIAG_REG);
   SPI.transfer(out_pec);
 
-  i = 0;
-  while( i < MON_SIZE_OF_DIAG_REG )
-  {
-    SPI_rec_buf[i] = SPI.transfer(0); /* Read response from monitor */
-    
-    if(__DEBUG__) {
-      printByte(SPI_rec_buf[i]);
-    }
-    i++;
+  rec_byte = SPI.transfer(0);
+  in_pec_own = calculatePECForByte(rec_byte , in_pec_own , false);
+  MON_DIAG_reference_voltage = rec_byte;
+  rec_byte = SPI.transfer(0);
+  in_pec_own = calculatePECForByte(rec_byte , in_pec_own , false);
+  
+  MON_DIAG_muxfail = (rec_byte & 0x20);
+  
+  MON_DIAG_revision_number = (rec_byte & 0xC0);
+  MON_DIAG_revision_number = (MON_DIAG_revision_number >> 6);
+  
+  high_byte = (rec_byte & 0x0F);
+  MON_DIAG_reference_voltage += (high_byte << 8);
+
+  if(__DEBUG__) {
+    printWord(MON_DIAG_reference_voltage);
+    printByte( (unsigned char) MON_DIAG_revision_number);
+    printByte( (unsigned char) MON_DIAG_muxfail);
   }
+
   in_pec = SPI.transfer(0);
-  in_pec_own = calculatePECForByteArray(SPI_rec_buf , 2);
   SPI_setSlaveSelect(true);
   
   if(__DEBUG__) {

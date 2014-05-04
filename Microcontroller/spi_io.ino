@@ -24,6 +24,7 @@
 
 /* Global variables and structures */
 unsigned char MON_configuration_register[MON_SIZE_OF_CONF_REG];
+unsigned char MON_configuration_register_local[MON_SIZE_OF_CONF_REG];
 word MON_voltages[MON_BOARD_COUNT * 12];
 
 word MON_DIAG_reference_voltage;
@@ -76,10 +77,10 @@ void SPI_setSlaveSelect(boolean level)
 void MON_toggleGPIOLed1(boolean toggle)
 {
   if(toggle) {
-    MON_configuration_register[0] = (MON_configuration_register[0] & 0xBF);
+    MON_configuration_register_local[0] = (MON_configuration_register_local[0] & 0xBF);
   }
   else {
-    MON_configuration_register[0] = (MON_configuration_register[0] | 0x40);
+    MON_configuration_register_local[0] = (MON_configuration_register_local[0] | 0x40);
   }
 }
 
@@ -87,10 +88,10 @@ void MON_toggleGPIOLed1(boolean toggle)
 void MON_toggleGPIOLed2(boolean toggle)
 {
   if(toggle) {
-    MON_configuration_register[0] = (MON_configuration_register[0] & 0xDF);
+    MON_configuration_register_local[0] = (MON_configuration_register_local[0] & 0xDF);
   }
   else {
-    MON_configuration_register[0] = (MON_configuration_register[0] | 0x20);
+    MON_configuration_register_local[0] = (MON_configuration_register_local[0] | 0x20);
   }
 }
 
@@ -98,8 +99,8 @@ void MON_toggleGPIOLed2(boolean toggle)
 void MON_setComparatorDutyCycle(unsigned char level)
 {
   if( 8 > level ) {
-    MON_configuration_register[0] = (MON_configuration_register[0] & 0xF8);
-    MON_configuration_register[0] = (MON_configuration_register[0] | level);
+    MON_configuration_register_local[0] = (MON_configuration_register_local[0] & 0xF8);
+    MON_configuration_register_local[0] = (MON_configuration_register_local[0] | level);
   }
   else if(__DEBUG__) {
     Serial.println("ERR: Trying to set invalid ADC conversion level!");
@@ -113,30 +114,17 @@ void SPI_writeConfigurationRegister()
 {
   int i = 0;
   unsigned char pec = calculatePECForByte(MON_WRITE_CONF_REG , 0 , true);
-
-  if(__DEBUG__) {
-    Serial.println("\nWriting configuration register:");
-  }
   
   SPI_setSlaveSelect(false);
   SPI.transfer(MON_WRITE_CONF_REG);
   SPI.transfer(pec);
   
   while( i < MON_SIZE_OF_CONF_REG ) {
-    SPI.transfer(MON_configuration_register[i]);
-    if(__DEBUG__) {
-      printByte(MON_configuration_register[i]);
-    }
+    SPI.transfer(MON_configuration_register_local[i]);
     i++;
   }
-  pec = calculatePECForByteArray(MON_configuration_register , 6);
+  pec = calculatePECForByteArray(MON_configuration_register_local , 6);
   SPI.transfer(pec);
-
-  if(__DEBUG__) {
-    Serial.print("PEC: ");
-    printByte(pec);
-    Serial.println("END OF write configuration register\n");
-  }
 
   SPI_setSlaveSelect(true);
 }
@@ -151,10 +139,6 @@ void SPI_readConfigurationRegister()
   unsigned char in_pec_own = 0;
   unsigned char out_pec = calculatePECForByte(MON_READ_CONF_REG , 0 , true);
 
-  if(__DEBUG__) {
-    Serial.println("\nReading configuration register:");
-  }
-
   SPI_setSlaveSelect(false);
   SPI.transfer(MON_READ_CONF_REG);
   SPI.transfer(out_pec);
@@ -163,10 +147,6 @@ void SPI_readConfigurationRegister()
   while( i < MON_SIZE_OF_CONF_REG )
   {
     MON_configuration_register[i] = SPI.transfer(0);
-    if(__DEBUG__)
-    {
-      printByte(MON_configuration_register[i]);
-    }
     i++;
   }
   in_pec = SPI.transfer(0);
@@ -174,21 +154,41 @@ void SPI_readConfigurationRegister()
   SPI_setSlaveSelect(true);
   
   if(__DEBUG__) {
-    if( in_pec == in_pec_own ) {
-      Serial.println("PECs match!");
-      printByte(in_pec);
-    }
-    else {
-      Serial.println("PECs MISMATCH!");
+    if( in_pec != in_pec_own ) {
+      Serial.println("CONFIGURATION REGISTER PECs MISMATCH!");
       Serial.print("Pec received: ");
       printByte(in_pec);
       Serial.print("Pec calculated: ");
       printByte(in_pec_own);
+      Serial.println("");
     }
-    Serial.println("END OF read configuration register\n");
   }
   
   return;
+}
+
+
+
+void MON_printConfigurationRegisterLocal()
+{
+  int i = 0;
+  Serial.println("\nLOCAL CONFIGURATION REGISTER:");
+  while( i < MON_SIZE_OF_CONF_REG ) {
+    printByte(MON_configuration_register_local[i]);
+    i++;
+  }
+  Serial.println("");
+}
+
+void MON_printConfigurationRegister()
+{
+  int i = 0;
+  Serial.println("\nMONITOR CURRENT CONFIGURATION REGISTER:");
+  while( i < MON_SIZE_OF_CONF_REG ) {
+    printByte(MON_configuration_register[i]);
+    i++;
+  }
+  Serial.println("");
 }
 
 
@@ -205,14 +205,9 @@ void SPI_readAllVoltages()
   unsigned char pec_in = 0;
   unsigned char pec_in_own = initPEC();
 
-  if(__DEBUG__) {
-    Serial.println("\nReading all voltages:");
-  }
-
   SPI_setSlaveSelect(false);
   SPI.transfer(MON_READ_ALL_VOLTAGES);
   SPI.transfer(pec_out);
-  
   
   i = 0;
   value_ctr = 0;
@@ -245,10 +240,6 @@ void SPI_readAllVoltages()
       value_ctr++;
     }
 
-    if( (__DEBUG__) && (bytes_read_not_handled != 8) ) {
-      printWord(MON_voltages[value_ctr - 1]);
-    }
-
     i++;
   } /* END OF WHILE */  
   
@@ -257,22 +248,36 @@ void SPI_readAllVoltages()
   SPI_setSlaveSelect(true);
   
   if(__DEBUG__) {
-    if( pec_in == pec_in_own ) {
-      Serial.println("PECs match!");
-      printByte(pec_in);
-    }
-    else {
-      Serial.println("PECs MISMATCH!");
+    if( pec_in != pec_in_own ) {
+      Serial.println("VOLTAGE PECs MISMATCH!");
       Serial.print("Pec received: ");
       printByte(pec_in);
       Serial.print("Pec calculated: ");
       printByte(pec_in_own);
+      Serial.println("");
     }
-    Serial.println("END OF read all voltages register\n");
   }
   
   return;
 }
+
+
+
+void MON_printAllVoltages()
+{
+  int i = 0;
+  Serial.println("\nVOLTAGES:");
+  while( i < 12 ) {
+    Serial.print("Batt ");
+    Serial.print(i , DEC);
+    Serial.print(": ");
+    printWord(MON_voltages[i]);
+    i++;
+  }
+}
+
+
+
 
 
 
@@ -284,10 +289,6 @@ void SPI_readDiagnostics()
   unsigned char out_pec = calculatePECForByte(MON_READ_DIAG_REG , 0 , true);
   unsigned char in_pec = 0;
   unsigned char in_pec_own = initPEC();
-
-  if(__DEBUG__) {
-    Serial.println("\nReading diagnostics register:");
-  }  
 
   SPI_setSlaveSelect(false);
   SPI.transfer(MON_READ_DIAG_REG);
@@ -307,31 +308,33 @@ void SPI_readDiagnostics()
   high_byte = (rec_byte & 0x0F);
   MON_DIAG_reference_voltage += (high_byte << 8);
 
-  if(__DEBUG__) {
-    printWord(MON_DIAG_reference_voltage);
-    printByte( (unsigned char) MON_DIAG_revision_number);
-    printByte( (unsigned char) MON_DIAG_muxfail);
-  }
-
   in_pec = SPI.transfer(0);
   SPI_setSlaveSelect(true);
   
   if(__DEBUG__) {
-    if( in_pec == in_pec_own ) {
-      Serial.println("PECs match!");
-      printByte(in_pec);
-    }
-    else {
-      Serial.println("PECs MISMATCH!");
+    if( in_pec != in_pec_own ) {
+      Serial.println("DIAGNOSTICS PECs MISMATCH!");
       Serial.print("Pec received: ");
       printByte(in_pec);
       Serial.print("Pec calculated: ");
       printByte(in_pec_own);
+      Serial.println("");
     }
-    Serial.println("END OF read diagnostics register\n");
   }
 
   return;
+}
+
+
+void MON_printDiagnosticsRegister()
+{
+  Serial.println("\nDIAGNOSTICS REGISTER:");
+  Serial.print("Ref volt: ");
+  printWord(MON_DIAG_reference_voltage);
+  Serial.print("Rev numb: ");
+  printByte( (unsigned char) MON_DIAG_revision_number);
+  Serial.print("Mux fail: ");
+  printByte( (unsigned char) MON_DIAG_muxfail);
 }
 
 

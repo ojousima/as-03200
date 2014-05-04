@@ -18,3 +18,18 @@ void printByte(unsigned char byte_in) {
   Serial.print(" , ");
   Serial.println(byte_in,DEC);
 }
+
+
+
+void printWord(word word_in) {
+  int i = 0;
+  Serial.print("Word: ");
+  while( i < 16 ) {
+    Serial.print(bitRead(word_in,15-i));
+    i++;
+  }
+  Serial.print(" , 0x");
+  Serial.print(word_in,HEX);
+  Serial.print(" , ");
+  Serial.println(word_in,DEC);
+}

@@ -15,29 +15,30 @@ void loop()
     Serial.println("Opened SPI bus.");
   }
   
-  if(loop_ctr == 3) {
-    MON_setGPIOLed1(true);
-    MON_setGPIOLed2(true);
+  if(loop_ctr == 2) {
+    MON_toggleGPIOLed1(true);
+    MON_toggleGPIOLed2(true);
+    MON_setComparatorDutyCycle(3);
     SPI_writeConfigurationRegister();
   }
   
-  if(loop_ctr == 5) {
-    SPI_readAllVoltages();
+  if(loop_ctr == 4) {
+    MON_setComparatorDutyCycle(6);
+    SPI_writeConfigurationRegister();
   }
   
-  if(loop_ctr == 7) {
-    MON_setGPIOLed1(false);
-    MON_setGPIOLed2(false);
+  if(loop_ctr == 6) {
+    MON_toggleGPIOLed1(false);
+    MON_toggleGPIOLed2(false);
+    MON_setComparatorDutyCycle(10);
     SPI_writeConfigurationRegister();
   }
 
-  if( (loop_ctr % 2) == 0 ) {
-    SPI_readDiagnostics();
-    SPI_readConfigurationRegister();
-    delay(1000);
-  }
+  SPI_readDiagnostics();
+  SPI_readConfigurationRegister();
+  SPI_readAllVoltages();
   
-  delay(4000);
+  delay(500);
   loop_ctr++;
 }
 

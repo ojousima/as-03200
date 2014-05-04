@@ -69,7 +69,7 @@ void SPI_setSlaveSelect(boolean level)
 /****************************/
 
 /* Toggle GPIO Led 1 in monitor configuration register */
-void MON_setGPIOLed1(boolean toggle)
+void MON_toggleGPIOLed1(boolean toggle)
 {
   if(toggle) {
     MON_configuration_register[0] = (MON_configuration_register[0] & 0xBF);
@@ -80,7 +80,7 @@ void MON_setGPIOLed1(boolean toggle)
 }
 
 /* Toggle GPIO Led 2 in monitor configuration register */
-void MON_setGPIOLed2(boolean toggle)
+void MON_toggleGPIOLed2(boolean toggle)
 {
   if(toggle) {
     MON_configuration_register[0] = (MON_configuration_register[0] & 0xDF);

@@ -25,9 +25,9 @@
 /* Global variables and structures */
 unsigned char MON_configuration_register[MON_SIZE_OF_CONF_REG];
 unsigned char MON_configuration_register_local[MON_SIZE_OF_CONF_REG];
-word MON_voltages[MON_BOARD_COUNT * 12];
+int MON_voltages[MON_BOARD_COUNT * 12];
 
-word MON_DIAG_reference_voltage;
+int MON_DIAG_reference_voltage;
 unsigned char MON_DIAG_revision_number;
 boolean MON_DIAG_muxfail;
 
@@ -271,7 +271,7 @@ void MON_printAllVoltages()
     Serial.print("Batt ");
     Serial.print(i , DEC);
     Serial.print(": ");
-    printWord(MON_voltages[i]);
+    printVoltage(MON_voltages[i]);
     i++;
   }
 }
@@ -330,7 +330,7 @@ void MON_printDiagnosticsRegister()
 {
   Serial.println("\nDIAGNOSTICS REGISTER:");
   Serial.print("Ref volt: ");
-  printWord(MON_DIAG_reference_voltage);
+  printVoltage(MON_DIAG_reference_voltage);
   Serial.print("Rev numb: ");
   printByte( (unsigned char) MON_DIAG_revision_number);
   Serial.print("Mux fail: ");

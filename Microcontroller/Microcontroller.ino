@@ -6,6 +6,17 @@
 #define MON_CMD_START_ADC_CONVERSION_SELF_TEST_2 0x1F
 
 
+void printVoltage(int volt_in) {
+  int i = 0;
+  int voltage = (volt_in-512) * 1.5;
+  Serial.print("Orig val: ");
+  Serial.print(volt_in , DEC);
+  Serial.print(", Volt: ");
+  Serial.print(voltage , DEC);
+  Serial.println("mV");
+}
+
+
 void printByte(unsigned char byte_in) {
   int i = 0;
   Serial.print("Byte: ");

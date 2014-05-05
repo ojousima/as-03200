@@ -1,20 +1,25 @@
-/**************************
- *   USER INPUT OPTIONS   *
-***************************
-** LOWER CASE
-*************
- * a    - adc conversion - start
- * 0-7  - Set comparator duty cycle
- * w    - Write configuration changes to monitor
- *
-*************
-** UPPER CASE
-*************
- * C    - Print configuration data
- * D    - Print diagnostics data
- * V    - Print voltages data
- *
-************************************/
+
+void printHelp()
+{
+  Serial.println("\n/**************************");
+  Serial.println(" *   USER INPUT OPTIONS   *");
+  Serial.println("***************************");
+  Serial.println("** LOWER CASE");
+  Serial.println("*************");
+  Serial.println(" * a    - adc conversion - start");
+  Serial.println(" * 0-7  - Set comparator duty cycle");
+  Serial.println(" * w    - Write configuration changes to monitor");
+  Serial.println(" *");
+  Serial.println("*************");
+  Serial.println("** UPPER CASE");
+  Serial.println("*************");
+  Serial.println(" * H    - Print help message");
+  Serial.println(" * C    - Print configuration data");
+  Serial.println(" * D    - Print diagnostics data");
+  Serial.println(" * V    - Print voltages data");
+  Serial.println(" *");
+  Serial.println("************************************/");
+}
 
 
 void handleInput(char user_input)
@@ -22,46 +27,48 @@ void handleInput(char user_input)
   if( (user_input >= '0') && (user_input <= '7') ) {
     MON_setComparatorDutyCycle((unsigned char) (user_input & 0x0F));
     if(__DEBUG__) {
-      Serial.println("Changed comparatpr duty cycle in local buffer.");
+      Serial.println("\nChanged comparatpr duty cycle in local buffer.");
     }
   }
   
   else if(user_input == 'a') {
-    SPI_sendCommandToMonitor(MON_CMD_START_ADC_CONVERSION_ALL);
     if(__DEBUG__) {
-      Serial.println("Start adc conversion command sent to monitor.");
+      Serial.println("\nSending start adc conversion command to monitor.");
     }
+    SPI_sendCommandToMonitor(MON_CMD_START_ADC_CONVERSION_ALL);
   }
   else if(user_input == 'w') {
-    SPI_writeConfigurationRegister();
     if(__DEBUG__) {
-      Serial.println("Wrote local configuration register buffer to monitor.");
+      Serial.println("\nWriting local configuration register buffer to monitor.");
     }
+    SPI_writeConfigurationRegister();
   }
   
   
-  
+  else if(user_input == 'H') {
+    printHelp();
+  }
   else if(user_input == 'C') {
     if(__DEBUG__) {
-      Serial.println("Print monitor configuration register.");
+      Serial.println("\nPrint monitor configuration register.");
     }
     MON_printConfigurationRegister();
   }
   else if(user_input == 'D') {
     if(__DEBUG__) {
-      Serial.println("Print monitor diagnostics register.");
+      Serial.println("\nPrint monitor diagnostics register.");
     }
     MON_printDiagnosticsRegister();
   }
   else if(user_input == 'L') {
     if(__DEBUG__) {
-      Serial.println("Print local configuration register buffer.");
+      Serial.println("\nPrint local configuration register buffer.");
     }
     MON_printConfigurationRegisterLocal();
   }
   else if(user_input == 'V') {
     if(__DEBUG__) {
-      Serial.println("Print all voltages.");
+      Serial.println("\nPrint all voltages.");
     }
     MON_printAllVoltages();
   }

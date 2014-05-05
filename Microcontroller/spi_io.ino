@@ -172,7 +172,7 @@ void SPI_readConfigurationRegister()
 void MON_printConfigurationRegisterLocal()
 {
   int i = 0;
-  Serial.println("\nLOCAL CONFIGURATION REGISTER:");
+  Serial.println("LOCAL CONFIGURATION REGISTER:");
   while( i < MON_SIZE_OF_CONF_REG ) {
     printByte(MON_configuration_register_local[i]);
     i++;
@@ -183,7 +183,7 @@ void MON_printConfigurationRegisterLocal()
 void MON_printConfigurationRegister()
 {
   int i = 0;
-  Serial.println("\nMONITOR CURRENT CONFIGURATION REGISTER:");
+  Serial.println("MONITOR CURRENT CONFIGURATION REGISTER:");
   while( i < MON_SIZE_OF_CONF_REG ) {
     printByte(MON_configuration_register[i]);
     i++;
@@ -266,7 +266,7 @@ void SPI_readAllVoltages()
 void MON_printAllVoltages()
 {
   int i = 0;
-  Serial.println("\nVOLTAGES:");
+  Serial.println("VOLTAGES:");
   while( i < 12 ) {
     Serial.print("Batt ");
     Serial.print(i , DEC);
@@ -328,7 +328,7 @@ void SPI_readDiagnostics()
 
 void MON_printDiagnosticsRegister()
 {
-  Serial.println("\nDIAGNOSTICS REGISTER:");
+  Serial.println("DIAGNOSTICS REGISTER:");
   Serial.print("Ref volt: ");
   printVoltage(MON_DIAG_reference_voltage);
   Serial.print("Rev numb: ");
@@ -344,7 +344,7 @@ void SPI_sendCommandToMonitor(unsigned char cmd)
   unsigned char pec = calculatePECForByte(cmd , 0 , true);
   
   if(__DEBUG__) {
-    Serial.print("\nSending command to monitor: ");
+    Serial.print("Sending command to monitor: ");
     printByte(cmd);
   }
 

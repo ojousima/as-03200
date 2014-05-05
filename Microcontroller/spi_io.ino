@@ -6,30 +6,8 @@
 #define SPI_MOSI 11  /* SPI MOSI DIO output */
 #define SPI_MISO 12  /* SPI MISO DIO output */
 #define SPI_CLK  13  /* SPI CLOCK DIO output */
-/* Definitions about SPI Slave - Monitor */
-#define MON_BOARD_COUNT 6  /* Amount of monitor boards connected to system */
-/* Values of registers in the LTC6803 circuit */
-#define MON_WRITE_CONF_REG 0x01
-#define MON_READ_CONF_REG 0x02
-#define MON_READ_ALL_VOLTAGES 0x04
-#define MON_START_DIAG_REG 0x52
-#define MON_READ_DIAG_REG 0x54
-#define MON_READ_CELL_1_4 0x06
-#define MON_READ_CELL_5_8 0x08
-#define MON_READ_CELL_9_12 0x0A
-
-#define MON_SIZE_OF_CONF_REG 6
-#define MON_SIZE_OF_DIAG_REG 2
 
 
-/* Global variables and structures */
-unsigned char MON_configuration_register[MON_SIZE_OF_CONF_REG];
-unsigned char MON_configuration_register_local[MON_SIZE_OF_CONF_REG];
-int MON_voltages[MON_BOARD_COUNT * 12];
-
-int MON_DIAG_reference_voltage;
-unsigned char MON_DIAG_revision_number;
-boolean MON_DIAG_muxfail;
 
 /*********************/
 /* SPI API functions */

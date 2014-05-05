@@ -1,3 +1,6 @@
+#define __DEMO__    /* Comment out entire line for real implementation */
+
+
 #define __DEBUG__ true
 #define __PEC_DEBUG__ false
 

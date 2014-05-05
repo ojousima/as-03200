@@ -70,6 +70,8 @@ void loop()
   SPI_readConfigurationRegister();
   SPI_readAllVoltages();
   
+  checkVoltages();
+  
   delay(100);
   loop_ctr++;
 }

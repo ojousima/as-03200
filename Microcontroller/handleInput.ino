@@ -13,9 +13,10 @@ void printHelp()
   Serial.println("*************");
   Serial.println("** UPPER CASE");
   Serial.println("*************");
-  Serial.println(" * H    - Print help message");
   Serial.println(" * C    - Print configuration data");
   Serial.println(" * D    - Print diagnostics data");
+  Serial.println(" * H    - Print help message");
+  Serial.println(" * S    - Print Battery status");
   Serial.println(" * V    - Print voltages data");
   Serial.println(" *");
   Serial.println("************************************/");
@@ -65,6 +66,9 @@ void handleInput(char user_input)
       Serial.println("\nPrint local configuration register buffer.");
     }
     MON_printConfigurationRegisterLocal();
+  }
+  else if(user_input == 'S') {
+    printBatteryStatus();
   }
   else if(user_input == 'V') {
     if(__DEBUG__) {

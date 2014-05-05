@@ -310,9 +310,9 @@ void MON_printDiagnosticsRegister()
   Serial.print("Ref volt: ");
   printVoltage(MON_DIAG_reference_voltage);
   Serial.print("Rev numb: ");
-  printByte( (unsigned char) MON_DIAG_revision_number);
+  Serial.println(MON_DIAG_revision_number , DEC);
   Serial.print("Mux fail: ");
-  printByte( (unsigned char) MON_DIAG_muxfail);
+  Serial.println(MON_DIAG_muxfail , DEC);
 }
 
 

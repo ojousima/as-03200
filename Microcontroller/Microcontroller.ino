@@ -23,6 +23,8 @@
 #define MON_CMD_START_ADC_CONVERSION_SELF_TEST_1 0x1E
 #define MON_CMD_START_ADC_CONVERSION_SELF_TEST_2 0x1F
 
+#define MON_CMD_START_ADC_CONVERSION_ALL_ALLOW_DISCH 0x60
+
 
 
 /* Global variables and structures */
@@ -34,7 +36,8 @@ int MON_DIAG_reference_voltage;
 unsigned char MON_DIAG_revision_number;
 boolean MON_DIAG_muxfail;
 
-
+boolean do_adc_conversion = false;
+boolean do_adc_conversion_discharge = false;
 
 
 

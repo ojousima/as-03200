@@ -73,6 +73,16 @@ void MON_toggleGPIOLed2(boolean toggle)
   }
 }
 
+void MON_dischargeCell0(boolean toggle)
+{
+  if(toggle) {
+    MON_configuration_register_local[1] = (MON_configuration_register_local[1] | 0x01);
+  }
+  else {
+    MON_configuration_register_local[1] = (MON_configuration_register_local[1] & 0xFE);
+  }
+}
+
 /* Set comparator duty cycle. Value is a number between 0-7. See LTC6803 datasheet. */
 void MON_setComparatorDutyCycle(unsigned char level)
 {
@@ -320,11 +330,6 @@ void MON_printDiagnosticsRegister()
 void SPI_sendCommandToMonitor(unsigned char cmd)
 {
   unsigned char pec = calculatePECForByte(cmd , 0 , true);
-  
-  if(__DEBUG__) {
-    Serial.print("Sending command to monitor: ");
-    printByte(cmd);
-  }
 
   SPI_setSlaveSelect(false);
   SPI.transfer(cmd);

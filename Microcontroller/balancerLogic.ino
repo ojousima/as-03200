@@ -1,6 +1,6 @@
 #ifdef __DEMO__
-#define MON_CONF_OVERVOLTAGE    900    /* DEMO mV */
-#define MON_CONF_UNDERVOLTAGE   130    /* DEMO mV */
+#define MON_CONF_OVERVOLTAGE    3800    /* DEMO mV */
+#define MON_CONF_UNDERVOLTAGE   2900    /* DEMO mV */
 #endif
 #ifndef __DEMO__
 #define MON_CONF_OVERVOLTAGE    4200    /* mV */

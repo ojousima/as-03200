@@ -31,11 +31,9 @@ void printHelp()
 void handleInput(char user_input)
 {
   if( start_discharge_select ) {
-    Serial.println("HEEEELOO");
     startDischarge(user_input);
   }
   else if( stop_discharge_select ) {
-    Serial.println("HEEEELOO       2");
     stopDischarge(user_input);
   }
   
@@ -55,7 +53,7 @@ void handleInput(char user_input)
   }
   else if(user_input == 'd') {
     if(__DEBUG__) {
-      Serial.println("\nDischarging... Which cell? (0-3 or 'a'):");
+      Serial.println("\nDischarge on: Which cell? (0-3 or 'a' for all):");
     }
     start_discharge_select = true;
   }
@@ -68,7 +66,7 @@ void handleInput(char user_input)
   }
   else if(user_input == 'z') {
     if(__DEBUG__) {
-      Serial.println("\nResetting discharging... Which cell? (0-3 or 'a'):");
+      Serial.println("\nStop discharge: Which cell? (0-3 or 'a' for all):");
     }
     stop_discharge_select = true;
   }
@@ -135,6 +133,8 @@ void startDischarge(char user_input)
     MON_dischargeCell2(true);
     MON_dischargeCell3(true);
   }
+  Serial.print("Input received (ascii): ");
+  Serial.println(user_input , HEX);
   start_discharge_select = false;
 }
 
@@ -160,4 +160,6 @@ void stopDischarge(char user_input)
     MON_dischargeCell3(false);
   }
   stop_discharge_select = false;
+  Serial.print("Input received (ascii): ");
+  Serial.println(user_input , HEX);
 }

@@ -39,6 +39,8 @@ void loop()
   }
 
 
+  SPI_sendCommandToMonitor(MON_CMD_START_DIAG_REG);
+  delay(20);
   if( do_adc_conversion ) {
     SPI_sendCommandToMonitor(MON_CMD_START_ADC_CONVERSION_ALL);
   }
@@ -52,7 +54,7 @@ void loop()
   
   checkVoltages();
   
-  delay(100);
+  delay(80);
   loop_ctr++;
 }
 

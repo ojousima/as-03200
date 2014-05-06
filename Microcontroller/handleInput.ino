@@ -1,3 +1,5 @@
+boolean start_discharge_select = false;
+boolean stop_discharge_select = false;
 
 void printHelp()
 {
@@ -7,6 +9,9 @@ void printHelp()
   Serial.println("** LOWER CASE");
   Serial.println("*************");
   Serial.println(" * a    - adc conversion - start");
+  Serial.println(" * d    - discharge");
+  Serial.println(" * s    - adc conversion, allow discharge - start");
+  Serial.println(" * z    - reset discharge");
   Serial.println(" * 0-7  - Set comparator duty cycle");
   Serial.println(" * w    - Write configuration changes to monitor");
   Serial.println(" *");
@@ -25,7 +30,17 @@ void printHelp()
 
 void handleInput(char user_input)
 {
-  if( (user_input >= '0') && (user_input <= '7') ) {
+  if( start_discharge_select ) {
+    Serial.println("HEEEELOO");
+    startDischarge(user_input);
+  }
+  else if( stop_discharge_select ) {
+    Serial.println("HEEEELOO       2");
+    stopDischarge(user_input);
+  }
+  
+  
+  else if( (user_input >= '0') && (user_input <= '7') ) {
     MON_setComparatorDutyCycle((unsigned char) (user_input & 0x0F));
     if(__DEBUG__) {
       Serial.println("\nChanged comparatpr duty cycle in local buffer.");
@@ -36,7 +51,26 @@ void handleInput(char user_input)
     if(__DEBUG__) {
       Serial.println("\nSending start adc conversion command to monitor.");
     }
-    SPI_sendCommandToMonitor(MON_CMD_START_ADC_CONVERSION_ALL);
+    do_adc_conversion = true;
+  }
+  else if(user_input == 'd') {
+    if(__DEBUG__) {
+      Serial.println("\nDischarging... Which cell? (0-3 or 'a'):");
+    }
+    start_discharge_select = true;
+  }
+  else if(user_input == 's') {
+    if(__DEBUG__) {
+      Serial.println("\nSending start adc conversion, allow discharge command to monitor.");
+    }
+  do_adc_conversion_discharge = true;
+
+  }
+  else if(user_input == 'z') {
+    if(__DEBUG__) {
+      Serial.println("\nResetting discharging... Which cell? (0-3 or 'a'):");
+    }
+    stop_discharge_select = true;
   }
   else if(user_input == 'w') {
     if(__DEBUG__) {
@@ -78,3 +112,52 @@ void handleInput(char user_input)
   }
 }
 
+
+void startDischarge(char user_input)
+{
+  Serial.print("In start disch..");
+  Serial.println(user_input , DEC);
+  if( user_input == '0' ) {
+    MON_dischargeCell0(true);
+  }
+  else if( user_input == '1' ) {
+    MON_dischargeCell1(true);
+  }
+  else if( user_input == '2' ) {
+    MON_dischargeCell2(true);
+  }
+  else if( user_input == '3' ) {
+    MON_dischargeCell3(true);
+  }
+  else if( user_input == 'a' ) {
+    MON_dischargeCell0(true);
+    MON_dischargeCell1(true);
+    MON_dischargeCell2(true);
+    MON_dischargeCell3(true);
+  }
+  start_discharge_select = false;
+}
+
+
+void stopDischarge(char user_input)
+{
+  if( user_input == '0' ) {
+    MON_dischargeCell0(false);
+  }
+  else if( user_input == '1' ) {
+    MON_dischargeCell1(false);
+  }
+  else if( user_input == '2' ) {
+    MON_dischargeCell2(false);
+  }
+  else if( user_input == '3' ) {
+    MON_dischargeCell3(false);
+  }
+  else if( user_input == 'a' ) {
+    MON_dischargeCell0(false);
+    MON_dischargeCell1(false);
+    MON_dischargeCell2(false);
+    MON_dischargeCell3(false);
+  }
+  stop_discharge_select = false;
+}

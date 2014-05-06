@@ -82,6 +82,35 @@ void MON_dischargeCell0(boolean toggle)
     MON_configuration_register_local[1] = (MON_configuration_register_local[1] & 0xFE);
   }
 }
+void MON_dischargeCell1(boolean toggle)
+{
+  if(toggle) {
+    MON_configuration_register_local[1] = (MON_configuration_register_local[1] | 0x02);
+  }
+  else {
+    MON_configuration_register_local[1] = (MON_configuration_register_local[1] & 0xFC);
+  }
+}
+void MON_dischargeCell2(boolean toggle)
+{
+  if(toggle) {
+    MON_configuration_register_local[1] = (MON_configuration_register_local[1] | 0x04);
+  }
+  else {
+    MON_configuration_register_local[1] = (MON_configuration_register_local[1] & 0xFB);
+  }
+}
+void MON_dischargeCell3(boolean toggle)
+{
+  if(toggle) {
+    MON_configuration_register_local[1] = (MON_configuration_register_local[1] | 0x08);
+  }
+  else {
+    MON_configuration_register_local[1] = (MON_configuration_register_local[1] & 0xF7);
+  }
+}
+
+
 
 /* Set comparator duty cycle. Value is a number between 0-7. See LTC6803 datasheet. */
 void MON_setComparatorDutyCycle(unsigned char level)

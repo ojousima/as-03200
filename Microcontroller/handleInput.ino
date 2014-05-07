@@ -6,18 +6,23 @@ void printHelp()
   Serial.println("\n/**************************");
   Serial.println(" *   USER INPUT OPTIONS   *");
   Serial.println("***************************");
-  Serial.println("** LOWER CASE");
-  Serial.println("*************");
-  Serial.println(" * a    - adc conversion - start");
-  Serial.println(" * d    - discharge");
-  Serial.println(" * s    - adc conversion, allow discharge - start");
-  Serial.println(" * z    - reset discharge");
-  Serial.println(" * 0-7  - Set comparator duty cycle");
-  Serial.println(" * w    - Write configuration changes to monitor");
+  Serial.println("** DIRECT COMMANDS");
+  Serial.println("******************");
+  Serial.println(" * a    - Toggle start adc conversion");
+  Serial.println(" * s    - Toggle start adc conversion - Allow discharge");
   Serial.println(" *");
-  Serial.println("*************");
-  Serial.println("** UPPER CASE");
-  Serial.println("*************");
+  Serial.println("*******************");
+  Serial.println("** REGISTER CHANGES");
+  Serial.println("*******************");
+  Serial.println(" * d    - START discharging. Select which cells after entering d");
+  Serial.println(" * z    - STOP discharging. Select which cells after entering z");
+  Serial.println(" * 0-7  - Set comparator duty cycle");
+//  Serial.println(" * w    - Write config changes to monitor");
+  Serial.println(" *");
+
+  Serial.println("*******************");
+  Serial.println("** PRINT DEBUG DATA");
+  Serial.println("*******************");
   Serial.println(" * C    - Print configuration data");
   Serial.println(" * D    - Print diagnostics data");
   Serial.println(" * H    - Print help message");
@@ -47,9 +52,9 @@ void handleInput(char user_input)
   
   else if(user_input == 'a') {
     if(__DEBUG__) {
-      Serial.println("\nSending start adc conversion command to monitor.");
+      Serial.println("\nToggle start adc conversion command to monitor.");
     }
-    do_adc_conversion = true;
+    do_adc_conversion = !do_adc_conversion;
   }
   else if(user_input == 'd') {
     if(__DEBUG__) {
@@ -59,9 +64,9 @@ void handleInput(char user_input)
   }
   else if(user_input == 's') {
     if(__DEBUG__) {
-      Serial.println("\nSending start adc conversion, allow discharge command to monitor.");
+      Serial.println("\nToggle adc conversion, allow discharge command to monitor.");
     }
-  do_adc_conversion_discharge = true;
+  do_adc_conversion_discharge = !do_adc_conversion_discharge;
 
   }
   else if(user_input == 'z') {

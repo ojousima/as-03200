@@ -118,8 +118,6 @@ void handleInput(char user_input)
 
 void startDischarge(char user_input)
 {
-  Serial.print("In start disch..");
-  Serial.println(user_input , DEC);
   if( user_input == '0' ) {
     MON_dischargeCell0(true);
   }

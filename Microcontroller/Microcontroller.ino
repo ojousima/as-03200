@@ -22,9 +22,9 @@
 #define MON_CMD_START_ADC_CONVERSION_ALL 0x10
 #define MON_CMD_START_ADC_CONVERSION_SELF_TEST_1 0x1E
 #define MON_CMD_START_ADC_CONVERSION_SELF_TEST_2 0x1F
-
 #define MON_CMD_START_ADC_CONVERSION_ALL_ALLOW_DISCH 0x60
 
+#define ERR_MSG_COUNTER_LIMIT 70
 
 
 /* Global variables and structures */
@@ -38,6 +38,10 @@ boolean MON_DIAG_muxfail;
 
 boolean do_adc_conversion = false;
 boolean do_adc_conversion_discharge = false;
+
+
+int error_msg_ctr = 0;
+int err_msg_print_allowed = false;
 
 
 
@@ -78,4 +82,18 @@ void printWord(word word_in) {
   Serial.print(word_in,HEX);
   Serial.print(" , ");
   Serial.println(word_in,DEC);
+}
+
+
+
+void updateErrMsgCtr()
+{
+  err_msg_print_allowed = false;
+  if(error_msg_ctr == ERR_MSG_COUNTER_LIMIT) {
+    err_msg_print_allowed = true;
+  }
+  error_msg_ctr++;
+  if(error_msg_ctr > ERR_MSG_COUNTER_LIMIT) {
+    error_msg_ctr = 0;
+  }
 }

@@ -31,6 +31,7 @@ void loop()
   if( 1000 <= loop_ctr ) {
     loop_ctr = 0;
   }
+  updateErrMsgCtr();
 
 
   user_input = Serial.read();

@@ -95,9 +95,9 @@ void SPI_readConfigurationRegister()
   in_pec_own = calculatePECForByteArray(MON_configuration_register , 6);
   SPI_setSlaveSelect(true);
   
-  if(__DEBUG__) {
+  if(__DEBUG__ && err_msg_print_allowed) {
     if( in_pec != in_pec_own ) {
-      Serial.println("CONFIGURATION REGISTER PECs MISMATCH!");
+      Serial.println("\nCONFIGURATION REGISTER PECs MISMATCH!");
       Serial.print("Pec received: ");
       printByte(in_pec);
       Serial.print("Pec calculated: ");
@@ -189,9 +189,9 @@ void SPI_readAllVoltages()
   pec_in = SPI.transfer(0);
   SPI_setSlaveSelect(true);
   
-  if(__DEBUG__) {
+  if(__DEBUG__ && err_msg_print_allowed) {
     if( pec_in != pec_in_own ) {
-      Serial.println("VOLTAGE PECs MISMATCH!");
+      Serial.println("\nVOLTAGE PECs MISMATCH!");
       Serial.print("Pec received: ");
       printByte(pec_in);
       Serial.print("Pec calculated: ");
@@ -253,9 +253,9 @@ void SPI_readDiagnostics()
   in_pec = SPI.transfer(0);
   SPI_setSlaveSelect(true);
   
-  if(__DEBUG__) {
+  if(__DEBUG__ && err_msg_print_allowed) {
     if( in_pec != in_pec_own ) {
-      Serial.println("DIAGNOSTICS PECs MISMATCH!");
+      Serial.println("\nDIAGNOSTICS PECs MISMATCH!");
       Serial.print("Pec received: ");
       printByte(in_pec);
       Serial.print("Pec calculated: ");

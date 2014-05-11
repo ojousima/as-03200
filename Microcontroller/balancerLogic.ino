@@ -1,6 +1,6 @@
 #ifdef __DEMO__
-#define MON_CONF_OVERVOLTAGE    3800    /* DEMO mV */
-#define MON_CONF_UNDERVOLTAGE   2900    /* DEMO mV */
+#define MON_CONF_OVERVOLTAGE    4000    /* DEMO mV */
+#define MON_CONF_UNDERVOLTAGE   3650    /* DEMO mV */
 #endif
 #ifndef __DEMO__
 #define MON_CONF_OVERVOLTAGE    4200    /* mV */
@@ -79,6 +79,81 @@ void MON_dischargeCell3(boolean toggle)
     MON_configuration_register_local[1] = (MON_configuration_register_local[1] & 0xF7);
   }
 }
+void MON_dischargeCell4(boolean toggle)
+{
+  if(toggle) {
+    MON_configuration_register_local[1] = (MON_configuration_register_local[1] | 0x10);
+  }
+  else {
+    MON_configuration_register_local[1] = (MON_configuration_register_local[1] & 0xEF);
+  }
+}
+void MON_dischargeCell5(boolean toggle)
+{
+  if(toggle) {
+    MON_configuration_register_local[1] = (MON_configuration_register_local[1] | 0x20);
+  }
+  else {
+    MON_configuration_register_local[1] = (MON_configuration_register_local[1] & 0xDF);
+  }
+}
+void MON_dischargeCell6(boolean toggle)
+{
+  if(toggle) {
+    MON_configuration_register_local[1] = (MON_configuration_register_local[1] | 0x40);
+  }
+  else {
+    MON_configuration_register_local[1] = (MON_configuration_register_local[1] & 0xBF);
+  }
+}
+void MON_dischargeCell7(boolean toggle)
+{
+  if(toggle) {
+    MON_configuration_register_local[1] = (MON_configuration_register_local[1] | 0x80);
+  }
+  else {
+    MON_configuration_register_local[1] = (MON_configuration_register_local[1] & 0x7F);
+  }
+}
+void MON_dischargeCell8(boolean toggle)
+{
+  if(toggle) {
+    MON_configuration_register_local[2] = (MON_configuration_register_local[2] | 0x01);
+  }
+  else {
+    MON_configuration_register_local[2] = (MON_configuration_register_local[2] & 0xFE);
+  }
+}
+void MON_dischargeCell9(boolean toggle)
+{
+  if(toggle) {
+    MON_configuration_register_local[2] = (MON_configuration_register_local[2] | 0x02);
+  }
+  else {
+    MON_configuration_register_local[2] = (MON_configuration_register_local[2] & 0xFD);
+  }
+}
+void MON_dischargeCell10(boolean toggle)
+{
+  if(toggle) {
+    MON_configuration_register_local[2] = (MON_configuration_register_local[2] | 0x04);
+  }
+  else {
+    MON_configuration_register_local[2] = (MON_configuration_register_local[2] & 0xFB);
+  }
+}
+void MON_dischargeCell11(boolean toggle)
+{
+  if(toggle) {
+    MON_configuration_register_local[2] = (MON_configuration_register_local[2] | 0x08);
+  }
+  else {
+    MON_configuration_register_local[2] = (MON_configuration_register_local[2] & 0xF7);
+  }
+}
+
+
+
 
 
 /* Set comparator duty cycle. Value is a number between 0-7. See LTC6803 datasheet. */

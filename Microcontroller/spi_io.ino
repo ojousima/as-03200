@@ -271,26 +271,26 @@ void SPI_readDiagnostics()
 void MON_printDiagnosticsRegister()
 {
   MON_printDiagnosticsRegister_1();
-//  MON_printDiagnosticsRegister_2();
+  MON_printDiagnosticsRegister_2();
 }
 
 void MON_printDiagnosticsRegister_1()
 {
-  Serial.println("DIAGNOSTICS REGISTER:");
-  Serial.print("Ref volt: ");
+  Serial.println(F("DIAGNOSTICS REGISTER:"));
+  Serial.print(F("Ref volt: "));
   printVoltage(MON_DIAG_reference_voltage);
-  Serial.print("Rev numb: ");
-//  Serial.println(MON_DIAG_revision_number , DEC);
-//  Serial.print("Mux fail: ");
-//  Serial.println(MON_DIAG_muxfail , DEC);
+  Serial.print(F("Rev numb: "));
+  Serial.println(MON_DIAG_revision_number , DEC);
+  Serial.print(F("Mux fail: "));
+  Serial.println(MON_DIAG_muxfail , DEC);
 }
-//void MON_printDiagnosticsRegister_2()
-//{
-//  Serial.print("ADC conversion on: ");
-//  Serial.println(do_adc_conversion , DEC);
-//  Serial.print("ADC conv with discharge: ");
-//  Serial.println(do_adc_conversion_discharge , DEC);
-//}
+void MON_printDiagnosticsRegister_2()
+{
+  Serial.print(F("ADC conversion on: "));
+  Serial.println(do_adc_conversion , DEC);
+  Serial.print(F("ADC conv with discharge: "));
+  Serial.println(do_adc_conversion_discharge , DEC);
+}
 
 
 void SPI_sendCommandToMonitor(unsigned char cmd)

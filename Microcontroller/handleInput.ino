@@ -9,38 +9,38 @@ void printHelp()
 }
 
 void printHelp_1() {
-  Serial.println("\n/**************************");
-  Serial.println(" *   USER INPUT OPTIONS   *");
-  Serial.println("***************************");
-  Serial.println("** DIRECT COMMANDS");
-  Serial.println("******************");
-  Serial.println(" * a    - Toggle start adc conversion");
-  Serial.println(" * s    - Toggle start adc conversion - Allow discharge");
-  Serial.println(" *");
+  Serial.println(F("\n/**************************"));
+  Serial.println(F(" *   USER INPUT OPTIONS   *"));
+  Serial.println(F("***************************"));
+  Serial.println(F("** DIRECT COMMANDS"));
+  Serial.println(F("******************"));
+  Serial.println(F(" * a    - Toggle start adc conversion"));
+  Serial.println(F(" * s    - Toggle start adc conversion - Allow discharge"));
+  Serial.println(F(" *"));
 }
 void printHelp_2()
 {
-  Serial.println("*******************");
-  Serial.println("** REGISTER CHANGES");
-  Serial.println("*******************");
+  Serial.println(F("*******************"));
+  Serial.println(F("** REGISTER CHANGES"));
+  Serial.println(F("*******************"));
 
-  Serial.println(" * d    - START discharging. Select which cells after entering d");
-  Serial.println(" * z    - STOP discharging. Select which cells after entering z");
-  Serial.println(" * 0-7  - Set comparator duty cycle");
-  Serial.println(" * w    - Write config changes to monitor");
-  Serial.println(" *");
+  Serial.println(F(" * d    - START discharging. Select which cells after entering d"));
+  Serial.println(F(" * z    - STOP discharging. Select which cells after entering z"));
+  Serial.println(F(" * 0-7  - Set comparator duty cycle"));
+  Serial.println(F(" * w    - Write config changes to monitor"));
+  Serial.println(F(" *"));
 }
 void printHelp_3()
 {
-  Serial.println("*******************");
-  Serial.println("** PRINT DEBUG DATA");
-  Serial.println("*******************");
-  Serial.println(" * C    - Print configuration data");
-  Serial.println(" * D    - Print diagnostics data");
-  Serial.println(" * H    - Print help message");
-  Serial.println(" * S    - Print Battery status");
-  Serial.println(" * V    - Print voltages data");
-  Serial.println("*******************");
+  Serial.println(F("*******************"));
+  Serial.println(F("** PRINT DEBUG DATA"));
+  Serial.println(F("*******************"));
+  Serial.println(F(" * C    - Print configuration register"));
+  Serial.println(F(" * D    - Print diagnostics register and adc conversion status "));
+  Serial.println(F(" * H    - Print help message"));
+  Serial.println(F(" * S    - Print Battery status"));
+  Serial.println(F(" * V    - Print voltages data"));
+  Serial.println(F("*******************"));
 }
 
 

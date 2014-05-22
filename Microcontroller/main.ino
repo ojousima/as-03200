@@ -19,7 +19,7 @@ void displayInitSequence()
 
 
 char user_input = -1;
-int loop_ctr = 0; 
+int loop_ctr = 0;
 
 void loop()
 { 
@@ -29,7 +29,7 @@ void loop()
     displayInitSequence();
   }
   if( 1000 <= loop_ctr ) {
-    loop_ctr = 0;
+    loop_ctr = 1;
   }
   updateErrMsgCtr();
 

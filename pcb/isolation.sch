@@ -214,9 +214,9 @@ Text Label 2900 3900 0    60   ~ 0
 CS
 Text Label 2900 4250 0    60   ~ 0
 MISO
-Text Label 2900 4000 0    60   ~ 0
-MOSI
 Text Label 2900 4150 0    60   ~ 0
+MOSI
+Text Label 2900 4000 0    60   ~ 0
 SCL
 $Comp
 L CONNECT_6 K401

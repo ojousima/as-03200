@@ -1,6 +1,9 @@
 
 void setup() {
   Serial.begin(9600);
+  SPI_openBus();
+  Serial.println("Opened SPI bus.");
+  displayInitSequence();
 }
 
 
@@ -19,20 +22,10 @@ void displayInitSequence()
 
 
 char user_input = -1;
-int loop_ctr = 0;
 
 void loop()
 { 
-  if(loop_ctr == 0) {
-    SPI_openBus();
-    Serial.println("Opened SPI bus.");
-    displayInitSequence();
-  }
-  if( 1000 <= loop_ctr ) {
-    loop_ctr = 1;
-  }
   updateErrMsgCtr();
-
 
   user_input = Serial.read();
   if( user_input != -1 ) {
@@ -56,6 +49,5 @@ void loop()
   checkVoltages();
   
   delay(80);
-  loop_ctr++;
 }
 

@@ -75,7 +75,7 @@ void handleInput(char user_input)
   else if( (user_input >= '0') && (user_input <= '7') ) {
     MON_setComparatorDutyCycle((unsigned char) (user_input & 0x0F));
     if(__DEBUG__) {
-      Serial.println("\nChanged comparatpr duty cycle in local buffer.");
+      Serial.println("\nChanged comparator duty cycle in local buffer.");
     }
   }
   

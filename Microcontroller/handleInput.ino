@@ -6,16 +6,17 @@ void printHelp()
   printHelp_1();
   printHelp_2();
   printHelp_3();
+  printHelp_4();
 }
 
 void printHelp_1() {
-  Serial.println(F("\n/**************************"));
+  Serial.println(F("\n**************************"));
   Serial.println(F(" *   USER INPUT OPTIONS   *"));
   Serial.println(F("***************************"));
   Serial.println(F("** DIRECT COMMANDS"));
   Serial.println(F("******************"));
-  Serial.println(F(" * a    - Toggle start adc conversion"));
-  Serial.println(F(" * s    - Toggle start adc conversion - Allow discharge"));
+  Serial.println(F(" * a     - Toggle start adc conversion"));
+  Serial.println(F(" * s     - Toggle start adc conversion - Allow discharge"));
   Serial.println(F(" *"));
 }
 void printHelp_2()
@@ -24,10 +25,11 @@ void printHelp_2()
   Serial.println(F("** REGISTER CHANGES"));
   Serial.println(F("*******************"));
 
-  Serial.println(F(" * d    - START discharging. Select which cells after entering d"));
-  Serial.println(F(" * z    - STOP discharging. Select which cells after entering z"));
-  Serial.println(F(" * 0-7  - Set comparator duty cycle"));
-  Serial.println(F(" * w    - Write config changes to monitor"));
+  Serial.println(F(" * d     - START discharging. Select cells after entering d"));
+  Serial.println(F(" * z     - STOP discharging. Select cells after entering z"));
+  Serial.println(F(" * 0-b|x - ONLY DIRECTLY AFTER d or z. Cell selection as hex, x for all"));
+  Serial.println(F(" * 0-7   - Set comparator duty cycle"));
+  Serial.println(F(" * w     - Write config changes to monitor"));
   Serial.println(F(" *"));
 }
 void printHelp_3()
@@ -35,12 +37,28 @@ void printHelp_3()
   Serial.println(F("*******************"));
   Serial.println(F("** PRINT DEBUG DATA"));
   Serial.println(F("*******************"));
-  Serial.println(F(" * C    - Print configuration register"));
-  Serial.println(F(" * D    - Print diagnostics register and adc conversion status "));
-  Serial.println(F(" * H    - Print help message"));
-  Serial.println(F(" * S    - Print Battery status"));
-  Serial.println(F(" * V    - Print voltages data"));
+  Serial.println(F(" * C     - Print configuration register"));
+  Serial.println(F(" * D     - Print diagnostics register and adc conversion status "));
+  Serial.println(F(" * H     - Print help message"));
+  Serial.println(F(" * S     - Print Battery status"));
+  Serial.println(F(" * V     - Print voltages data"));
   Serial.println(F("*******************"));
+}
+void printHelp_4()
+{
+  Serial.println(F(""));
+  Serial.println(F("*******************"));
+  Serial.println(F(" * USAGE"));
+  Serial.println(F("*******************"));
+  Serial.println(F("To wake the monitor from sleep after boot the"));
+  Serial.println(F("comparator duty cycle has to be set. The LTC6803"));
+  Serial.println(F("starts to function only after the comp.duty. cycle is set."));
+  Serial.println(F(""));
+  Serial.println(F("ALL register changes have to be separately written to monitor"));
+  Serial.println(F("with the 'w' command."));
+  Serial.println(F("The 'a' and 's' commands are directly sent to the monitor."));
+  Serial.println(F("*******************"));
+  Serial.println(F(""));
 }
 
 

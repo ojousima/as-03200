@@ -21,17 +21,13 @@ void displayInitSequence()
 }
 
 
-char user_input = -1;
+
 
 void loop()
 { 
   updateErrMsgCtr();
 
-  user_input = Serial.read();
-  if( user_input != -1 ) {
-    handleInput(user_input);
-  }
-
+  handleInput();
 
   SPI_sendCommandToMonitor(MON_CMD_START_DIAG_REG);
   delay(20);
@@ -42,8 +38,11 @@ void loop()
     SPI_sendCommandToMonitor(MON_CMD_START_ADC_CONVERSION_ALL_ALLOW_DISCH);
   }
 
+
   SPI_readDiagnostics();
+
   SPI_readConfigurationRegister();
+
   SPI_readAllVoltages();
   
   checkVoltages();

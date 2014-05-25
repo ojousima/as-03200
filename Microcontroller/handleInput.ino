@@ -62,8 +62,17 @@ void printHelp_4()
 }
 
 
-void handleInput(char user_input)
+
+
+
+void handleInput()
 {
+  char user_input = Serial.read();
+  if( user_input == -1 ) {
+    return;
+  }
+  
+  
   if( start_discharge_select ) {
     startDischarge(user_input);
   }
@@ -197,7 +206,7 @@ void startDischarge(char user_input)
     MON_dischargeCell10(true);
     MON_dischargeCell11(true);
   }
-  Serial.print("Input received (ascii): ");
+  Serial.print("Input received (ascii hex): ");
   Serial.println(user_input , HEX);
   start_discharge_select = false;
 }
@@ -256,6 +265,6 @@ void stopDischarge(char user_input)
     MON_dischargeCell11(false);
   }
   stop_discharge_select = false;
-  Serial.print("Input received (ascii): ");
+  Serial.print("Input received (ascii hex): ");
   Serial.println(user_input , HEX);
 }

@@ -191,17 +191,3 @@ void checkVoltages()
   }
 }
 
-
-
-void printBatteryStatus()
-{
-  int i = 0;
-  Serial.println("\nBATTERY STATUS:");
-  while( i < 12 ) {
-    Serial.print("Batt ");
-    Serial.print(i , DEC);
-    Serial.print(": ");
-    Serial.println(voltIndicator[i] , DEC);
-    i++;
-  }
-}
